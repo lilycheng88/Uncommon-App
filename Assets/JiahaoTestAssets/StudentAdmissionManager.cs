@@ -35,8 +35,7 @@ public class StudentAdmissionManager : MonoBehaviour
     public GameObject rejectedStudentContentParent;
     public GameObject waitlistedStudentContentParent;
 
-    public GameObject gameLoseScreen;
-    public GameObject gameCalcScreen;
+
 
     public float timeLeft;
     public float maxTime = 60f;
@@ -68,19 +67,19 @@ public class StudentAdmissionManager : MonoBehaviour
         if (inGame)
         {
             if (studentAdmitted > studentRequired)
-        {
-            GameLose();
-        }
+            {
+                GameManager.Instance.GameLose();
+            }
 
         if (studentLeft <= 0)
         {
             if (studentAdmitted < studentRequired)
             {
-                GameLose();
+                GameManager.Instance.GameLose();
             }
             else
             {
-                GameCalc();
+                GameManager.Instance.GameCalc();
             }
 
         }
@@ -89,18 +88,18 @@ public class StudentAdmissionManager : MonoBehaviour
         {
             if (averageFinance > financeDangerLine && averageAcademic >academicDangerLine)
             {
-                GameCalc();
+                GameManager.Instance.GameCalc();
             }
             else
             {
-                GameLose();
+                GameManager.Instance.GameLose();
             }
 
         }
 
         if (timeLeft < 0)
         {
-            GameLose();
+            GameManager.Instance.GameLose();
         }
 
         
@@ -109,17 +108,7 @@ public class StudentAdmissionManager : MonoBehaviour
         }
     }
 
-    public void GameLose()
-    {
-        inGame = false;
-        gameLoseScreen.SetActive(true);
-    }
 
-    public void GameCalc()
-    {
-        inGame = false;
-        gameCalcScreen.SetActive(true);
-    }
 
     public void UpdateAllVisuals()
     {
@@ -150,6 +139,13 @@ public class StudentAdmissionManager : MonoBehaviour
             studentLeft -= 1;
             averageFinance += Mathf.RoundToInt((data._finance - financeMidValue)*0.2f);
             averageAcademic += Mathf.RoundToInt((data._academic - academicMidValue)*0.2f);
+            //real average algorism
+            //var totalAcademic = 0;
+            //foreach(StudentData s in admittedStudentList)
+            //{
+            //    totalAcademic += s._academic;
+            //}
+            //averageAcademic = totalAcademic / admittedStudentList.Count;
 
             UpdateAllVisuals();
         }

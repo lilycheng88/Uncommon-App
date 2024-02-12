@@ -8,7 +8,6 @@ public class SliderVisuals : MonoBehaviour
 {
 
     public List<Color> colorList = new List<Color>();
-
     public List<int> threshHolds = new List<int>();
 
     [SerializeField] Image fillImage;
