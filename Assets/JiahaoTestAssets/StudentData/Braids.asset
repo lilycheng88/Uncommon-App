@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Braids
   m_EditorClassIdentifier: 
   _studentName: Braids
-  _studentDescription: 
+  _studentDescription: Test Decscription Test Test yo yo aye aye yo
   _academic: 60
   _finance: 50
   _studentImage: {fileID: 21300000, guid: 91c25581ec654471f8818e10a7d5df42, type: 3}

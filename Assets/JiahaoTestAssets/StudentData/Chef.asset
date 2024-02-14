@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Chef
   m_EditorClassIdentifier: 
   _studentName: Chef
-  _studentDescription: 
+  _studentDescription: Test Decscription Test Test yo yo aye aye yo
   _academic: 20
   _finance: 20
   _studentImage: {fileID: 21300000, guid: e83b7dc85f5b54eb8b0cfafff92920ef, type: 3}

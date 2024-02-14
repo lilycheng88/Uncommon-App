@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Santa
   m_EditorClassIdentifier: 
   _studentName: Santa
-  _studentDescription: 
+  _studentDescription: Test Decscription Test Test yo yo aye aye yo
   _academic: 80
   _finance: 80
   _studentImage: {fileID: 21300000, guid: 38de5ff1338c040b18fadec06e9cfe50, type: 3}

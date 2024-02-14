@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Police
   m_EditorClassIdentifier: 
   _studentName: Police
-  _studentDescription: 
+  _studentDescription: Test Decscription Test Test yo yo aye aye yo
   _academic: 65
   _finance: 25
   _studentImage: {fileID: 21300000, guid: 43ada2afb37c84ef89075ff9163b734a, type: 3}

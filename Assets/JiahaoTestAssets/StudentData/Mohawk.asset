@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Mohawk
   m_EditorClassIdentifier: 
   _studentName: Mohawk
-  _studentDescription: 
+  _studentDescription: Test Decscription Test Test yo yo aye aye yo
   _academic: 30
   _finance: 30
   _studentImage: {fileID: 21300000, guid: 0fa10a30d02914dbfbcff4f0d574183f, type: 3}

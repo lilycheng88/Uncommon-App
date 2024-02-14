@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Fox
   m_EditorClassIdentifier: 
   _studentName: Fox
-  _studentDescription: 
+  _studentDescription: Test Decscription Test Test yo yo aye aye yo
   _academic: 70
   _finance: 45
   _studentImage: {fileID: 21300000, guid: c78d122ff449847229db1feadaedbfe9, type: 3}

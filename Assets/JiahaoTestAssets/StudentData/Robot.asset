@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Robot
   m_EditorClassIdentifier: 
   _studentName: Robot
-  _studentDescription: 
+  _studentDescription: Test Decscription Test Test yo yo aye aye yo
   _academic: 60
   _finance: 40
   _studentImage: {fileID: 21300000, guid: 34d575678a297426ea444b51146d8818, type: 3}
