@@ -19,6 +19,5 @@ public class StudentInfoContent : MonoBehaviour
     void UpdateContent()
     {
         studentNameText.text = data._studentName;
-        studentImage.sprite = data._studentImage;
     }
 }

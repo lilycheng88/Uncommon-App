@@ -12,8 +12,7 @@ public class StudentAdmissionManager : MonoBehaviour
     //
 
     [SerializeField] StudentInfo studentInfo;
-
-    public List<StudentData> studentDataList = new List<StudentData>();
+    [SerializeField] StudentGenerationManager studentGenerationManager;
 
     public List<StudentData> admittedStudentList = new List<StudentData>();
     public List<StudentData> rejectedStudentList = new List<StudentData>();
@@ -71,36 +70,36 @@ public class StudentAdmissionManager : MonoBehaviour
                 GameManager.Instance.GameLose();
             }
 
-        if (studentLeft <= 0)
-        {
-            if (studentAdmitted < studentRequired)
+            if (studentLeft <= 0)
+            {
+                if (studentAdmitted < studentRequired)
+                {
+                    GameManager.Instance.GameLose();
+                }
+                else
+                {
+                    GameManager.Instance.GameCalc();
+                }
+
+            }
+
+            if(studentAdmitted == studentRequired)
+            {
+                if (averageFinance > financeDangerLine && averageAcademic >academicDangerLine)
+                {
+                    GameManager.Instance.GameCalc();
+                }
+                else
+                {
+                    GameManager.Instance.GameLose();
+                }
+
+            }
+
+            if (timeLeft < 0)
             {
                 GameManager.Instance.GameLose();
             }
-            else
-            {
-                GameManager.Instance.GameCalc();
-            }
-
-        }
-
-        if(studentAdmitted == studentRequired)
-        {
-            if (averageFinance > financeDangerLine && averageAcademic >academicDangerLine)
-            {
-                GameManager.Instance.GameCalc();
-            }
-            else
-            {
-                GameManager.Instance.GameLose();
-            }
-
-        }
-
-        if (timeLeft < 0)
-        {
-            GameManager.Instance.GameLose();
-        }
 
         
             timeLeft -= Time.deltaTime;
@@ -122,9 +121,11 @@ public class StudentAdmissionManager : MonoBehaviour
     }
 
 
-    public void AdmitStudent(StudentData data)
+
+    public void AdmitCurrentStudent()
     {
-        if (data._studentName == "DefaultData")
+        StudentData data = studentInfo.data;
+        if (data == null)
         {
             data = studentInfo.data;
         }
@@ -139,13 +140,6 @@ public class StudentAdmissionManager : MonoBehaviour
             studentLeft -= 1;
             averageFinance += Mathf.RoundToInt((data._finance - financeMidValue)*0.2f);
             averageAcademic += Mathf.RoundToInt((data._academic - academicMidValue)*0.2f);
-            //real average algorism
-            //var totalAcademic = 0;
-            //foreach(StudentData s in admittedStudentList)
-            //{
-            //    totalAcademic += s._academic;
-            //}
-            //averageAcademic = totalAcademic / admittedStudentList.Count;
 
             UpdateAllVisuals();
         }
@@ -154,13 +148,8 @@ public class StudentAdmissionManager : MonoBehaviour
 
     public void RejectCurrentStudent()
     {
-
-        RejectStudent(studentInfo.data);
-    }
-
-    public void RejectStudent(StudentData data)
-    {
-        if(data._studentName == "DefaultData")
+        StudentData data = studentInfo.data;
+        if (data == null)
         {
             data = studentInfo.data;
         }
@@ -174,12 +163,9 @@ public class StudentAdmissionManager : MonoBehaviour
         UpdateAllVisuals();
     }
 
-    public void WaitlistStudent(StudentData data)
+    public void WaitlistCurrentStudent()
     {
-        if (data._studentName == "DefaultData")
-        {
-            data = studentInfo.data;
-        }
+        StudentData data = studentInfo.data;
 
         if (!waitlistedStudentList.Contains(data))
         {
@@ -191,12 +177,8 @@ public class StudentAdmissionManager : MonoBehaviour
 
     public void RandomlyPresentAStudent()
     {
-        StudentData data;
-        data = studentDataList[Random.Range(0, studentDataList.Count)];
-        while (data == studentInfo.data)
-        {
-            data = studentDataList[Random.Range(0, studentDataList.Count)];
-        }
+        
+        StudentData data = studentGenerationManager.RandomGenerateStudent();
         studentInfo.UpdateStudentInfo(data);
     }
 
