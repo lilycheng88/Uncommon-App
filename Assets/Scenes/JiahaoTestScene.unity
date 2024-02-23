@@ -2774,8 +2774,8 @@ MonoBehaviour:
   maxTime: 10
   timeAddedPerStudentAdmitted: 3
   studentLeft: 100
+  studentRequired: 60
   studentAdmitted: 0
-  studentRequired: 30
   financeMidValue: 50
   academicMidValue: 50
   averageFinance: 50
