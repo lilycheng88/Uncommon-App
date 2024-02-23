@@ -5,6 +5,18 @@ using UnityEngine.UI;
 
 public class StudentGenerationManager : MonoBehaviour
 {
+    //=====Testing=====
+    [Range(0.0f, 100.0f)]
+    [SerializeField] int goodStudentPercentage;
+    [Range(0.0f, 100.0f)]
+    [SerializeField] int badStudentPercentage;
+    [Range(0.0f, 100.0f)]
+    [SerializeField] int richStudentPercentage;
+    [Range(0.0f, 100.0f)]
+    [SerializeField] int poorStudentPercentage;
+
+    //=================
+
 
     [SerializeField] List<Sprite> earSprites;
     [SerializeField] List<Sprite> eyeSprites;
@@ -23,6 +35,7 @@ public class StudentGenerationManager : MonoBehaviour
     [SerializeField] Image hairImage;
     [SerializeField] Image mouthImage;
     [SerializeField] Image noseImage;
+
 
 
 
@@ -57,8 +70,34 @@ public class StudentGenerationManager : MonoBehaviour
         string lastName = lastNames[Random.Range(0, lastNames.Count)];
         data._studentName = firstName + " " + lastName;
 
-        data._finance = Random.Range(0,100);
+        //==========Student stats generation algorithm=============
+
+        data._finance = Random.Range(0, 100);
         data._academic = Random.Range(0, 100);
+
+        int a = Random.Range(0, 100);
+        if(a < Mathf.Min(goodStudentPercentage,100))
+        {
+            data._academic = Random.Range(80, 100);
+        }
+        else if (a < Mathf.Min(badStudentPercentage + goodStudentPercentage,100))
+        {
+            data._academic = Random.Range(0, 20);
+        }
+
+        int f = Random.Range(0, 100);
+        if (f < Mathf.Min(richStudentPercentage,100))
+        {
+            data._finance = Random.Range(80, 100);
+        }
+        else if (f < Mathf.Min(poorStudentPercentage + richStudentPercentage,100))
+        {
+            data._finance = Random.Range(0, 20);
+        }
+
+        //==========================================================
+
+        
 
 
         return data;

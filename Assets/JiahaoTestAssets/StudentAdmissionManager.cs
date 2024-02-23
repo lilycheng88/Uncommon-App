@@ -37,7 +37,8 @@ public class StudentAdmissionManager : MonoBehaviour
 
 
     public float timeLeft;
-    public float maxTime = 60f;
+    public float maxTime = 20f;
+    public float timeAddedPerStudentAdmitted = 10f;
     public int studentLeft;
     public int maxStudent = 20;
     public int studentAdmitted = 0;
@@ -136,6 +137,7 @@ public class StudentAdmissionManager : MonoBehaviour
         }
         if (data != null)
         {
+            timeLeft += timeAddedPerStudentAdmitted;
             studentAdmitted += 1;
             studentLeft -= 1;
             averageFinance += Mathf.RoundToInt((data._finance - financeMidValue)*0.2f);
