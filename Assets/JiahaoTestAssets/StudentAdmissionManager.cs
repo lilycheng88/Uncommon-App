@@ -37,12 +37,21 @@ public class StudentAdmissionManager : MonoBehaviour
 
 
     public float timeLeft;
+
+    [Header("Starting max time")]
     public float maxTime = 20f;
+
+    [Header("Time added per student admittedd")]
     public float timeAddedPerStudentAdmitted = 10f;
+
+    [Header("How many student in total")]
     public int studentLeft;
-    public int maxStudent = 20;
-    public int studentAdmitted = 0;
+
+    [Header("Student Required")]
     public int studentRequired = 7;
+
+    [Header(" ")]
+    public int studentAdmitted = 0;
 
 
     public int financeMidValue = 50;
