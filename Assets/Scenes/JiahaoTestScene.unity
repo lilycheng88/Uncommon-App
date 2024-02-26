@@ -3086,6 +3086,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 47fd158442f4844aba6f71f48819fce6, type: 3}
   faceSprites:
   - {fileID: 21300000, guid: dd8d5ee5cb501499086d701b9a34da8a, type: 3}
+  - {fileID: 21300000, guid: 8b4423530abf443c39b70da19dffc9f5, type: 3}
+  - {fileID: 21300000, guid: 8fa922c6797534403a277d439ab2d92f, type: 3}
   hairSprites:
   - {fileID: 21300000, guid: c53503467598740b58da9264e84592fd, type: 3}
   - {fileID: 21300000, guid: e6929cf51339c4418bc7ab393381cd90, type: 3}
