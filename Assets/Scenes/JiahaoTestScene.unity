@@ -3080,6 +3080,8 @@ MonoBehaviour:
   poorStudentPercentage: 30
   earSprites:
   - {fileID: 21300000, guid: dedce62326cc64318a6b0083cbdc37e6, type: 3}
+  - {fileID: 21300000, guid: 2703b41d2d27b4fac9bd47c2d2722cae, type: 3}
+  - {fileID: 21300000, guid: 8c66ee7e8ff3249fba89999b97ef83ba, type: 3}
   eyeSprites:
   - {fileID: 21300000, guid: 096e3858e01a443a7bdc6e85bd89ea02, type: 3}
   - {fileID: 21300000, guid: d2ffd43919add45fc932dba515b2fc4d, type: 3}
