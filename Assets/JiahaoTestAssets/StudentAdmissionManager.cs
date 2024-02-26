@@ -12,6 +12,7 @@ public class StudentAdmissionManager : MonoBehaviour
     //
 
     [SerializeField] StudentInfo studentInfo;
+    [SerializeField] Animator studentImageAnimator;
     [SerializeField] StudentGenerationManager studentGenerationManager;
 
     public List<StudentData> admittedStudentList = new List<StudentData>();
@@ -76,7 +77,7 @@ public class StudentAdmissionManager : MonoBehaviour
     {
         timeLeft = maxTime;
         totalScholarship = initialScholarship;
-        
+
     }
 
     private void Start()
@@ -110,9 +111,9 @@ public class StudentAdmissionManager : MonoBehaviour
 
             }
 
-            if(studentAdmitted == studentRequired)
+            if (studentAdmitted == studentRequired)
             {
-                if (averageFinance > financeDangerLine && averageAcademic >academicDangerLine)
+                if (averageFinance > financeDangerLine && averageAcademic > academicDangerLine)
                 {
                     timeLeft = maxTime;
                     GameManager.Instance.GameCalc();
@@ -130,7 +131,7 @@ public class StudentAdmissionManager : MonoBehaviour
                 GameManager.Instance.GameLose();
             }
 
-        
+
             timeLeft -= Time.deltaTime;
             timeLeftText.text = timeLeft.ToString();
         }
@@ -173,7 +174,7 @@ public class StudentAdmissionManager : MonoBehaviour
                 studentAdmitted += 1;
                 studentLeft -= 1;
                 totalScholarship -= (financeRequired - data._finance);
-                if(totalScholarship < 0)
+                if (totalScholarship < 0)
                 {
                     totalScholarship = 0;
                 }
@@ -230,7 +231,7 @@ public class StudentAdmissionManager : MonoBehaviour
 
     public void RandomlyPresentAStudent()
     {
-        
+        studentImageAnimator.SetTrigger("LoadIn");
         StudentData data = studentGenerationManager.RandomGenerateStudent();
         studentInfo.UpdateStudentInfo(data);
     }

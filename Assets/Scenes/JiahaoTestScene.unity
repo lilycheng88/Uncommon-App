@@ -279,6 +279,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 51665675}
+  - component: {fileID: 51665676}
   m_Layer: 5
   m_Name: FaceParts
   m_TagString: Untagged
@@ -311,6 +312,27 @@ RectTransform:
   m_AnchoredPosition: {x: 283.78754, y: 195.39478}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 1.4459586, y: 1.1513159}
+--- !u!95 &51665676
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51665674}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 97d360742d61940c5a146ea6fd70654b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &52378948
 GameObject:
   m_ObjectHideFlags: 0
@@ -2992,6 +3014,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   studentInfo: {fileID: 1451621151}
+  studentImageAnimator: {fileID: 51665676}
   studentGenerationManager: {fileID: 491151446}
   averageFinanceText: {fileID: 770739345}
   averageAcademicText: {fileID: 1793833332}
@@ -3008,7 +3031,7 @@ MonoBehaviour:
   rejectedStudentContentParent: {fileID: 1769614594}
   waitlistedStudentContentParent: {fileID: 1842189397}
   timeLeft: 0
-  maxTime: 10
+  maxTime: 20
   timeAddedPerStudentAdmitted: 1.5
   studentLeft: 100
   studentRequired: 60
