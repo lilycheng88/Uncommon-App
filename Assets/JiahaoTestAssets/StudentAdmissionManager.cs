@@ -20,9 +20,11 @@ public class StudentAdmissionManager : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI averageFinanceText;
     [SerializeField] TextMeshProUGUI averageAcademicText;
-    [SerializeField] Image averageAcademicGlobe;
+    [SerializeField] TextMeshProUGUI totalScholarshipText;
+    [SerializeField] Image averageAcademicGlobe;//Not in use
     [SerializeField] Slider averageFinanceSlider;
     [SerializeField] Slider averageAcademicSlider;
+    [SerializeField] Slider totalScholarshipSlider;
 
     [SerializeField] TextMeshProUGUI studentLeftText;
     [SerializeField] TextMeshProUGUI timeLeftText;
@@ -37,6 +39,7 @@ public class StudentAdmissionManager : MonoBehaviour
 
 
     public float timeLeft;
+    [Header("===========================")]
 
     [Header("Starting max time")]
     public float maxTime = 20f;
@@ -50,23 +53,34 @@ public class StudentAdmissionManager : MonoBehaviour
     [Header("Student Required")]
     public int studentRequired = 7;
 
-    [Header(" ")]
+
+    [Header("===========================")]
+    [Header("   ")]
     public int studentAdmitted = 0;
 
+    public int financeRequired = 100;
 
     public int financeMidValue = 50;
     public int academicMidValue = 50;
     public int averageFinance = 50;
     public int averageAcademic = 50;
+    public int totalScholarship;
+    public int initialScholarship = 1000;
     public int financeDangerLine = 40;
     public int academicDangerLine = 40;
 
     bool inGame = true;
 
 
-    private void Start()
+    private void Awake()
     {
         timeLeft = maxTime;
+        totalScholarship = initialScholarship;
+        
+    }
+
+    private void Start()
+    {
         RandomlyPresentAStudent();
         UpdateAllVisuals();
     }
@@ -77,6 +91,7 @@ public class StudentAdmissionManager : MonoBehaviour
         {
             if (studentAdmitted > studentRequired)
             {
+                timeLeft = maxTime;
                 GameManager.Instance.GameLose();
             }
 
@@ -84,10 +99,12 @@ public class StudentAdmissionManager : MonoBehaviour
             {
                 if (studentAdmitted < studentRequired)
                 {
+                    timeLeft = maxTime;
                     GameManager.Instance.GameLose();
                 }
                 else
                 {
+                    timeLeft = maxTime;
                     GameManager.Instance.GameCalc();
                 }
 
@@ -97,10 +114,12 @@ public class StudentAdmissionManager : MonoBehaviour
             {
                 if (averageFinance > financeDangerLine && averageAcademic >academicDangerLine)
                 {
+                    timeLeft = maxTime;
                     GameManager.Instance.GameCalc();
                 }
                 else
                 {
+                    timeLeft = maxTime;
                     GameManager.Instance.GameLose();
                 }
 
@@ -123,8 +142,10 @@ public class StudentAdmissionManager : MonoBehaviour
     {
         averageFinanceText.text = averageFinance.ToString();
         averageAcademicText.text = averageAcademic.ToString();
+        totalScholarshipText.text = totalScholarship.ToString();
         averageFinanceSlider.value = averageFinance;
         averageAcademicSlider.value = averageAcademic;
+        totalScholarshipSlider.value = totalScholarship;
         averageAcademicGlobe.fillAmount = averageAcademic / 100f;
         studentAdmittedVSRequiredText.text = studentAdmitted.ToString() + "/" + studentRequired;
         studentLeftText.text = studentLeft.ToString();
@@ -140,21 +161,42 @@ public class StudentAdmissionManager : MonoBehaviour
             data = studentInfo.data;
         }
 
-        if (!admittedStudentList.Contains(data))
+        if (CanAdmit(data))
         {
-            admittedStudentList.Add(data);
-        }
-        if (data != null)
-        {
-            timeLeft += timeAddedPerStudentAdmitted;
-            studentAdmitted += 1;
-            studentLeft -= 1;
-            averageFinance += Mathf.RoundToInt((data._finance - financeMidValue)*0.2f);
-            averageAcademic += Mathf.RoundToInt((data._academic - academicMidValue)*0.2f);
+            if (!admittedStudentList.Contains(data))
+            {
+                admittedStudentList.Add(data);
+            }
+            if (data != null)
+            {
+                timeLeft += timeAddedPerStudentAdmitted;
+                studentAdmitted += 1;
+                studentLeft -= 1;
+                totalScholarship -= (financeRequired - data._finance);
+                if(totalScholarship < 0)
+                {
+                    totalScholarship = 0;
+                }
+                averageFinance += Mathf.RoundToInt((data._finance - financeMidValue) * 0.1f);
+                averageAcademic += Mathf.RoundToInt((data._academic - academicMidValue) * 0.2f);
 
-            UpdateAllVisuals();
+                UpdateAllVisuals();
+            }
+            RandomlyPresentAStudent();
         }
-        RandomlyPresentAStudent();
+    }
+
+    public bool CanAdmit(StudentData data)
+    {
+        if (totalScholarship >= financeRequired - data._finance)
+        {
+
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     public void RejectCurrentStudent()

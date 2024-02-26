@@ -40,7 +40,7 @@ public class StudentGenerationManager : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
 
         var _firstNames = new[]{"Kilay", "Huja", "UIyenw", "Toni", "Lia", "Charlotte", "Kandy", "Tynamous", "Wilhelm",
@@ -88,7 +88,7 @@ public class StudentGenerationManager : MonoBehaviour
         int f = Random.Range(0, 100);
         if (f < Mathf.Min(richStudentPercentage,100))
         {
-            data._finance = Random.Range(80, 100);
+            data._finance = Random.Range(100, 100);
         }
         else if (f < Mathf.Min(poorStudentPercentage + richStudentPercentage,100))
         {
