@@ -133,7 +133,7 @@ public class StudentAdmissionManager : MonoBehaviour
 
 
             timeLeft -= Time.deltaTime;
-            timeLeftText.text = timeLeft.ToString();
+            timeLeftText.text = timeLeft.ToString("F2");
         }
     }
 
