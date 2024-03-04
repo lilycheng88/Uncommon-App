@@ -164,6 +164,7 @@ public class StudentAdmissionManager : MonoBehaviour
 
         if (CanAdmit(data))
         {
+            SoundManager.Instance.PlaySFX("Admit");
             if (!admittedStudentList.Contains(data))
             {
                 admittedStudentList.Add(data);
@@ -202,6 +203,7 @@ public class StudentAdmissionManager : MonoBehaviour
 
     public void RejectCurrentStudent()
     {
+        SoundManager.Instance.PlaySFX("Reject");
         StudentData data = studentInfo.data;
         if (data == null)
         {
