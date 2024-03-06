@@ -15,6 +15,26 @@ public class StudentGenerationManager : MonoBehaviour
     [Range(0.0f, 100.0f)]
     [SerializeField] int poorStudentPercentage;
 
+    //====Personal Info====
+    //==scales==
+    [Range(0.0f, 100.0f)]
+    [SerializeField] int extroversionPercentage;
+
+
+    //==========
+
+
+    //==bools===
+    [Range(0.0f, 100.0f)]
+    [SerializeField] bool isVeteranPercentage;
+    [Range(0.0f, 100.0f)]
+    [SerializeField] bool isAlumniPercentage;
+    [Range(0.0f, 100.0f)]
+    [SerializeField] bool isPatronPercentage;
+    //==========
+    //======================
+
+
     //=================
 
 
@@ -59,6 +79,7 @@ public class StudentGenerationManager : MonoBehaviour
     {
         StudentData data = new StudentData();
 
+        //=======Visuals=========
         data._earSprite = earSprites[Random.Range(0, earSprites.Count)];
         data._eyeSprite = eyeSprites[Random.Range(0, eyeSprites.Count)];
         data._faceSprite = faceSprites[Random.Range(0, faceSprites.Count)];
@@ -70,8 +91,10 @@ public class StudentGenerationManager : MonoBehaviour
         string lastName = lastNames[Random.Range(0, lastNames.Count)];
         data._studentName = firstName + " " + lastName;
 
-        //==========Student stats generation algorithm=============
+        //========================
 
+
+        //===Finance and academic====
         data._finance = Random.Range(0, 100);
         data._academic = Random.Range(0, 100);
 
@@ -94,10 +117,29 @@ public class StudentGenerationManager : MonoBehaviour
         {
             data._finance = Random.Range(0, 20);
         }
+        //============================
 
-        //==========================================================
+        //=======Personal Information======
 
-        
+        //extroversion
+        float e = Random.Range(1, extroversionPercentage) * 0.025f;
+        if(extroversionPercentage < 50)
+        {
+            e *= -1f;
+        }
+
+        data._extroversion = Mathf.Clamp(Mathf.RoundToInt(Random.Range(1, 5) + e),1,5);
+
+        Debug.Log("this student's extroversion is: " + data._extroversion);
+
+
+
+
+
+
+
+
+        //=================================
 
 
         return data;

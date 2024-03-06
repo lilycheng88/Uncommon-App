@@ -3772,6 +3772,10 @@ MonoBehaviour:
   badStudentPercentage: 25
   richStudentPercentage: 39
   poorStudentPercentage: 30
+  extroversionPercentage: 100
+  isVeteranPercentage: 0
+  isAlumniPercentage: 0
+  isPatronPercentage: 0
   earSprites:
   - {fileID: 21300000, guid: dedce62326cc64318a6b0083cbdc37e6, type: 3}
   - {fileID: 21300000, guid: 2703b41d2d27b4fac9bd47c2d2722cae, type: 3}
