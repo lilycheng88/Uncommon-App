@@ -30,6 +30,11 @@ public class StudentData
     //====Personal Info====
     //==scales==
     public int _extroversion;
+    public int _magicalPersonality;
+    public int _workplace;
+    public int _schedule;
+    public int _explorativity;
+    public int _psionicAffinity;
 
 
     //==========

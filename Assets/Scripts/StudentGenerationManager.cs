@@ -19,6 +19,24 @@ public class StudentGenerationManager : MonoBehaviour
     //==scales==
     [Range(0.0f, 100.0f)]
     [SerializeField] int extroversionPercentage;
+    [Range(0.0f, 100.0f)]
+    [SerializeField] int magicalPersonalityPercentage;
+    [Range(0.0f, 100.0f)]
+    [SerializeField] int workplacePercentage;
+    [Range(0.0f, 100.0f)]
+    [SerializeField] int schedulePercentage;
+    [Range(0.0f, 100.0f)]
+    [SerializeField] int explorativityPercentage;
+    [Range(0.0f, 100.0f)]
+    [SerializeField] int psionicAffinityPercentage;
+
+
+    [Range(0.0f, 100.0f)]
+    [SerializeField] int verteranPercentage;
+    [Range(0.0f, 100.0f)]
+    [SerializeField] int alumniPercentage;
+    [Range(0.0f, 100.0f)]
+    [SerializeField] int patronPercentage;
 
 
     //==========
@@ -120,17 +138,78 @@ public class StudentGenerationManager : MonoBehaviour
         //============================
 
         //=======Personal Information======
+        //==checks==
+        data._isAlumni = (Random.Range(0, 100) < alumniPercentage);
+        data._isVeteran = (Random.Range(0, 100) < verteranPercentage);
+        data._isPatron = (Random.Range(0, 100) < patronPercentage);
+        //==========
 
+        //==bars==
         //extroversion
         float e = Random.Range(1, extroversionPercentage) * 0.025f;
         if(extroversionPercentage < 50)
         {
             e *= -1f;
         }
-
         data._extroversion = Mathf.Clamp(Mathf.RoundToInt(Random.Range(1, 5) + e),1,5);
-
         Debug.Log("this student's extroversion is: " + data._extroversion);
+
+
+
+        //magicalPersonality
+        float m = Random.Range(1, magicalPersonalityPercentage) * 0.025f;
+        if (magicalPersonalityPercentage < 50)
+        {
+            m *= -1f;
+        }
+        data._magicalPersonality = Mathf.Clamp(Mathf.RoundToInt(Random.Range(1, 5) + m), 1, 5);
+
+        Debug.Log("this student's magicalPersonality is: " + data._magicalPersonality);
+
+        //workplace
+        float w = Random.Range(1, workplacePercentage) * 0.025f;
+        if (workplacePercentage < 50)
+        {
+            m *= -1f;
+        }
+        data._workplace = Mathf.Clamp(Mathf.RoundToInt(Random.Range(1, 5) + m), 1, 5);
+
+        Debug.Log("this student's workplace is: " + data._workplace);
+
+        //schedule
+        float s = Random.Range(1, schedulePercentage) * 0.025f;
+        if (schedulePercentage < 50)
+        {
+            s *= -1f;
+        }
+        data._schedule = Mathf.Clamp(Mathf.RoundToInt(Random.Range(1, 5) + s), 1, 5);
+
+        Debug.Log("this student's schedule is: " + data._schedule);
+
+        //explorativity
+        float ex = Random.Range(1, explorativityPercentage) * 0.025f;
+        if (explorativityPercentage < 50)
+        {
+            ex *= -1f;
+        }
+        data._explorativity = Mathf.Clamp(Mathf.RoundToInt(Random.Range(1, 5) + ex), 1, 5);
+
+        Debug.Log("this student's explorativity is: " + data._explorativity);
+
+        //Psionic Affinity
+        float p = Random.Range(1, psionicAffinityPercentage) * 0.025f;
+        if (psionicAffinityPercentage < 50)
+        {
+            p  *= -1f;
+        }
+        data._psionicAffinity = Mathf.Clamp(Mathf.RoundToInt(Random.Range(1, 5) + m), 1, 5);
+
+        Debug.Log("this student's workplace is: " + data._psionicAffinity);
+
+
+        //=======
+
+
 
 
 

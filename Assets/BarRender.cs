@@ -11,10 +11,10 @@ public class BarRender : MonoBehaviour
 
     private void Start()
     {
-        setImage(input);
+        SetImage(input);
     }
 
-    public void setImage(int num)
+    public void SetImage(int num)
     {
         if (num > 5 || num < 0)
         {

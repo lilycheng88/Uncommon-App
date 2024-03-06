@@ -440,6 +440,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dac1113a0b6af466fbc3ad1b3a7b7a5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bools:
+  - {fileID: 2938042019208034034}
+  - {fileID: 8544603755702974665}
+  - {fileID: 8210555363885294802}
+  booleans: 
 --- !u!1 &4851197786645535449
 GameObject:
   m_ObjectHideFlags: 0
@@ -577,14 +582,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8745098, g: 0.8117647, b: 0.68235296, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8e258200709d146cfa03756938dcd4a8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

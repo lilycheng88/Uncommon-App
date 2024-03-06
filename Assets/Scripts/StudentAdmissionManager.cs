@@ -11,7 +11,11 @@ public class StudentAdmissionManager : MonoBehaviour
     //Manages admitted, waitlisted, and rejected students
     //
 
+
     [SerializeField] StudentInfo studentInfo;
+    [SerializeField] PreferencesManager preferencesManager;
+    [SerializeField] BooleanManager booleanManager;
+
     [SerializeField] Animator studentImageAnimator;
     [SerializeField] StudentGenerationManager studentGenerationManager;
 
@@ -203,7 +207,7 @@ public class StudentAdmissionManager : MonoBehaviour
 
     public void RejectCurrentStudent()
     {
-        SoundManager.Instance.PlaySFX("Reject");
+        SoundManager.Instance.PlaySFX("Reject   ");
         StudentData data = studentInfo.data;
         if (data == null)
         {
@@ -236,6 +240,9 @@ public class StudentAdmissionManager : MonoBehaviour
         studentImageAnimator.SetTrigger("LoadIn");
         StudentData data = studentGenerationManager.RandomGenerateStudent();
         studentInfo.UpdateStudentInfo(data);
+        preferencesManager.SetBars(data._extroversion-1,data._magicalPersonality-1,data._workplace-1,data._schedule-1,data._explorativity-1,data._psionicAffinity-1);
+        booleanManager.SetChecks(data._isAlumni,data._isPatron,data._isVeteran);
+
     }
 
     public void UpdateAdmittedStudentInfo()
