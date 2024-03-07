@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject gameLoseScreen;
     [SerializeField] GameObject gameCalcScreen;
 
+    [SerializeField] GameObject[] gameTabs;
+
     // Public accessor for the singleton instance
     public static GameManager Instance
     {
@@ -62,5 +64,23 @@ public class GameManager : MonoBehaviour
     public void ReloadCurrentScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void SwitchToTab(GameObject tab)
+    {
+        foreach (GameObject go in gameTabs)
+        {
+            if (go == tab)
+            {
+                // If the current GameObject in the loop is the target, set it active.
+                go.SetActive(true);
+            }
+            else
+            {
+                // Otherwise, set the GameObject inactive.
+                go.SetActive(false);
+            }
+        }
+
     }
 }
