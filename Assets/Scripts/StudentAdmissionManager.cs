@@ -186,6 +186,144 @@ public class StudentAdmissionManager : MonoBehaviour
                 averageFinance += Mathf.RoundToInt((data._finance - financeMidValue) * 0.1f);
                 averageAcademic += Mathf.RoundToInt((data._academic - academicMidValue) * 0.2f);
 
+                //===Mini Goal Datas===
+                for( int i = 0; i < MiniGoalManager.Instance.miniGoalDatas.Count; i++)
+                {
+                    MiniGoalData goal = MiniGoalManager.Instance.miniGoalDatas[i];
+
+                    switch (goal.label)
+                    {
+                        case "introverted":
+                            if(data._extroversion <= 2)
+                            {
+                                MiniGoalManager.Instance.miniGoalDatas[i].currentCount += 1;
+                            }
+
+                        break;
+
+                        case "extroverted":
+                            if(data._extroversion >= 4)
+                            {
+                                MiniGoalManager.Instance.miniGoalDatas[i].currentCount += 1;
+                            }
+
+                        break;
+
+                        case "calm":
+                            if(data._magicalPersonality <= 2)
+                            {
+                                MiniGoalManager.Instance.miniGoalDatas[i].currentCount += 1;
+                            }
+
+                        break;
+
+                        case "emotion-driven":
+                            if(data._magicalPersonality >= 4)
+                            {
+                                MiniGoalManager.Instance.miniGoalDatas[i].currentCount += 1;
+                            }
+
+                        break;
+
+                        case "moning favored":
+                            if(data._schedule <= 2)
+                            {
+                                MiniGoalManager.Instance.miniGoalDatas[i].currentCount += 1;
+                            }
+
+                        break;
+
+                        case "evening favored":
+                            if(data._schedule >= 4)
+                            {
+                                MiniGoalManager.Instance.miniGoalDatas[i].currentCount += 1;
+                            }
+
+                        break;
+
+                        case "hardly exploring":
+                            if(data._explorativity <= 2)
+                            {
+                                MiniGoalManager.Instance.miniGoalDatas[i].currentCount += 1;
+                            }
+
+                        break;
+                    
+                        case "often exploring":
+                            if(data._explorativity <= 4)
+                            {
+                                MiniGoalManager.Instance.miniGoalDatas[i].currentCount += 1;
+                            }
+
+                        break;
+
+                        case "obtuse":
+                            if(data._psionicAffinity <= 2)
+                            {
+                                MiniGoalManager.Instance.miniGoalDatas[i].currentCount += 1;
+                            }
+
+                        break;
+
+                        case "keen":
+                            if(data._psionicAffinity >= 4)
+                            {
+                                MiniGoalManager.Instance.miniGoalDatas[i].currentCount += 1;
+                            }
+
+                        break;
+
+                        case "1st-gen":
+                            if(data._isFirstGen)
+                            {
+                                MiniGoalManager.Instance.miniGoalDatas[i].currentCount += 1;
+                            }
+
+                        break;
+
+                        case "alumni":
+                            if(data._isAlumni)
+                            {
+                                MiniGoalManager.Instance.miniGoalDatas[i].currentCount += 1;
+                            }
+
+                        break;
+
+                        case "patron":
+                            if(data._isPatron)
+                            {
+                                MiniGoalManager.Instance.miniGoalDatas[i].currentCount += 1;
+                            }
+
+                        break;
+
+                        case "veteran":
+                            if(data._isVeteran)
+                            {
+                                MiniGoalManager.Instance.miniGoalDatas[i].currentCount += 1;
+                            }
+
+                        break;
+
+                        case "state-sponsored":
+                            if(data._isStateSponsored)
+                            {
+                                MiniGoalManager.Instance.miniGoalDatas[i].currentCount += 1;
+                            }
+
+                        break;
+
+
+                    }
+
+                }
+                MiniGoalManager.Instance.UpdateMiniGoalVisuals();
+
+
+
+                //======================
+
+
                 UpdateAllVisuals();
             }
             RandomlyPresentAStudent();

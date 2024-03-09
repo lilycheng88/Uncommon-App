@@ -41,9 +41,13 @@ public class StudentData
 
 
     //==bools===
+
+    public bool _isFirstGen;
     public bool _isVeteran;
     public bool _isAlumni;
     public bool _isPatron;
+
+    public bool _isStateSponsored;
 
 
 

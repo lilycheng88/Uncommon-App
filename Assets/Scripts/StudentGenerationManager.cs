@@ -37,6 +37,7 @@ public class StudentGenerationManager : MonoBehaviour
     [SerializeField] int alumniPercentage;
     [Range(0.0f, 100.0f)]
     [SerializeField] int patronPercentage;
+    
 
 
     //==========
@@ -49,6 +50,10 @@ public class StudentGenerationManager : MonoBehaviour
     [SerializeField] bool isAlumniPercentage;
     [Range(0.0f, 100.0f)]
     [SerializeField] bool isPatronPercentage;
+    [Range(0.0f, 100.0f)]
+    [SerializeField] int firstGenPercentage;
+    [Range(0.0f, 100.0f)]
+    [SerializeField] int stateSponsoredPercentage;
     //==========
     //======================
 
@@ -142,6 +147,10 @@ public class StudentGenerationManager : MonoBehaviour
         data._isAlumni = (Random.Range(0, 100) < alumniPercentage);
         data._isVeteran = (Random.Range(0, 100) < verteranPercentage);
         data._isPatron = (Random.Range(0, 100) < patronPercentage);
+        data._isFirstGen = (Random.Range(0, 100) < firstGenPercentage);
+        data._isStateSponsored = (Random.Range(0, 100) < stateSponsoredPercentage);
+        
+        
         //==========
 
         //==bars==
