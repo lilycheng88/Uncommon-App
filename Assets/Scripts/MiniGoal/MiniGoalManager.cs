@@ -38,8 +38,8 @@ public class MiniGoalManager : MonoBehaviour
     {
         List<string> conditions = new List<string>();
         List<int> conditionNums = new List<int>();
-        conditions.Add(Random.Range(0, 2) == 0 ? "introveted" : "extroverted");conditionNums.Add(5);
-        conditions.Add(Random.Range(0, 2) == 0 ? "calm" : "emotion");conditionNums.Add(5);
+        conditions.Add(Random.Range(0, 2) == 0 ? "introverted" : "extroverted");conditionNums.Add(5);
+        conditions.Add(Random.Range(0, 2) == 0 ? "calm" : "emotion-driven");conditionNums.Add(5);
         conditions.Add(Random.Range(0, 2) == 0 ? "morning favored" : "evening favored");conditionNums.Add(5);
         conditions.Add(Random.Range(0, 2) == 0 ? "hardly exploring" : "often exploring");conditionNums.Add(5);
         conditions.Add(Random.Range(0, 2) == 0 ? "obtuse" : "keen");conditionNums.Add(5);
@@ -95,14 +95,16 @@ public class MiniGoalManager : MonoBehaviour
     }
 
     // Call this method periodically or after certain actions to check for completion
-    public void CheckGoals()
+    public bool CheckGoals()
     {
         foreach (var goal in miniGoalDatas)
         {
-            if (goal.IsCompleted)
+            if (!goal.IsCompleted)
             {
-                // Handle goal completion, e.g., give rewards
+                return false;
             }
         }
+        return true;
+
     }
 }

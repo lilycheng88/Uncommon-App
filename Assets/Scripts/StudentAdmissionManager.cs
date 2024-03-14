@@ -41,6 +41,9 @@ public class StudentAdmissionManager : MonoBehaviour
     public GameObject rejectedStudentContentParent;
     public GameObject waitlistedStudentContentParent;
 
+    public NewspaperManager newspaperManager;
+    
+
 
 
     public float timeLeft;
@@ -49,7 +52,7 @@ public class StudentAdmissionManager : MonoBehaviour
     [Header("Starting max time")]
     public float maxTime = 20f;
 
-    [Header("Time added per student admittedd")]
+    [Header("Time added per student admitted")]
     public float timeAddedPerStudentAdmitted = 10f;
 
     [Header("How many student in total")]
@@ -76,6 +79,14 @@ public class StudentAdmissionManager : MonoBehaviour
 
     bool inGame = true;
 
+    //====Personal Info=====
+
+    int firstGenStudent = 0;
+
+
+
+    //======================
+
 
     private void Awake()
     {
@@ -92,7 +103,7 @@ public class StudentAdmissionManager : MonoBehaviour
 
     private void Update()
     {
-        if (inGame)
+        if (GameManager.Instance.inGame)
         {
             if (studentAdmitted > studentRequired)
             {
@@ -186,6 +197,8 @@ public class StudentAdmissionManager : MonoBehaviour
                 averageFinance += Mathf.RoundToInt((data._finance - financeMidValue) * 0.1f);
                 averageAcademic += Mathf.RoundToInt((data._academic - academicMidValue) * 0.2f);
 
+                firstGenStudent += data._isFirstGen? 1:0;
+
                 //===Mini Goal Datas===
                 for( int i = 0; i < MiniGoalManager.Instance.miniGoalDatas.Count; i++)
                 {
@@ -225,7 +238,7 @@ public class StudentAdmissionManager : MonoBehaviour
 
                         break;
 
-                        case "moning favored":
+                        case "morning favored":
                             if(data._schedule <= 2)
                             {
                                 MiniGoalManager.Instance.miniGoalDatas[i].currentCount += 1;
@@ -434,6 +447,33 @@ public class StudentAdmissionManager : MonoBehaviour
             GameObject studentContent = Instantiate(studentContentInfoPrefab, waitlistedStudentContentParent.transform);
 
             studentContent.GetComponent<StudentInfoContent>().data = studentData;
+        }
+    }
+
+    public void CheckAllNewsEndings()
+    {
+        if (GameManager.Instance.inGame)
+        {
+            if (averageAcademic >= academicMidValue * 2 * 0.8f)
+            {
+                Debug.Log("scholarshipexcellence increased");
+                newspaperManager.IncrementTriggerCount("ScholarlyExcellence", 1);
+            }
+
+            if (totalScholarship >= initialScholarship*0.3f)
+            {
+                Debug.Log("totalScholarship");
+                newspaperManager.IncrementTriggerCount("ScholarshipWho", 1);
+            }
+            
+            if (firstGenStudent >= 5f)
+            {
+                Debug.Log("firstGenAcademy");
+                newspaperManager.IncrementTriggerCount("FirstGenAcademy", 1);
+            }
+
+
+
         }
     }
 }

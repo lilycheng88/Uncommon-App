@@ -9,11 +9,15 @@ public class GameManager : MonoBehaviour
 {
     private static GameManager instance;
 
-    private bool inGame = true;
+    public bool inGame = true;
     [SerializeField] GameObject gameLoseScreen;
     [SerializeField] GameObject gameCalcScreen;
 
+    [SerializeField] GameObject gameParent;
+
     [SerializeField] GameObject[] gameTabs;
+    [SerializeField] StudentAdmissionManager studentAdmissionManager;
+    [SerializeField] NewspaperManager newspaperManager;
 
     // Public accessor for the singleton instance
     public static GameManager Instance
@@ -39,13 +43,25 @@ public class GameManager : MonoBehaviour
     public void GameLose()
     {
         inGame = false;
+
         gameLoseScreen.SetActive(true);
     }
 
     public void GameCalc()
     {
-        inGame = false;
+        if(!MiniGoalManager.Instance.CheckGoals())
+        {
+            GameLose();
+            return;
+        }
+        
+        
+        
         gameCalcScreen.SetActive(true);
+        studentAdmissionManager.CheckAllNewsEndings();
+        inGame = false;
+        newspaperManager.SelectNews(3);
+        gameParent.SetActive(false);
     }
 
     private void Awake()
@@ -72,6 +88,7 @@ public class GameManager : MonoBehaviour
         {
             if (go == tab)
             {
+
                 // If the current GameObject in the loop is the target, set it active.
                 go.SetActive(true);
             }
