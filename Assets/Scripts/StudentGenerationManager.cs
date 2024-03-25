@@ -55,12 +55,20 @@ public class StudentGenerationManager : MonoBehaviour
     [Range(0.0f, 100.0f)]
     [SerializeField] int stateSponsoredPercentage;
     //==========
-    //======================
+
+    //========Race===========  
+    public List<string> raceList = new List<string>();
+    private List<RaceData> raceDatas = new List<RaceData>(); 
+    
+
+
+
+    //========================
 
 
     //=================
 
-
+    //======Visuals Inits========
     [SerializeField] List<Sprite> earSprites;
     [SerializeField] List<Sprite> eyeSprites;
     [SerializeField] List<Sprite> faceSprites;
@@ -79,7 +87,7 @@ public class StudentGenerationManager : MonoBehaviour
     [SerializeField] Image mouthImage;
     [SerializeField] Image noseImage;
 
-
+    //================================
 
 
     // Start is called before the first frame update
@@ -96,23 +104,46 @@ public class StudentGenerationManager : MonoBehaviour
         var _lastNames = new[] { "Bastal", "Fowler", "Francis", "Tiaki", "Xulu", "Moonbeam", "Featherwing", "Lousu", "Yenwi", "Crookshank", "Ultra", "Maximus", "Smith", "Jones", "Sanada", "Zero", "Miite", "Russo", "Virilous", "Tiger", "Tanjiro", "Eoun", "Uwoni", "Hunter", "Lilywhite", "Crow", "Wisdom", "Seacastle", "Strongjaw", "Wubif"};
         lastNames.AddRange(_lastNames);
 
+        //=====Race Data import=====
+        // Load all RaceData assets from the specified Resources folder
+        RaceData[] raceDataArray = Resources.LoadAll<RaceData>("RaceData");
+
+        // If you want to clear the list each time you load to avoid duplicates
+        raceDatas.Clear();
+
+        // Add loaded RaceData assets to the list
+        raceDatas.AddRange(raceDataArray);
+        //==========================
+
     }
 
     public StudentData RandomGenerateStudent()
     {
         StudentData data = new StudentData();
-
+        data._studentRace = raceList[Random.Range(0, raceList.Count)];
         //=======Visuals=========
-        data._earSprite = earSprites[Random.Range(0, earSprites.Count)];
-        data._eyeSprite = eyeSprites[Random.Range(0, eyeSprites.Count)];
-        data._faceSprite = faceSprites[Random.Range(0, faceSprites.Count)];
-        data._hairSprite = hairSprites[Random.Range(0, hairSprites.Count)];
-        data._mouthSprite = mouthSprites[Random.Range(0, mouthSprites.Count)];
-        data._noseSprite = noseSprites[Random.Range(0, noseSprites.Count)];
+        string race = data._studentRace;
+        if (race == "Elf")
+        {
+            RaceData raceData = raceDatas.Find(raceData => raceData.raceName == race);
+            data._ASprite = raceData.ASpriteList[Random.Range(0, raceData.ASpriteList.Count)];
+            data._BSprite = raceData.BSpriteList[Random.Range(0, raceData.BSpriteList.Count)];
+            data._CSprite = raceData.CSpriteList[Random.Range(0, raceData.CSpriteList.Count)];
+            data._DSprite = raceData.DSpriteList[Random.Range(0, raceData.DSpriteList.Count)];
+            data._ESprite = raceData.ESpriteList[Random.Range(0, raceData.ESpriteList.Count)];
+            data._FSprite = raceData.FSpriteList[Random.Range(0, raceData.FSpriteList.Count)];
 
-        string firstName = firstNames[Random.Range(0, firstNames.Count)];
-        string lastName = lastNames[Random.Range(0, lastNames.Count)];
-        data._studentName = firstName + " " + lastName;
+            // data._earSprite = earSprites[Random.Range(0, earSprites.Count)];
+            // data._eyeSprite = eyeSprites[Random.Range(0, eyeSprites.Count)];
+            // data._faceSprite = faceSprites[Random.Range(0, faceSprites.Count)];
+            // data._hairSprite = hairSprites[Random.Range(0, hairSprites.Count)];
+            // data._mouthSprite = mouthSprites[Random.Range(0, mouthSprites.Count)];
+            // data._noseSprite = noseSprites[Random.Range(0, noseSprites.Count)];
+
+            string firstName = firstNames[Random.Range(0, firstNames.Count)];
+            string lastName = lastNames[Random.Range(0, lastNames.Count)];
+            data._studentName = firstName + " " + lastName;
+        }
 
         //========================
 

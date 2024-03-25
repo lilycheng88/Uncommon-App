@@ -16,12 +16,12 @@ public class StudentInfo : MonoBehaviour
     public Slider academicSlider;
     public Image academicGlobe;
 
-    [SerializeField] Image earImage;
-    [SerializeField] Image eyeImage;
-    [SerializeField] Image faceImage;
-    [SerializeField] Image hairImage;
-    [SerializeField] Image mouthImage;
-    [SerializeField] Image noseImage;
+    [SerializeField] Image AImage;
+    [SerializeField] Image BImage;
+    [SerializeField] Image CImage;
+    [SerializeField] Image DImage;
+    [SerializeField] Image EImage;
+    [SerializeField] Image FImage;
     //public TextMeshProUGUI 
 
 
@@ -32,12 +32,12 @@ public class StudentInfo : MonoBehaviour
     {
         data = _data;
 
-        earImage.sprite = data._earSprite;
-        eyeImage.sprite = data._eyeSprite;
-        noseImage.sprite = data._noseSprite;
-        faceImage.sprite = data._faceSprite;
-        hairImage.sprite = data._hairSprite;
-        mouthImage.sprite = data._mouthSprite;
+        AImage.sprite = data._ASprite;
+        BImage.sprite = data._BSprite;
+        CImage.sprite = data._CSprite;
+        DImage.sprite = data._DSprite;
+        EImage.sprite = data._ESprite;
+        FImage.sprite = data._FSprite;
 
 
         studentNameText.text = data._studentName;

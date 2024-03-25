@@ -9,6 +9,8 @@ public class StudentData
     public string _studentName = "N/A";
     public string _studentDescription;
 
+    public string _studentRace = "N/A";
+
     //====General Info=====
     public int _academic;
     public int _finance;
@@ -17,12 +19,14 @@ public class StudentData
     //=====================
 
     //=====Sprites=========
-    public Sprite _earSprite;
-    public Sprite _eyeSprite;
-    public Sprite _noseSprite;
-    public Sprite _hairSprite;
-    public Sprite _faceSprite;
-    public Sprite _mouthSprite;
+    public Sprite _ASprite;
+    public Sprite _BSprite;
+    public Sprite _CSprite;
+    public Sprite _DSprite;
+    public Sprite _ESprite;
+    public Sprite _FSprite;
+
+    
 
     //=====================
 

@@ -4088,6 +4088,8 @@ MonoBehaviour:
   isPatronPercentage: 0
   firstGenPercentage: 37
   stateSponsoredPercentage: 37
+  raceList:
+  - Elf
   earSprites:
   - {fileID: 21300000, guid: dedce62326cc64318a6b0083cbdc37e6, type: 3}
   - {fileID: 21300000, guid: 2703b41d2d27b4fac9bd47c2d2722cae, type: 3}
@@ -9912,12 +9914,12 @@ MonoBehaviour:
   financeSlider: {fileID: 814719640}
   academicSlider: {fileID: 1695118703}
   academicGlobe: {fileID: 2145602462}
-  earImage: {fileID: 1750240101}
-  eyeImage: {fileID: 729473017}
-  faceImage: {fileID: 1034450840}
-  hairImage: {fileID: 1867131138}
-  mouthImage: {fileID: 119166627}
-  noseImage: {fileID: 721236675}
+  AImage: {fileID: 1750240101}
+  BImage: {fileID: 729473017}
+  CImage: {fileID: 721236675}
+  DImage: {fileID: 1867131138}
+  EImage: {fileID: 1034450840}
+  FImage: {fileID: 119166627}
 --- !u!114 &1451621152
 MonoBehaviour:
   m_ObjectHideFlags: 0
