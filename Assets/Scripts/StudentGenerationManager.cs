@@ -80,12 +80,12 @@ public class StudentGenerationManager : MonoBehaviour
     [SerializeField] List<string> lastNames;
 
 
-    [SerializeField] Image earImage;
-    [SerializeField] Image eyeImage;
-    [SerializeField] Image faceImage;
-    [SerializeField] Image hairImage;
-    [SerializeField] Image mouthImage;
-    [SerializeField] Image noseImage;
+    //[SerializeField] Image earImage;
+    //[SerializeField] Image eyeImage;
+    //[SerializeField] Image faceImage;
+    //[SerializeField] Image hairImage;
+    //[SerializeField] Image mouthImage;
+    //[SerializeField] Image noseImage;
 
     //================================
 
