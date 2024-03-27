@@ -10,7 +10,7 @@ public class StudentAdmissionManager : MonoBehaviour
     //Student Admission Manager
     //Manages admitted, waitlisted, and rejected students
     //
-
+    public static StudentAdmissionManager Instance { get; private set; } // Singleton instance
 
     [SerializeField] StudentInfo studentInfo;
     [SerializeField] PreferencesManager preferencesManager;
@@ -77,6 +77,9 @@ public class StudentAdmissionManager : MonoBehaviour
     public int financeDangerLine = 40;
     public int academicDangerLine = 40;
 
+    public float financeMultiplier = 0.1f;
+    public float academicMultiplier = 0.2f;
+
     bool inGame = true;
 
     //====Personal Info=====
@@ -90,6 +93,18 @@ public class StudentAdmissionManager : MonoBehaviour
 
     private void Awake()
     {
+
+        // Check if an instance already exists
+        if (Instance == null)
+        {
+            Instance = this; // Assign this instance as the singleton instance
+        }
+        else
+        {
+            Destroy(gameObject); // Destroy this instance because another one already exists
+            return;
+        }
+
         timeLeft = maxTime;
         totalScholarship = initialScholarship;
 
@@ -194,8 +209,8 @@ public class StudentAdmissionManager : MonoBehaviour
                 {
                     totalScholarship = 0;
                 }
-                averageFinance += Mathf.RoundToInt((data._finance - financeMidValue) * 0.1f);
-                averageAcademic += Mathf.RoundToInt((data._academic - academicMidValue) * 0.2f);
+                averageFinance += Mathf.RoundToInt((data._finance - financeMidValue) * financeMultiplier);
+                averageAcademic += Mathf.RoundToInt((data._academic - academicMidValue) * academicMultiplier);
 
                 firstGenStudent += data._isFirstGen? 1:0;
 
@@ -209,7 +224,7 @@ public class StudentAdmissionManager : MonoBehaviour
                         case "introverted":
                             if(data._extroversion <= 2)
                             {
-                                MiniGoalManager.Instance.miniGoalDatas[i].currentCount += 1;
+                                MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
                             }
 
                         break;
@@ -217,7 +232,7 @@ public class StudentAdmissionManager : MonoBehaviour
                         case "extroverted":
                             if(data._extroversion >= 4)
                             {
-                                MiniGoalManager.Instance.miniGoalDatas[i].currentCount += 1;
+                                MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
                             }
 
                         break;
@@ -225,7 +240,7 @@ public class StudentAdmissionManager : MonoBehaviour
                         case "calm":
                             if(data._magicalPersonality <= 2)
                             {
-                                MiniGoalManager.Instance.miniGoalDatas[i].currentCount += 1;
+                                MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
                             }
 
                         break;
@@ -233,7 +248,7 @@ public class StudentAdmissionManager : MonoBehaviour
                         case "emotion-driven":
                             if(data._magicalPersonality >= 4)
                             {
-                                MiniGoalManager.Instance.miniGoalDatas[i].currentCount += 1;
+                                MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
                             }
 
                         break;
@@ -241,7 +256,7 @@ public class StudentAdmissionManager : MonoBehaviour
                         case "morning favored":
                             if(data._schedule <= 2)
                             {
-                                MiniGoalManager.Instance.miniGoalDatas[i].currentCount += 1;
+                                MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
                             }
 
                         break;
@@ -249,7 +264,7 @@ public class StudentAdmissionManager : MonoBehaviour
                         case "evening favored":
                             if(data._schedule >= 4)
                             {
-                                MiniGoalManager.Instance.miniGoalDatas[i].currentCount += 1;
+                                MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
                             }
 
                         break;
@@ -257,7 +272,7 @@ public class StudentAdmissionManager : MonoBehaviour
                         case "hardly exploring":
                             if(data._explorativity <= 2)
                             {
-                                MiniGoalManager.Instance.miniGoalDatas[i].currentCount += 1;
+                                MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
                             }
 
                         break;
@@ -265,7 +280,7 @@ public class StudentAdmissionManager : MonoBehaviour
                         case "often exploring":
                             if(data._explorativity <= 4)
                             {
-                                MiniGoalManager.Instance.miniGoalDatas[i].currentCount += 1;
+                                MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
                             }
 
                         break;
@@ -273,7 +288,7 @@ public class StudentAdmissionManager : MonoBehaviour
                         case "obtuse":
                             if(data._psionicAffinity <= 2)
                             {
-                                MiniGoalManager.Instance.miniGoalDatas[i].currentCount += 1;
+                                MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
                             }
 
                         break;
@@ -281,7 +296,7 @@ public class StudentAdmissionManager : MonoBehaviour
                         case "keen":
                             if(data._psionicAffinity >= 4)
                             {
-                                MiniGoalManager.Instance.miniGoalDatas[i].currentCount += 1;
+                                MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
                             }
 
                         break;
@@ -289,7 +304,7 @@ public class StudentAdmissionManager : MonoBehaviour
                         case "1st-gen":
                             if(data._isFirstGen)
                             {
-                                MiniGoalManager.Instance.miniGoalDatas[i].currentCount += 1;
+                                MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
                             }
 
                         break;
@@ -297,7 +312,7 @@ public class StudentAdmissionManager : MonoBehaviour
                         case "alumni":
                             if(data._isAlumni)
                             {
-                                MiniGoalManager.Instance.miniGoalDatas[i].currentCount += 1;
+                                MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
                             }
 
                         break;
@@ -305,7 +320,7 @@ public class StudentAdmissionManager : MonoBehaviour
                         case "patron":
                             if(data._isPatron)
                             {
-                                MiniGoalManager.Instance.miniGoalDatas[i].currentCount += 1;
+                                MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
                             }
 
                         break;
@@ -313,7 +328,7 @@ public class StudentAdmissionManager : MonoBehaviour
                         case "veteran":
                             if(data._isVeteran)
                             {
-                                MiniGoalManager.Instance.miniGoalDatas[i].currentCount += 1;
+                                MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
                             }
 
                         break;
@@ -321,7 +336,7 @@ public class StudentAdmissionManager : MonoBehaviour
                         case "state-sponsored":
                             if(data._isStateSponsored)
                             {
-                                MiniGoalManager.Instance.miniGoalDatas[i].currentCount += 1;
+                                MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
                             }
 
                         break;

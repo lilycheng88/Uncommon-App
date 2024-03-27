@@ -17,6 +17,8 @@ public class MiniGoal : MonoBehaviour
     [SerializeField] TextMeshProUGUI goalDescriptionTxt;
     [SerializeField] TextMeshProUGUI requiredAndCurrentNumTxt;
 
+    [SerializeField] TextMeshProUGUI rewardTxt;
+
     //=================
 
     void Start()
@@ -36,6 +38,11 @@ public class MiniGoal : MonoBehaviour
         }
         requiredAndCurrentNumTxt.text = colorOpen + data.currentCount.ToString() + colorClose+ "/" + colorOpen +data.targetCount.ToString() + colorClose;
         //requiredAndCurrentNumTxt.text = "<color=red> blablabla </color>";
+        Debug.Log(data.rewardType);
+        if (MiniGoalManager.Instance.rewardDictionary[data.rewardType] != null)
+        {
+            rewardTxt.text = MiniGoalManager.Instance.rewardDictionary[data.rewardType];
+        }
     }
 
 
