@@ -31,7 +31,7 @@ public class MiniGoal : MonoBehaviour
         string colorClose = "</color>";
         if(toggle.isOn)
         {
-            colorOpen =  "<color=green>";
+            colorOpen =  "<color=#32a852>";
             colorClose = "</color>";
         }
         requiredAndCurrentNumTxt.text = colorOpen + data.currentCount.ToString() + colorClose+ "/" + colorOpen +data.targetCount.ToString() + colorClose;

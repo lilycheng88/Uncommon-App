@@ -77,6 +77,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        gameTabs[0].GetComponent<Animator>().SetTrigger("LoadIn");
+    }
     public void ReloadCurrentScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);

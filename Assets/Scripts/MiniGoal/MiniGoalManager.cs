@@ -13,6 +13,7 @@ public class MiniGoalManager : MonoBehaviour
     [SerializeField] GameObject miniGoalPrefab;
     public List<MiniGoal> miniGoals = new List<MiniGoal>();
 
+    public int MiniGoalNum = 3;
 
     //Data List
      public List<MiniGoalData> miniGoalDatas = new List<MiniGoalData>();
@@ -45,14 +46,14 @@ public class MiniGoalManager : MonoBehaviour
         conditions.Add(Random.Range(0, 2) == 0 ? "obtuse" : "keen");conditionNums.Add(5);
 
         string gen; conditions.Add(gen = Random.Range(0, 2) == 0 ? "1st-gen" : "alumni"); conditionNums.Add(gen == "1st-gen"?5:10);
-        conditions.Add("patron");conditionNums.Add(5);
-        conditions.Add("veteran");conditionNums.Add(5);
-        conditions.Add("state-sponsored");conditionNums.Add(5);
+        conditions.Add("patron");conditionNums.Add(MiniGoalNum);
+        conditions.Add("veteran");conditionNums.Add(MiniGoalNum);
+        conditions.Add("state-sponsored");conditionNums.Add(MiniGoalNum);
 
         System.Random rng = new System.Random();
         var selectedIndices = Enumerable.Range(0, conditions.Count)
                                         .OrderBy(_ => rng.Next())
-                                        .Take(5)
+                                        .Take(MiniGoalNum)
                                         .ToList();
 
         conditions = selectedIndices.Select(index => conditions[index]).ToList();

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class StudentInfo : MonoBehaviour
 {
@@ -39,7 +40,13 @@ public class StudentInfo : MonoBehaviour
         DImage.sprite = data._DSprite;
         EImage.sprite = data._ESprite;
         FImage.sprite = data._FSprite;
-        GImage.sprite = data._GSprite;
+        if (data._GSprite != null)
+        {
+            GImage.enabled = true;
+            GImage.sprite = data._GSprite;
+        }else{
+            GImage.enabled = false;
+        }
 
 
         studentNameText.text = data._studentName;
