@@ -25,8 +25,9 @@ public class StudentData
     public Sprite _DSprite;
     public Sprite _ESprite;
     public Sprite _FSprite;
+    public Sprite _GSprite;
 
-    
+
 
     //=====================
 

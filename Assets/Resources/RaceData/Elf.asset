@@ -34,7 +34,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 8fa922c6797534403a277d439ab2d92f, type: 3}
   FSpriteList:
   - {fileID: 21300000, guid: ec9b613bd36134a74be47342feda1214, type: 3}
-  GSpriteList: []
+  GSpriteList:
+  - {fileID: 0}
   HSpriteList: []
   ISpriteList: []
   JSpriteList: []

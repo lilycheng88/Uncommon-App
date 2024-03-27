@@ -22,6 +22,7 @@ public class StudentInfo : MonoBehaviour
     [SerializeField] Image DImage;
     [SerializeField] Image EImage;
     [SerializeField] Image FImage;
+    [SerializeField] Image GImage;
     //public TextMeshProUGUI 
 
 
@@ -38,6 +39,7 @@ public class StudentInfo : MonoBehaviour
         DImage.sprite = data._DSprite;
         EImage.sprite = data._ESprite;
         FImage.sprite = data._FSprite;
+        GImage.sprite = data._GSprite;
 
 
         studentNameText.text = data._studentName;
