@@ -4094,28 +4094,6 @@ MonoBehaviour:
   raceList:
   - Elf
   - Tanuki
-  earSprites:
-  - {fileID: 21300000, guid: dedce62326cc64318a6b0083cbdc37e6, type: 3}
-  - {fileID: 21300000, guid: 2703b41d2d27b4fac9bd47c2d2722cae, type: 3}
-  - {fileID: 21300000, guid: 8c66ee7e8ff3249fba89999b97ef83ba, type: 3}
-  eyeSprites:
-  - {fileID: 21300000, guid: 096e3858e01a443a7bdc6e85bd89ea02, type: 3}
-  - {fileID: 21300000, guid: d2ffd43919add45fc932dba515b2fc4d, type: 3}
-  - {fileID: 21300000, guid: 47fd158442f4844aba6f71f48819fce6, type: 3}
-  faceSprites:
-  - {fileID: 21300000, guid: dd8d5ee5cb501499086d701b9a34da8a, type: 3}
-  - {fileID: 21300000, guid: 8b4423530abf443c39b70da19dffc9f5, type: 3}
-  - {fileID: 21300000, guid: 8fa922c6797534403a277d439ab2d92f, type: 3}
-  hairSprites:
-  - {fileID: 21300000, guid: c53503467598740b58da9264e84592fd, type: 3}
-  - {fileID: 21300000, guid: e6929cf51339c4418bc7ab393381cd90, type: 3}
-  - {fileID: 21300000, guid: 78bb8fe481010425781f05b09404b50c, type: 3}
-  mouthSprites:
-  - {fileID: 21300000, guid: ec9b613bd36134a74be47342feda1214, type: 3}
-  noseSprites:
-  - {fileID: 21300000, guid: 2ebd5e346dc1b494cac57a23fdd12863, type: 3}
-  - {fileID: 21300000, guid: 7a88f11ba75ec4a9793faa6a34ca147d, type: 3}
-  - {fileID: 21300000, guid: 5ab1ea3e78b5145c2b0e8a5f84b7b0af, type: 3}
   firstNames: []
   lastNames: []
 --- !u!4 &491151447
@@ -6578,7 +6556,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &890936116
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10999,7 +10977,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -102.30029, y: 9.597534}
+  m_AnchoredPosition: {x: -102.30023, y: 9.597534}
   m_SizeDelta: {x: -46.52063, y: 18.573975}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1690484075
@@ -11570,7 +11548,7 @@ GameObject:
   - component: {fileID: 1734048914}
   - component: {fileID: 1734048913}
   m_Layer: 5
-  m_Name: GComponent
+  m_Name: Clothes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

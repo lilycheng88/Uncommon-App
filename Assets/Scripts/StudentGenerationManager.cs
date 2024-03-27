@@ -69,12 +69,12 @@ public class StudentGenerationManager : MonoBehaviour
     //=================
 
     //======Visuals Inits========
-    [SerializeField] List<Sprite> earSprites;
+    /*[SerializeField] List<Sprite> earSprites;
     [SerializeField] List<Sprite> eyeSprites;
     [SerializeField] List<Sprite> faceSprites;
     [SerializeField] List<Sprite> hairSprites;
     [SerializeField] List<Sprite> mouthSprites;
-    [SerializeField] List<Sprite> noseSprites;
+    [SerializeField] List<Sprite> noseSprites;*/
 
     [SerializeField] List<string> firstNames;
     [SerializeField] List<string> lastNames;
