@@ -4030,7 +4030,7 @@ MonoBehaviour:
   timeLeft: 0
   maxTime: 2e+9
   timeAddedPerStudentAdmitted: 2000
-  studentLeft: 35
+  studentLeft: 20
   studentRequired: 15
   studentAdmitted: 0
   financeRequired: 100
@@ -4042,6 +4042,8 @@ MonoBehaviour:
   initialScholarship: 500
   financeDangerLine: 40
   academicDangerLine: 40
+  financeMultiplier: 0.3
+  academicMultiplier: 0.7
 --- !u!1 &491151445
 GameObject:
   m_ObjectHideFlags: 0
@@ -4071,10 +4073,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 953569baf33604eec887d955a1cb2335, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goodStudentPercentage: 26
-  badStudentPercentage: 13
-  richStudentPercentage: 44
-  poorStudentPercentage: 14
+  goodStudentPercentage: 50
+  badStudentPercentage: 50
+  richStudentPercentage: 50
+  poorStudentPercentage: 50
   extroversionPercentage: 100
   magicalPersonalityPercentage: 0
   workplacePercentage: 33
