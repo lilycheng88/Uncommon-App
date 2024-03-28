@@ -123,29 +123,7 @@ public class StudentGenerationManager : MonoBehaviour
         data._studentRace = raceList[Random.Range(0, raceList.Count)];
         //=======Visuals=========
         string race = data._studentRace;
-        if (race == "Elf")
-        {
-            RaceData raceData = raceDatas.Find(raceData => raceData.raceName == race);
-            data._ASprite = raceData.ASpriteList[Random.Range(0, raceData.ASpriteList.Count)];
-            data._BSprite = raceData.BSpriteList[Random.Range(0, raceData.BSpriteList.Count)];
-            data._CSprite = raceData.CSpriteList[Random.Range(0, raceData.CSpriteList.Count)];
-            data._DSprite = raceData.DSpriteList[Random.Range(0, raceData.DSpriteList.Count)];
-            data._ESprite = raceData.ESpriteList[Random.Range(0, raceData.ESpriteList.Count)];
-            data._FSprite = raceData.FSpriteList[Random.Range(0, raceData.FSpriteList.Count)];
-
-            // data._earSprite = earSprites[Random.Range(0, earSprites.Count)];
-            // data._eyeSprite = eyeSprites[Random.Range(0, eyeSprites.Count)];
-            // data._faceSprite = faceSprites[Random.Range(0, faceSprites.Count)];
-            // data._hairSprite = hairSprites[Random.Range(0, hairSprites.Count)];
-            // data._mouthSprite = mouthSprites[Random.Range(0, mouthSprites.Count)];
-            // data._noseSprite = noseSprites[Random.Range(0, noseSprites.Count)];
-
-            string firstName = firstNames[Random.Range(0, firstNames.Count)];
-            string lastName = lastNames[Random.Range(0, lastNames.Count)];
-            data._studentName = firstName + " " + lastName;
-        }
-
-        if (race == "Tanuki")
+        if (race == "Elf" || race == "Tanuki" || race == "Gnome" || race == "Human" || race == "Wyrm" || race == "Ogre")
         {
             RaceData raceData = raceDatas.Find(raceData => raceData.raceName == race);
             data._ASprite = raceData.ASpriteList[Random.Range(0, raceData.ASpriteList.Count)];
@@ -168,6 +146,37 @@ public class StudentGenerationManager : MonoBehaviour
             data._studentName = firstName + " " + lastName;
         }
 
+        /*if (race == "Tanuki")
+        {
+            RaceData raceData = raceDatas.Find(raceData => raceData.raceName == race);
+            data._ASprite = raceData.ASpriteList[Random.Range(0, raceData.ASpriteList.Count)];
+            data._BSprite = raceData.BSpriteList[Random.Range(0, raceData.BSpriteList.Count)];
+            data._CSprite = raceData.CSpriteList[Random.Range(0, raceData.CSpriteList.Count)];
+            data._DSprite = raceData.DSpriteList[Random.Range(0, raceData.DSpriteList.Count)];
+            data._ESprite = raceData.ESpriteList[Random.Range(0, raceData.ESpriteList.Count)];
+            data._FSprite = raceData.FSpriteList[Random.Range(0, raceData.FSpriteList.Count)];
+            data._GSprite = raceData.GSpriteList[Random.Range(0, raceData.GSpriteList.Count)];
+
+            string firstName = firstNames[Random.Range(0, firstNames.Count)];
+            string lastName = lastNames[Random.Range(0, lastNames.Count)];
+            data._studentName = firstName + " " + lastName;
+        }
+
+        if (race == "Gnome")
+        {
+            RaceData raceData = raceDatas.Find(raceData => raceData.raceName == race);
+            data._ASprite = raceData.ASpriteList[Random.Range(0, raceData.ASpriteList.Count)];
+            data._BSprite = raceData.BSpriteList[Random.Range(0, raceData.BSpriteList.Count)];
+            data._CSprite = raceData.CSpriteList[Random.Range(0, raceData.CSpriteList.Count)];
+            data._DSprite = raceData.DSpriteList[Random.Range(0, raceData.DSpriteList.Count)];
+            data._ESprite = raceData.ESpriteList[Random.Range(0, raceData.ESpriteList.Count)];
+            data._FSprite = raceData.FSpriteList[Random.Range(0, raceData.FSpriteList.Count)];
+            data._GSprite = raceData.GSpriteList[Random.Range(0, raceData.GSpriteList.Count)];
+
+            string firstName = firstNames[Random.Range(0, firstNames.Count)];
+            string lastName = lastNames[Random.Range(0, lastNames.Count)];
+            data._studentName = firstName + " " + lastName;
+        }*/
         //========================
 
 

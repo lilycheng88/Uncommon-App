@@ -44,7 +44,9 @@ public class StudentInfo : MonoBehaviour
         {
             GImage.enabled = true;
             GImage.sprite = data._GSprite;
-        }else{
+        }
+        else
+        {
             GImage.enabled = false;
         }
 
