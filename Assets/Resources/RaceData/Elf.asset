@@ -41,5 +41,8 @@ MonoBehaviour:
   JSpriteList: []
   KSpriteList: []
   LSpriteList: []
+  bindedBodyParts:
+  - FirstSpriteComponent: 0
+    SecondSpriteComponent: 4
   raceName: Elf
   raceDescription: Ear, Eye, Nose, Hair, Face, Mouth

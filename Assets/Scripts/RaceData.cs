@@ -16,9 +16,34 @@ public class RaceData : ScriptableObject
     public List<Sprite> JSpriteList;
     public List<Sprite> KSpriteList;
     public List<Sprite> LSpriteList;
+    public List<List<Sprite>> bodyPartList = new List<List<Sprite>>();
     // Add more as needed, such as hair, mouth, etc.
+
+    public List<bindedBodyParts> bindedBodyParts;
 
     // You can also add fields for race-specific attributes if needed.
     public string raceName;
     public string raceDescription; // Description or other characteristics.
+
+    private void OnEnable()
+    {
+        bodyPartList = new List<List<Sprite>> { ASpriteList, BSpriteList, CSpriteList, DSpriteList, ESpriteList, FSpriteList, GSpriteList, HSpriteList, ISpriteList, JSpriteList, KSpriteList, LSpriteList };
+    }
+
+}
+
+
+
+[System.Serializable]
+public class bindedBodyParts
+{
+    public enum SpriteComponents
+    {
+        A,B,C,D,E,F,G,H,I,J,K,L,M,N
+    }
+
+    public SpriteComponents FirstSpriteComponent;
+    public SpriteComponents SecondSpriteComponent;
+
+
 }

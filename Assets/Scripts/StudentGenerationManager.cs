@@ -126,12 +126,26 @@ public class StudentGenerationManager : MonoBehaviour
         if (race == "Elf")
         {
             RaceData raceData = raceDatas.Find(raceData => raceData.raceName == race);
+            List<Sprite> dataSpriteList = new List<Sprite>() { data._ASprite,data._BSprite,data._CSprite,data._DSprite,data._ESprite,data._FSprite,data._GSprite};
             data._ASprite = raceData.ASpriteList[Random.Range(0, raceData.ASpriteList.Count)];
             data._BSprite = raceData.BSpriteList[Random.Range(0, raceData.BSpriteList.Count)];
             data._CSprite = raceData.CSpriteList[Random.Range(0, raceData.CSpriteList.Count)];
             data._DSprite = raceData.DSpriteList[Random.Range(0, raceData.DSpriteList.Count)];
             data._ESprite = raceData.ESpriteList[Random.Range(0, raceData.ESpriteList.Count)];
             data._FSprite = raceData.FSpriteList[Random.Range(0, raceData.FSpriteList.Count)];
+            if (raceData.bindedBodyParts.Count > 0)
+            {
+                foreach (bindedBodyParts parts in raceData.bindedBodyParts)
+                {
+                    Debug.Log("doing the binding");
+                    int rank1 = char.ToLower(parts.FirstSpriteComponent.ToString()[0]) - 'a';
+                    int rank2 = char.ToLower(parts.SecondSpriteComponent.ToString()[0]) - 'a';
+                    int id = Random.Range(0, raceData.bodyPartList[rank1].Count);
+                    dataSpriteList[rank1] = raceData.bodyPartList[rank1][0];
+                    dataSpriteList[rank2] = raceData.bodyPartList[rank2][0];
+                   
+                }
+            }
 
             // data._earSprite = earSprites[Random.Range(0, earSprites.Count)];
             // data._eyeSprite = eyeSprites[Random.Range(0, eyeSprites.Count)];
