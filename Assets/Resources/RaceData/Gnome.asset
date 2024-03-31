@@ -19,43 +19,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: fbd693389910dfa4e8c870b3fb96848c, type: 3}
   - {fileID: 21300000, guid: 268ca33a0d0efbc40ae4227138153907, type: 3}
   - {fileID: 21300000, guid: 2f46265723ecbcf42ab3426960eeb713, type: 3}
-  BSpriteList:
-  - {fileID: 21300000, guid: 9f0bf64858e539446ab78d72a28963fe, type: 3}
-  - {fileID: 21300000, guid: 40550023268c48946b38afcad8c41fdb, type: 3}
-  - {fileID: 21300000, guid: f779598bf66c4704fa0f975e8297e5d5, type: 3}
-  - {fileID: 21300000, guid: 38c242dce869c394e9aa36d7e8f4da73, type: 3}
-  - {fileID: 21300000, guid: f21f8ddda738dcb4a9bd7eb10a9812cf, type: 3}
-  - {fileID: 21300000, guid: 64160ef61faf4b649bc2b807198f0141, type: 3}
-  - {fileID: 21300000, guid: 7858037a6fc7d284aa52037b8654dcd1, type: 3}
-  - {fileID: 21300000, guid: 1163ec1a4aed99b4cafff8649d8b181c, type: 3}
-  - {fileID: 21300000, guid: 7dccf950da9683045bf2352e0b4524be, type: 3}
-  - {fileID: 21300000, guid: 9b4726c2abfe0e74ebf1649018710d58, type: 3}
-  - {fileID: 21300000, guid: b47fd72b002428d449134091880a3737, type: 3}
-  - {fileID: 21300000, guid: 0e479f9f95e33f64f979f9dc75f7023d, type: 3}
-  - {fileID: 21300000, guid: 612a479a84ecfba4a8eeb2954a57c509, type: 3}
-  - {fileID: 21300000, guid: 8fb57258a2b33f24eb737fbf063f3b7c, type: 3}
-  - {fileID: 21300000, guid: 399aa3f1808e5eb48a5a499c315bee65, type: 3}
-  - {fileID: 21300000, guid: 090513b2d67330843af525431ca64c05, type: 3}
-  - {fileID: 21300000, guid: 97c1f7ec34230614bab839cfed9a3a02, type: 3}
-  - {fileID: 21300000, guid: eac5005817c6fab489016c19dd2fcff7, type: 3}
-  - {fileID: 21300000, guid: 66b374fb9520f414e80335087e1d5c3a, type: 3}
-  - {fileID: 21300000, guid: 7949e32841723884688e0cc2fcf8d269, type: 3}
-  - {fileID: 21300000, guid: 63daa8805ea17ff4cb2fc955cec28c4c, type: 3}
-  - {fileID: 21300000, guid: 586918dedce5cd14a87c9f97d2a35578, type: 3}
-  - {fileID: 21300000, guid: 69c8b7e25150c154596ab850b86fb5ac, type: 3}
-  - {fileID: 21300000, guid: e2352e1b50fd76b42a311f8e8fb87223, type: 3}
-  - {fileID: 21300000, guid: 474674a2aba751448a498ab2780f68f1, type: 3}
-  - {fileID: 21300000, guid: e8d9d443ea5ffd14896cb490e405dad1, type: 3}
-  - {fileID: 21300000, guid: 3b55b24067cb75445b2e52c30090ae35, type: 3}
-  - {fileID: 21300000, guid: 14ad97fe85348464186f057297fe2139, type: 3}
-  - {fileID: 21300000, guid: 90035683d5ce3b1489924b8d15f5d96a, type: 3}
-  - {fileID: 21300000, guid: 296466ede9019a04eab933baecda8c33, type: 3}
-  - {fileID: 21300000, guid: 3d546a748126dda43acc9f5f7e17f827, type: 3}
-  - {fileID: 21300000, guid: 7d52270f40e007943b7ee865e48a6541, type: 3}
-  - {fileID: 21300000, guid: 800ee92805df6aa488411b441529d320, type: 3}
-  - {fileID: 21300000, guid: 104253bff3654ec48a8aeb9605e35dc1, type: 3}
-  - {fileID: 21300000, guid: c136d9599ffb6e049b640c217c205982, type: 3}
-  - {fileID: 21300000, guid: 15eefd172655f2943a7fdfa4ad6d4435, type: 3}
+  BSpriteList: []
   CSpriteList:
   - {fileID: 21300000, guid: 3ab685517f0aaf64287f3b49a1e418d6, type: 3}
   - {fileID: 21300000, guid: 9e55fbcd0bc726949b1050bfa6b35008, type: 3}
@@ -118,10 +82,47 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 618e7fc46838b564caeff2a51166fb04, type: 3}
   - {fileID: 21300000, guid: bbf2aad6edb9ca74cb07e414cea39b7c, type: 3}
   - {fileID: 21300000, guid: 0551ed5d28e07c3428a7d45a0f2ba102, type: 3}
-  HSpriteList: []
+  HSpriteList:
+  - {fileID: 21300000, guid: 9f0bf64858e539446ab78d72a28963fe, type: 3}
+  - {fileID: 21300000, guid: 40550023268c48946b38afcad8c41fdb, type: 3}
+  - {fileID: 21300000, guid: f779598bf66c4704fa0f975e8297e5d5, type: 3}
+  - {fileID: 21300000, guid: 38c242dce869c394e9aa36d7e8f4da73, type: 3}
+  - {fileID: 21300000, guid: f21f8ddda738dcb4a9bd7eb10a9812cf, type: 3}
+  - {fileID: 21300000, guid: 64160ef61faf4b649bc2b807198f0141, type: 3}
+  - {fileID: 21300000, guid: 7858037a6fc7d284aa52037b8654dcd1, type: 3}
+  - {fileID: 21300000, guid: 1163ec1a4aed99b4cafff8649d8b181c, type: 3}
+  - {fileID: 21300000, guid: 7dccf950da9683045bf2352e0b4524be, type: 3}
+  - {fileID: 21300000, guid: 9b4726c2abfe0e74ebf1649018710d58, type: 3}
+  - {fileID: 21300000, guid: b47fd72b002428d449134091880a3737, type: 3}
+  - {fileID: 21300000, guid: 0e479f9f95e33f64f979f9dc75f7023d, type: 3}
+  - {fileID: 21300000, guid: 612a479a84ecfba4a8eeb2954a57c509, type: 3}
+  - {fileID: 21300000, guid: 8fb57258a2b33f24eb737fbf063f3b7c, type: 3}
+  - {fileID: 21300000, guid: 399aa3f1808e5eb48a5a499c315bee65, type: 3}
+  - {fileID: 21300000, guid: 090513b2d67330843af525431ca64c05, type: 3}
+  - {fileID: 21300000, guid: 97c1f7ec34230614bab839cfed9a3a02, type: 3}
+  - {fileID: 21300000, guid: eac5005817c6fab489016c19dd2fcff7, type: 3}
+  - {fileID: 21300000, guid: 66b374fb9520f414e80335087e1d5c3a, type: 3}
+  - {fileID: 21300000, guid: 7949e32841723884688e0cc2fcf8d269, type: 3}
+  - {fileID: 21300000, guid: 63daa8805ea17ff4cb2fc955cec28c4c, type: 3}
+  - {fileID: 21300000, guid: 586918dedce5cd14a87c9f97d2a35578, type: 3}
+  - {fileID: 21300000, guid: 69c8b7e25150c154596ab850b86fb5ac, type: 3}
+  - {fileID: 21300000, guid: e2352e1b50fd76b42a311f8e8fb87223, type: 3}
+  - {fileID: 21300000, guid: 474674a2aba751448a498ab2780f68f1, type: 3}
+  - {fileID: 21300000, guid: e8d9d443ea5ffd14896cb490e405dad1, type: 3}
+  - {fileID: 21300000, guid: 3b55b24067cb75445b2e52c30090ae35, type: 3}
+  - {fileID: 21300000, guid: 14ad97fe85348464186f057297fe2139, type: 3}
+  - {fileID: 21300000, guid: 90035683d5ce3b1489924b8d15f5d96a, type: 3}
+  - {fileID: 21300000, guid: 296466ede9019a04eab933baecda8c33, type: 3}
+  - {fileID: 21300000, guid: 3d546a748126dda43acc9f5f7e17f827, type: 3}
+  - {fileID: 21300000, guid: 7d52270f40e007943b7ee865e48a6541, type: 3}
+  - {fileID: 21300000, guid: 800ee92805df6aa488411b441529d320, type: 3}
+  - {fileID: 21300000, guid: 104253bff3654ec48a8aeb9605e35dc1, type: 3}
+  - {fileID: 21300000, guid: c136d9599ffb6e049b640c217c205982, type: 3}
+  - {fileID: 21300000, guid: 15eefd172655f2943a7fdfa4ad6d4435, type: 3}
   ISpriteList: []
   JSpriteList: []
   KSpriteList: []
   LSpriteList: []
+  bindedBodyParts: []
   raceName: Gnome
   raceDescription: Ear, Eye, Nose, Hair, Face, Mouth, Clothes

@@ -122,53 +122,44 @@ public class StudentGenerationManager : MonoBehaviour
         StudentData data = new StudentData();
         data._studentRace = raceList[Random.Range(0, raceList.Count)];
         //=======Visuals=========
+        
         string race = data._studentRace;
-        if (race == "Elf")
+        
+        if (race == "Elf" || race == "Tanuki" || race == "Gnome" || race == "Human" || race == "Wyrm" || race == "Ogre")
         {
             RaceData raceData = raceDatas.Find(raceData => raceData.raceName == race);
             List<Sprite> dataSpriteList = new List<Sprite>() { data._ASprite,data._BSprite,data._CSprite,data._DSprite,data._ESprite,data._FSprite,data._GSprite};
             data._ASprite = raceData.ASpriteList[Random.Range(0, raceData.ASpriteList.Count)];
-            data._BSprite = raceData.BSpriteList[Random.Range(0, raceData.BSpriteList.Count)];
-            data._CSprite = raceData.CSpriteList[Random.Range(0, raceData.CSpriteList.Count)];
-            data._DSprite = raceData.DSpriteList[Random.Range(0, raceData.DSpriteList.Count)];
-            data._ESprite = raceData.ESpriteList[Random.Range(0, raceData.ESpriteList.Count)];
-            data._FSprite = raceData.FSpriteList[Random.Range(0, raceData.FSpriteList.Count)];
-            if (raceData.bindedBodyParts.Count > 0)
+            if (raceData.BSpriteList.Count > 0)
             {
-                foreach (bindedBodyParts parts in raceData.bindedBodyParts)
-                {
-                    Debug.Log("doing the binding");
-                    int rank1 = char.ToLower(parts.FirstSpriteComponent.ToString()[0]) - 'a';
-                    int rank2 = char.ToLower(parts.SecondSpriteComponent.ToString()[0]) - 'a';
-                    int id = Random.Range(0, raceData.bodyPartList[rank1].Count);
-                    dataSpriteList[rank1] = raceData.bodyPartList[rank1][0];
-                    dataSpriteList[rank2] = raceData.bodyPartList[rank2][0];
-                   
-                }
+                data._BSprite = raceData.BSpriteList[Random.Range(0, raceData.BSpriteList.Count)];
             }
-
-            // data._earSprite = earSprites[Random.Range(0, earSprites.Count)];
-            // data._eyeSprite = eyeSprites[Random.Range(0, eyeSprites.Count)];
-            // data._faceSprite = faceSprites[Random.Range(0, faceSprites.Count)];
-            // data._hairSprite = hairSprites[Random.Range(0, hairSprites.Count)];
-            // data._mouthSprite = mouthSprites[Random.Range(0, mouthSprites.Count)];
-            // data._noseSprite = noseSprites[Random.Range(0, noseSprites.Count)];
-
-            string firstName = firstNames[Random.Range(0, firstNames.Count)];
-            string lastName = lastNames[Random.Range(0, lastNames.Count)];
-            data._studentName = firstName + " " + lastName;
-        }
-
-        if (race == "Tanuki")
-        {
-            RaceData raceData = raceDatas.Find(raceData => raceData.raceName == race);
-            data._ASprite = raceData.ASpriteList[Random.Range(0, raceData.ASpriteList.Count)];
-            data._BSprite = raceData.BSpriteList[Random.Range(0, raceData.BSpriteList.Count)];
             data._CSprite = raceData.CSpriteList[Random.Range(0, raceData.CSpriteList.Count)];
             data._DSprite = raceData.DSpriteList[Random.Range(0, raceData.DSpriteList.Count)];
             data._ESprite = raceData.ESpriteList[Random.Range(0, raceData.ESpriteList.Count)];
             data._FSprite = raceData.FSpriteList[Random.Range(0, raceData.FSpriteList.Count)];
             data._GSprite = raceData.GSpriteList[Random.Range(0, raceData.GSpriteList.Count)];
+            if (raceData.HSpriteList.Count > 0)
+            {
+                data._HSprite = raceData.HSpriteList[Random.Range(0, raceData.HSpriteList.Count)];
+            }
+
+
+            //========Body part binding==============
+            // if (raceData.bindedBodyParts.Count > 0)
+            // {
+            //     foreach (bindedBodyParts parts in raceData.bindedBodyParts)
+            //     {
+            //         Debug.Log("doing the binding");
+            //         int rank1 = char.ToLower(parts.FirstSpriteComponent.ToString()[0]) - 'a';
+            //         int rank2 = char.ToLower(parts.SecondSpriteComponent.ToString()[0]) - 'a';
+            //         int id = Random.Range(0, raceData.bodyPartList[rank1].Count);
+            //         dataSpriteList[rank1] = raceData.bodyPartList[rank1][0];
+            //         dataSpriteList[rank2] = raceData.bodyPartList[rank2][0];
+                   
+            //     }
+            // }
+            //=========================================
 
             // data._earSprite = earSprites[Random.Range(0, earSprites.Count)];
             // data._eyeSprite = eyeSprites[Random.Range(0, eyeSprites.Count)];
@@ -181,6 +172,29 @@ public class StudentGenerationManager : MonoBehaviour
             string lastName = lastNames[Random.Range(0, lastNames.Count)];
             data._studentName = firstName + " " + lastName;
         }
+
+        // if (race == "Tanuki")
+        // {
+        //     RaceData raceData = raceDatas.Find(raceData => raceData.raceName == race);
+        //     data._ASprite = raceData.ASpriteList[Random.Range(0, raceData.ASpriteList.Count)];
+        //     data._BSprite = raceData.BSpriteList[Random.Range(0, raceData.BSpriteList.Count)];
+        //     data._CSprite = raceData.CSpriteList[Random.Range(0, raceData.CSpriteList.Count)];
+        //     data._DSprite = raceData.DSpriteList[Random.Range(0, raceData.DSpriteList.Count)];
+        //     data._ESprite = raceData.ESpriteList[Random.Range(0, raceData.ESpriteList.Count)];
+        //     data._FSprite = raceData.FSpriteList[Random.Range(0, raceData.FSpriteList.Count)];
+        //     data._GSprite = raceData.GSpriteList[Random.Range(0, raceData.GSpriteList.Count)];
+
+        //     // data._earSprite = earSprites[Random.Range(0, earSprites.Count)];
+        //     // data._eyeSprite = eyeSprites[Random.Range(0, eyeSprites.Count)];
+        //     // data._faceSprite = faceSprites[Random.Range(0, faceSprites.Count)];
+        //     // data._hairSprite = hairSprites[Random.Range(0, hairSprites.Count)];
+        //     // data._mouthSprite = mouthSprites[Random.Range(0, mouthSprites.Count)];
+        //     // data._noseSprite = noseSprites[Random.Range(0, noseSprites.Count)];
+
+        //     string firstName = firstNames[Random.Range(0, firstNames.Count)];
+        //     string lastName = lastNames[Random.Range(0, lastNames.Count)];
+        //     data._studentName = firstName + " " + lastName;
+        // }
 
         /*if (race == "Tanuki")
         {
@@ -260,7 +274,6 @@ public class StudentGenerationManager : MonoBehaviour
             e *= -1f;
         }
         data._extroversion = Mathf.Clamp(Mathf.RoundToInt(Random.Range(1, 5) + e),1,5);
-        Debug.Log("this student's extroversion is: " + data._extroversion);
 
 
 
@@ -272,7 +285,6 @@ public class StudentGenerationManager : MonoBehaviour
         }
         data._magicalPersonality = Mathf.Clamp(Mathf.RoundToInt(Random.Range(1, 5) + m), 1, 5);
 
-        Debug.Log("this student's magicalPersonality is: " + data._magicalPersonality);
 
         //workplace
         float w = Random.Range(1, workplacePercentage) * 0.025f;
@@ -282,7 +294,6 @@ public class StudentGenerationManager : MonoBehaviour
         }
         data._workplace = Mathf.Clamp(Mathf.RoundToInt(Random.Range(1, 5) + m), 1, 5);
 
-        Debug.Log("this student's workplace is: " + data._workplace);
 
         //schedule
         float s = Random.Range(1, schedulePercentage) * 0.025f;
@@ -292,7 +303,6 @@ public class StudentGenerationManager : MonoBehaviour
         }
         data._schedule = Mathf.Clamp(Mathf.RoundToInt(Random.Range(1, 5) + s), 1, 5);
 
-        Debug.Log("this student's schedule is: " + data._schedule);
 
         //explorativity
         float ex = Random.Range(1, explorativityPercentage) * 0.025f;
@@ -302,8 +312,6 @@ public class StudentGenerationManager : MonoBehaviour
         }
         data._explorativity = Mathf.Clamp(Mathf.RoundToInt(Random.Range(1, 5) + ex), 1, 5);
 
-        Debug.Log("this student's explorativity is: " + data._explorativity);
-
         //Psionic Affinity
         float p = Random.Range(1, psionicAffinityPercentage) * 0.025f;
         if (psionicAffinityPercentage < 50)
@@ -312,7 +320,6 @@ public class StudentGenerationManager : MonoBehaviour
         }
         data._psionicAffinity = Mathf.Clamp(Mathf.RoundToInt(Random.Range(1, 5) + m), 1, 5);
 
-        Debug.Log("this student's workplace is: " + data._psionicAffinity);
 
 
         //=======

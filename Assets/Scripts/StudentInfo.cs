@@ -24,6 +24,7 @@ public class StudentInfo : MonoBehaviour
     [SerializeField] Image EImage;
     [SerializeField] Image FImage;
     [SerializeField] Image GImage;
+    [SerializeField] Image HImage;
     //public TextMeshProUGUI 
 
 
@@ -35,11 +36,24 @@ public class StudentInfo : MonoBehaviour
         data = _data;
 
         AImage.sprite = data._ASprite;
-        BImage.sprite = data._BSprite;
+
+        if (data._BSprite != null)
+        {
+            BImage.enabled = true;
+            BImage.sprite = data._BSprite;
+        }else
+        {
+            BImage.enabled = false;
+        }
+
+
+
         CImage.sprite = data._CSprite;
         DImage.sprite = data._DSprite;
         EImage.sprite = data._ESprite;
         FImage.sprite = data._FSprite;
+        
+
         if (data._GSprite != null)
         {
             GImage.enabled = true;
@@ -49,6 +63,19 @@ public class StudentInfo : MonoBehaviour
         {
             GImage.enabled = false;
         }
+
+        if(data._HSprite != null)
+        {
+            Debug.Log("enabling HSprite");
+            HImage.enabled = true;
+            HImage.sprite = data._HSprite;
+
+        }else
+        {
+            Debug.Log("disabling h sprite");
+            HImage.enabled = false;
+        }
+
 
 
         studentNameText.text = data._studentName;
