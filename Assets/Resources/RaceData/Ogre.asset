@@ -135,5 +135,6 @@ MonoBehaviour:
   JSpriteList: []
   KSpriteList: []
   LSpriteList: []
-  raceName: Wyrm
+  bindedBodyParts: []
+  raceName: Ogre
   raceDescription: Ear, Eye, Nose, Hair, Face, Mouth, Clothes
