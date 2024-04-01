@@ -71,7 +71,7 @@ public class ChatManager : MonoBehaviour
     {
         
         var message = Instantiate(messagePrefab, new Vector3(0, 0, 0), Quaternion.identity, messageParent);
-        string content = currentMessageData.messageContentList[currentMessageIndex];
+        string content = currentMessageData.messageContentList[currentMessageIndex].message;
 
         if (content != null)
         {

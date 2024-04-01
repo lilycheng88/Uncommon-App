@@ -15,6 +15,7 @@ public class Message : MonoBehaviour
     //========Controls========
     public string currentText;
 
+
     //========================
 
 

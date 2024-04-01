@@ -13,16 +13,24 @@ MonoBehaviour:
   m_Name: DayOneChat
   m_EditorClassIdentifier: 
   messageContentList:
-  - Good Morning?
-  - How is your work today?
-  - You lazy dog
-  - Why don't you work??
-  - Brother you smell so good
-  - 12312341qwerasmdgjfkasdghfjkashgdfjaghsdjkfhasldkfjhaslkduhflaksjdhflkasuhdflkuaghsdlfkuhasdlifuhaslkdhflkasudhfadsujhflkajshdlfkjhasdlkfjhalkdsjfhlaishdjaflkajshdf
-  - Let me taste you
-  - Let me taste you
-  - Let me taste you
-  - Let me taste you
-  - Let me taste you
-  - Let me taste you
-  - Let me taste you
+  - message: Tracking
+    sprite: {fileID: 0}
+  - message: image
+    sprite: {fileID: 0}
+  - message: toggle
+    sprite: {fileID: 0}
+  - message: System
+    sprite: {fileID: 0}
+  - message: Awake
+    sprite: {fileID: 0}
+  - message: I have too much money burning a hole in my pocket, this deplorable stage
+      cannot be allowed to continue
+    sprite: {fileID: 0}
+  - message: 
+    sprite: {fileID: 0}
+  - message: 
+    sprite: {fileID: 0}
+  - message: 
+    sprite: {fileID: 0}
+  - message: 
+    sprite: {fileID: 0}
