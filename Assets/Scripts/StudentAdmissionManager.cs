@@ -32,7 +32,6 @@ public class StudentAdmissionManager : MonoBehaviour
     [SerializeField] Slider totalScholarshipSlider;
 
     [SerializeField] TextMeshProUGUI studentLeftText;
-    [SerializeField] TextMeshProUGUI timeLeftText;
     [SerializeField] TextMeshProUGUI studentAdmittedVSRequiredText;
 
 
@@ -46,14 +45,9 @@ public class StudentAdmissionManager : MonoBehaviour
 
 
 
-    public float timeLeft;
     [Header("===========================")]
 
-    [Header("Starting max time")]
-    public float maxTime = 20f;
 
-    [Header("Time added per student admitted")]
-    public float timeAddedPerStudentAdmitted = 10f;
 
     [Header("How many student in total")]
     public int studentLeft;
@@ -105,7 +99,6 @@ public class StudentAdmissionManager : MonoBehaviour
             return;
         }
 
-        timeLeft = maxTime;
         totalScholarship = initialScholarship;
 
     }
@@ -122,7 +115,6 @@ public class StudentAdmissionManager : MonoBehaviour
         {
             if (studentAdmitted > studentRequired)
             {
-                timeLeft = maxTime;
                 GameManager.Instance.GameLose();
             }
 
@@ -130,12 +122,10 @@ public class StudentAdmissionManager : MonoBehaviour
             {
                 if (studentAdmitted < studentRequired)
                 {
-                    timeLeft = maxTime;
                     GameManager.Instance.GameLose();
                 }
                 else
                 {
-                    timeLeft = maxTime;
                     GameManager.Instance.GameCalc();
                 }
 
@@ -145,25 +135,15 @@ public class StudentAdmissionManager : MonoBehaviour
             {
                 if (averageFinance > financeDangerLine && averageAcademic > academicDangerLine)
                 {
-                    timeLeft = maxTime;
                     GameManager.Instance.GameCalc();
                 }
                 else
                 {
-                    timeLeft = maxTime;
                     GameManager.Instance.GameLose();
                 }
 
             }
 
-            if (timeLeft < 0)
-            {
-                GameManager.Instance.GameLose();
-            }
-
-
-            timeLeft -= Time.deltaTime;
-            timeLeftText.text = timeLeft.ToString("F2");
         }
     }
 
@@ -201,7 +181,6 @@ public class StudentAdmissionManager : MonoBehaviour
             }
             if (data != null)
             {
-                timeLeft += timeAddedPerStudentAdmitted;
                 studentAdmitted += 1;
                 studentLeft -= 1;
                 totalScholarship -= (financeRequired - data._finance);

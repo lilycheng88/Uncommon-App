@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject[] gameTabs;
     [SerializeField] StudentAdmissionManager studentAdmissionManager;
     [SerializeField] NewspaperManager newspaperManager;
+    [SerializeField] Animator chatScreenAnimator;
+    private bool chatScreenOpen = false;
 
     // Public accessor for the singleton instance
     public static GameManager Instance
@@ -101,6 +103,21 @@ public class GameManager : MonoBehaviour
                 // Otherwise, set the GameObject inactive.
                 go.SetActive(false);
             }
+        }
+
+    }
+
+    public void ToggleChatScreen()
+    {
+        if(!chatScreenOpen)
+        {
+            chatScreenAnimator.SetBool("Expand",true);
+            chatScreenOpen = true;
+        }else
+        {
+            chatScreenAnimator.SetBool("Expand",false);
+            chatScreenOpen = false;
+
         }
 
     }

@@ -11,6 +11,8 @@ public class MiniGoalManager : MonoBehaviour
 
     //GameObject and Visuals
     [SerializeField] GameObject miniGoalPrefab;
+    [SerializeField] Animator miniGoalAnimator;
+    bool miniGoalPanelExpand = false;
     public List<MiniGoal> miniGoals = new List<MiniGoal>();
 
     public int MiniGoalNum = 2;
@@ -44,8 +46,8 @@ public class MiniGoalManager : MonoBehaviour
 
     void InitializeRewardDictionary()
     {
-        rewardDictionary.Add(0,"Add <b><i>300$</b></i> to scholarship");
-        rewardDictionary.Add(1, "Add <b><i>10 students</b></i> to student pool");
+        rewardDictionary.Add(0,"Add <incr a=1 f=1 w=1><b><i>300$</b></i></incr> to scholarship");
+        rewardDictionary.Add(1, "Add <incr a=1 f=1 w=1><b><i>10 students</b></i></incr> to student pool");
 
     }
 
@@ -75,7 +77,7 @@ public class MiniGoalManager : MonoBehaviour
 
         for(int i = 0; i < conditions.Count; i++)
         {
-            AddGoal(new MiniGoalData (conditions[i],"Admit " + "<b><i>"+conditionNums[i] + " " + conditions[i] + "</b></i>" + " Students",conditionNums[i]));
+            AddGoal(new MiniGoalData (conditions[i],"Admit "+conditionNums[i] + " " + conditions[i] + "</b></i>" + " Students",conditionNums[i]));
         }
     }
 
@@ -141,5 +143,19 @@ public class MiniGoalManager : MonoBehaviour
         }
         return true;
 
+    }
+
+    public void ToggleMiniGoalPanel()
+    {
+        if(miniGoalPanelExpand == false)
+        {
+            miniGoalAnimator.SetBool("Expand", true);
+            miniGoalPanelExpand = true;
+
+        }else
+        {
+            miniGoalAnimator.SetBool("Expand", false);
+            miniGoalPanelExpand = false;
+        }
     }
 }

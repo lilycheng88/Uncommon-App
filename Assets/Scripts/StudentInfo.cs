@@ -15,7 +15,6 @@ public class StudentInfo : MonoBehaviour
     public TextMeshProUGUI studentDescriptionText;
     public Slider financeSlider;
     public Slider academicSlider;
-    public Image academicGlobe;
 
     [SerializeField] Image AImage;
     [SerializeField] Image BImage;
@@ -82,7 +81,6 @@ public class StudentInfo : MonoBehaviour
         studentDescriptionText.text = data._studentDescription;
         financeSlider.value = data._finance;
         academicSlider.value = data._academic;
-        academicGlobe.fillAmount = data._academic / 100f;
     }
 
 

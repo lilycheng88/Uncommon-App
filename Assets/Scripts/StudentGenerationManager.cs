@@ -170,7 +170,7 @@ public class StudentGenerationManager : MonoBehaviour
 
             string firstName = firstNames[Random.Range(0, firstNames.Count)];
             string lastName = lastNames[Random.Range(0, lastNames.Count)];
-            data._studentName = firstName + " " + lastName;
+            data._studentName = "<bounce a=0.1 f=0.3 w=1>"+firstName + " " + lastName+"</bounce>";
         }
 
         // if (race == "Tanuki")
