@@ -96,7 +96,7 @@ public class MiniGoalManager : MonoBehaviour
         miniGoalDatas[id] = newData;
         miniGoals[id].GetComponent<MiniGoal>().data = newData;
         UpdateMiniGoalVisuals();
-        Debug.Log("Mini goal replacedd");
+        Debug.Log("Mini goal replaced");
     }
 
 
