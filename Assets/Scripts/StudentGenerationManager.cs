@@ -69,23 +69,8 @@ public class StudentGenerationManager : MonoBehaviour
     //=================
 
     //======Visuals Inits========
-    /*[SerializeField] List<Sprite> earSprites;
-    [SerializeField] List<Sprite> eyeSprites;
-    [SerializeField] List<Sprite> faceSprites;
-    [SerializeField] List<Sprite> hairSprites;
-    [SerializeField] List<Sprite> mouthSprites;
-    [SerializeField] List<Sprite> noseSprites;*/
-
     [SerializeField] List<string> firstNames;
     [SerializeField] List<string> lastNames;
-
-
-    //[SerializeField] Image earImage;
-    //[SerializeField] Image eyeImage;
-    //[SerializeField] Image faceImage;
-    //[SerializeField] Image hairImage;
-    //[SerializeField] Image mouthImage;
-    //[SerializeField] Image noseImage;
 
     //================================
 
@@ -177,11 +162,12 @@ public class StudentGenerationManager : MonoBehaviour
         //=======Personal Information======
         //==checks==
         data._isAlumni = (Random.Range(0, 100) < alumniPercentage);
-        data._isVeteran = (Random.Range(0, 100) < verteranPercentage);
-        data._isPatron = (Random.Range(0, 100) < patronPercentage);
+        if (data._finance >= 90)
+        {
+            Debug.Log("this student is patron");
+            data._isPatron = (Random.Range(0, 100) < patronPercentage);
+        }
         data._isFirstGen = (Random.Range(0, 100) < firstGenPercentage);
-        data._isStateSponsored = (Random.Range(0, 100) < stateSponsoredPercentage);
-        
         
         //==========
 
@@ -238,8 +224,6 @@ public class StudentGenerationManager : MonoBehaviour
             p  *= -1f;
         }
         data._psionicAffinity = Mathf.Clamp(Mathf.RoundToInt(Random.Range(1, 5) + m), 1, 5);
-
-
 
         //=======
 

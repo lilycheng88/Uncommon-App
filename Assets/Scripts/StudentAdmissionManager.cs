@@ -55,6 +55,9 @@ public class StudentAdmissionManager : MonoBehaviour
     [Header("Student Required")]
     public int studentRequired = 7;
 
+    [Header("Scholarship Bonus")]
+    public int patronScholarshipBonus = 50;
+
 
     [Header("===========================")]
     [Header("   ")]
@@ -188,6 +191,12 @@ public class StudentAdmissionManager : MonoBehaviour
                 {
                     totalScholarship = 0;
                 }
+                
+                if(data._isPatron)
+                {
+                    totalScholarship += patronScholarshipBonus;
+                }
+
                 averageFinance += Mathf.RoundToInt((data._finance - financeMidValue) * financeMultiplier);
                 averageAcademic += Mathf.RoundToInt((data._academic - academicMidValue) * academicMultiplier);
 
@@ -224,7 +233,7 @@ public class StudentAdmissionManager : MonoBehaviour
 
                         break;
 
-                        case "emotion-driven":
+                        case "emotional":
                             if(data._magicalPersonality >= 4)
                             {
                                 MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
@@ -232,7 +241,7 @@ public class StudentAdmissionManager : MonoBehaviour
 
                         break;
 
-                        case "morning favored":
+                        case "night owl":
                             if(data._schedule <= 2)
                             {
                                 MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
@@ -240,7 +249,7 @@ public class StudentAdmissionManager : MonoBehaviour
 
                         break;
 
-                        case "evening favored":
+                        case "early bird":
                             if(data._schedule >= 4)
                             {
                                 MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
@@ -248,7 +257,7 @@ public class StudentAdmissionManager : MonoBehaviour
 
                         break;
 
-                        case "hardly exploring":
+                        case "careful":
                             if(data._explorativity <= 2)
                             {
                                 MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
@@ -256,7 +265,7 @@ public class StudentAdmissionManager : MonoBehaviour
 
                         break;
                     
-                        case "often exploring":
+                        case "explorative":
                             if(data._explorativity <= 4)
                             {
                                 MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
@@ -264,7 +273,7 @@ public class StudentAdmissionManager : MonoBehaviour
 
                         break;
 
-                        case "obtuse":
+                        case "non-psychic":
                             if(data._psionicAffinity <= 2)
                             {
                                 MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
@@ -272,7 +281,7 @@ public class StudentAdmissionManager : MonoBehaviour
 
                         break;
 
-                        case "keen":
+                        case "psychic":
                             if(data._psionicAffinity >= 4)
                             {
                                 MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
@@ -303,23 +312,6 @@ public class StudentAdmissionManager : MonoBehaviour
                             }
 
                         break;
-
-                        case "veteran":
-                            if(data._isVeteran)
-                            {
-                                MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
-                            }
-
-                        break;
-
-                        case "state-sponsored":
-                            if(data._isStateSponsored)
-                            {
-                                MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
-                            }
-
-                        break;
-
 
                     }
 
@@ -386,7 +378,7 @@ public class StudentAdmissionManager : MonoBehaviour
         StudentData data = studentGenerationManager.RandomGenerateStudent();
         studentInfo.UpdateStudentInfo(data);
         preferencesManager.SetBars(data._extroversion-1,data._magicalPersonality-1,data._schedule-1,data._explorativity-1,data._psionicAffinity-1);
-        booleanManager.SetChecks(data._isAlumni,data._isPatron,data._isVeteran);
+        booleanManager.SetChecks(data._isFirstGen,data._isAlumni,data._isPatron);
 
     }
 

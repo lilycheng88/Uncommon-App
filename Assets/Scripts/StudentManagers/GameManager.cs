@@ -51,14 +51,7 @@ public class GameManager : MonoBehaviour
 
     public void GameCalc()
     {
-        if(!MiniGoalManager.Instance.CheckGoals())
-        {
-            GameLose();
-            return;
-        }
-        
-        
-        
+           
         gameCalcScreen.SetActive(true);
         studentAdmissionManager.CheckAllNewsEndings();
         inGame = false;

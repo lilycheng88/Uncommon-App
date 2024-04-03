@@ -55,15 +55,13 @@ public class MiniGoalManager : MonoBehaviour
     {
         
         conditions.Add(Random.Range(0, 2) == 0 ? "introverted" : "extroverted");conditionNums.Add(5);
-        conditions.Add(Random.Range(0, 2) == 0 ? "calm" : "emotion-driven");conditionNums.Add(5);
-        conditions.Add(Random.Range(0, 2) == 0 ? "morning favored" : "evening favored");conditionNums.Add(5);
-        conditions.Add(Random.Range(0, 2) == 0 ? "hardly exploring" : "often exploring");conditionNums.Add(5);
-        conditions.Add(Random.Range(0, 2) == 0 ? "obtuse" : "keen");conditionNums.Add(5);
+        conditions.Add(Random.Range(0, 2) == 0 ? "calm" : "emotional");conditionNums.Add(5);
+        conditions.Add(Random.Range(0, 2) == 0 ? "early bird" : "night owl");conditionNums.Add(5);
+        conditions.Add(Random.Range(0, 2) == 0 ? "careful" : "explorative");conditionNums.Add(5);
+        conditions.Add(Random.Range(0, 2) == 0 ? "non-psychic" : "psychic");conditionNums.Add(5);
 
-        string gen; conditions.Add(gen = Random.Range(0, 2) == 0 ? "1st-gen" : "alumni"); conditionNums.Add(gen == "1st-gen"?5:10);
+        string gen; conditions.Add(gen = Random.Range(0, 2) == 0 ? "1st-gen" : "alumni"); conditionNums.Add(gen == "1st-gen"?5:5);
         conditions.Add("patron");conditionNums.Add(5);
-        conditions.Add("veteran");conditionNums.Add(5);
-        conditions.Add("state-sponsored");conditionNums.Add(5);
 
         System.Random rng = new System.Random();
         var selectedIndices = Enumerable.Range(0, conditions.Count)

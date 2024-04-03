@@ -7,7 +7,6 @@ using System;
 
 public class StudentInfo : MonoBehaviour
 {
-
     public StudentData data;
 
     //===StudentDataVisuals===
@@ -65,20 +64,17 @@ public class StudentInfo : MonoBehaviour
 
         if(data._HSprite != null)
         {
-            Debug.Log("enabling HSprite");
             HImage.enabled = true;
             HImage.sprite = data._HSprite;
 
         }else
         {
-            Debug.Log("disabling h sprite");
             HImage.enabled = false;
         }
 
 
 
         studentNameText.text = data._studentName;
-        studentDescriptionText.text = data._studentDescription;
         financeSlider.value = data._finance;
         academicSlider.value = data._academic;
     }
