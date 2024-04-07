@@ -13,13 +13,14 @@ MonoBehaviour:
   m_Name: DayOneChat
   m_EditorClassIdentifier: 
   messageContentList:
-  - message: ak;uhailusdhfblkajsdhflajshdlfijahsdlkfjhasldkjfkhbalskdjfbalksjdbflakjsdbflkajksbdflkjablkdsjfba;ksdifhoasidhjfpaisdjf;oiahjsd;fknasdlkfnal;skdnfl;aksdnf;laknsd;lfkansdl
+  - message: Welcome back, I hope your arms better now
     sprite: {fileID: 0}
-  - message: image
+  - message: As you can see, we've updated our admission portal
+    sprite: {fileID: 21300000, guid: 758ac31a9bff9ac4181f54de54a6ecb7, type: 3}
+  - message: Hopefully now accepting and rejecting students would be a much more
+      straight forward process
     sprite: {fileID: 0}
-  - message: toggle
-    sprite: {fileID: 0}
-  - message: System
+  - message: I would follow your performance with great interest
     sprite: {fileID: 0}
   - message: sdqerqwerqwerqsdfgsdfgsdfgsdfgsdfgsdfgsdfgsdfgdfgsdfgsdfgsdfgsdfgsdfgsdfgsdfgsdfgsdfgsdfgsdfgsdfgsdfgsdfgsdfgsdfgsdfgsdfgdsfgsdfgsdfgsdfgsdfgsdfgsdfgsdfgsdfgsdfgsdfgsdfgsdfgsdfgdsfgsdfgsdfsdfgsdfgsdfgwer
     sprite: {fileID: 0}

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ChatManager : MonoBehaviour
 {
@@ -71,12 +73,54 @@ public class ChatManager : MonoBehaviour
     {
         
         var message = Instantiate(messagePrefab, new Vector3(0, 0, 0), Quaternion.identity, messageParent);
-        string content = currentMessageData.messageContentList[currentMessageIndex].message;
 
-        if (content != null)
+        //===========Image Null Bypass=======
+        Transform ImageTransform = FindGrandchild(message.transform, "ImageMask");
+        if(ImageTransform != null)
         {
-            message.GetComponent<Message>().currentText = content;
+            //Debug.Log("ImageContent found!");
+            Image imageComponent = ImageTransform.GetComponent<Image>();
+            
+            if (imageComponent != null)
+            {
+                //Debug.Log("imageComponent Found!");
+                Sprite sprite = currentMessageData.messageContentList[currentMessageIndex].sprite;
+                if (sprite != null)
+                {
+                   message.GetComponent<Message>().currentSprite = sprite;
+                }
+                else
+                {
+                    ImageTransform.gameObject.SetActive(false);
+                }
+            }
         }
+
+        Transform textTransform = FindGrandchild(message.transform, "TextContent");
+        if (textTransform != null)
+        {
+            //Debug.Log("TextContent found!");
+            TextMeshProUGUI textComponent = textTransform.GetComponent<TextMeshProUGUI>();
+            
+            if (textComponent != null) {
+                Debug.Log("textComponent Found!");
+                string content = currentMessageData.messageContentList[currentMessageIndex].message;
+                if (content != null)
+                {
+                    message.GetComponent<Message>().currentText = content;
+                }
+                else
+                {
+                    textTransform.gameObject.SetActive(false);
+                }
+            }
+        }
+
+        
+
+        
+        
+        
     }
 
         // Function to find a MessageData by its name
@@ -89,6 +133,20 @@ public class ChatManager : MonoBehaviour
         return foundMessageData;
     }
 
-
-
-}
+    private Transform FindGrandchild(Transform parent, string grandchildName)
+    {
+        foreach (Transform child in parent)
+        {
+            if (child.name == grandchildName)
+            {
+                return child;
+            }
+            Transform grandchild = FindGrandchild(child, grandchildName);
+            if (grandchild != null)
+            {
+                return grandchild;
+            }
+        }
+        return null; // Grandchild not found
+    }
+}  
