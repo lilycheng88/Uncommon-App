@@ -41,8 +41,8 @@ public class StudentAdmissionManager : MonoBehaviour
     public GameObject waitlistedStudentContentParent;
 
     public NewspaperManager newspaperManager;
-    
 
+    public Animator gameAnimator;
 
 
     [Header("===========================")]
@@ -184,6 +184,7 @@ public class StudentAdmissionManager : MonoBehaviour
             }
             if (data != null)
             {
+                gameAnimator.SetTrigger("Accept");
                 studentAdmitted += 1;
                 studentLeft -= 1;
                 totalScholarship -= (financeRequired - data._finance);
@@ -353,6 +354,7 @@ public class StudentAdmissionManager : MonoBehaviour
 
         if (!rejectedStudentList.Contains(data))
         {
+            gameAnimator.SetTrigger("Reject");
             rejectedStudentList.Add(data);
         }
         studentLeft -= 1;

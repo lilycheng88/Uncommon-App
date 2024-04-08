@@ -168,8 +168,8 @@ public class StudentGenerationManager : MonoBehaviour
             data._isPatron = (Random.Range(0, 100) < patronPercentage);
         }
         data._isFirstGen = (Random.Range(0, 100) < firstGenPercentage);
-        
         //==========
+
 
         //==bars==
         //extroversion
@@ -224,7 +224,6 @@ public class StudentGenerationManager : MonoBehaviour
             p  *= -1f;
         }
         data._psionicAffinity = Mathf.Clamp(Mathf.RoundToInt(Random.Range(1, 5) + m), 1, 5);
-
         //=======
 
 
