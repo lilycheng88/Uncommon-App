@@ -7,6 +7,7 @@ public class SoundManager : MonoBehaviour
 
     [SerializeField] private AudioSource musicSource;
     [SerializeField] private AudioSource sfxSource;
+    [SerializeField] private AudioClip music;
 
     private Dictionary<string, AudioClip> soundEffects = new Dictionary<string, AudioClip>();
 
@@ -28,6 +29,11 @@ public class SoundManager : MonoBehaviour
         foreach (var clip in sounds)
         {
             soundEffects[clip.name] = clip;
+        }
+        if (!musicSource.isPlaying)
+        {
+            PlayMusic(music);
+            Debug.Log("Music Starts!");
         }
     }
 

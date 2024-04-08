@@ -14,6 +14,7 @@ public class Message : MonoBehaviour
 
     //========Controls========
     public string currentText;
+    public Sprite currentSprite;
 
 
     //========================
@@ -21,6 +22,7 @@ public class Message : MonoBehaviour
 
     //========Visuals=========
     [SerializeField]TextMeshProUGUI textContentTxt;
+    [SerializeField] Image imageContentImg;
     //========================
 
     void Start()
@@ -32,7 +34,7 @@ public class Message : MonoBehaviour
     public void UpdateVisuals()
     {
         textContentTxt.text = currentText;
-
+        imageContentImg.sprite = currentSprite;
 
     }
 
