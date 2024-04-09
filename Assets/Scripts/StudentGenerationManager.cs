@@ -5,38 +5,39 @@ using UnityEngine.UI;
 
 public class StudentGenerationManager : MonoBehaviour
 {
+    public static StudentGenerationManager Instance;
     //=====Testing=====
     [Range(0.0f, 100.0f)]
-    [SerializeField] int goodStudentPercentage;
+    public int goodStudentPercentage;
     [Range(0.0f, 100.0f)]
-    [SerializeField] int badStudentPercentage;
+    public int badStudentPercentage;
     [Range(0.0f, 100.0f)]
-    [SerializeField] int richStudentPercentage;
+    public int richStudentPercentage;
     [Range(0.0f, 100.0f)]
-    [SerializeField] int poorStudentPercentage;
+    public int poorStudentPercentage;
 
     //====Personal Info====
     //==scales==
     [Range(0.0f, 100.0f)]
-    [SerializeField] int extroversionPercentage;
+    public int extroversionPercentage;
     [Range(0.0f, 100.0f)]
-    [SerializeField] int magicalPersonalityPercentage;
+    public int magicalPersonalityPercentage;
     [Range(0.0f, 100.0f)]
-    [SerializeField] int workplacePercentage;
+    public int workplacePercentage;
     [Range(0.0f, 100.0f)]
-    [SerializeField] int schedulePercentage;
+    public int schedulePercentage;
     [Range(0.0f, 100.0f)]
-    [SerializeField] int explorativityPercentage;
+    public int explorativityPercentage;
     [Range(0.0f, 100.0f)]
-    [SerializeField] int psionicAffinityPercentage;
+    public int psionicAffinityPercentage;
 
 
     [Range(0.0f, 100.0f)]
-    [SerializeField] int verteranPercentage;
+    public int verteranPercentage;
     [Range(0.0f, 100.0f)]
-    [SerializeField] int alumniPercentage;
+    public int alumniPercentage;
     [Range(0.0f, 100.0f)]
-    [SerializeField] int patronPercentage;
+    public int patronPercentage;
     
 
 
@@ -44,16 +45,13 @@ public class StudentGenerationManager : MonoBehaviour
 
 
     //==bools===
+    // [SerializeField] bool isVeteranPercentage;
+    // [SerializeField] bool isAlumniPercentage;
+    // public bool isPatronPercentage;
     [Range(0.0f, 100.0f)]
-    [SerializeField] bool isVeteranPercentage;
+    public int firstGenPercentage;
     [Range(0.0f, 100.0f)]
-    [SerializeField] bool isAlumniPercentage;
-    [Range(0.0f, 100.0f)]
-    [SerializeField] bool isPatronPercentage;
-    [Range(0.0f, 100.0f)]
-    [SerializeField] int firstGenPercentage;
-    [Range(0.0f, 100.0f)]
-    [SerializeField] int stateSponsoredPercentage;
+    public int stateSponsoredPercentage;
     //==========
 
     //========Race===========  
@@ -69,7 +67,7 @@ public class StudentGenerationManager : MonoBehaviour
     //=================
 
     //======Visuals Inits========
-    [SerializeField] List<string> firstNames;
+    public List<string> firstNames;
     [SerializeField] List<string> lastNames;
 
     //================================
@@ -78,6 +76,16 @@ public class StudentGenerationManager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        // Check if an instance already exists
+        if (Instance == null)
+        {
+            Instance = this; // Assign this instance as the singleton instance
+        }
+        else
+        {
+            Destroy(gameObject); // Destroy this instance because another one already exists
+            return;
+        }
 
         var _firstNames = new[]{"Kilay", "Huja", "UIyenw", "Toni", "Lia", "Charlotte", "Kandy", "Tynamous", "Wilhelm",
             "Priah", "Ume", "Queha", "Boe", "Yannis", "Eiha", "Kitami", "Xenon", "Pasha", "Zules", "Rodger", "Fabian", "Tuni", "Wuhue", "Lyuen", "Starlight",

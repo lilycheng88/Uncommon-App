@@ -15,14 +15,15 @@ public class MiniGoalManager : MonoBehaviour
     bool miniGoalPanelExpand = false;
     public List<MiniGoal> miniGoals = new List<MiniGoal>();
 
+
     public int MiniGoalNum = 2;
 
     public Dictionary<int, string> rewardDictionary = new Dictionary<int, string>();
 
     //Data List
      public List<MiniGoalData> miniGoalDatas = new List<MiniGoalData>();
-     List<string> conditions = new List<string>();
-     List<int> conditionNums = new List<int>();
+     public List<string> conditions = new List<string>();
+     public List<int> conditionNums = new List<int>();
     private void Awake()
     {
         // Check if an instance already exists
@@ -54,14 +55,14 @@ public class MiniGoalManager : MonoBehaviour
     public void GenerateMiniGoals()
     {
         
-        conditions.Add(Random.Range(0, 2) == 0 ? "introverted" : "extroverted");conditionNums.Add(5);
-        conditions.Add(Random.Range(0, 2) == 0 ? "calm" : "emotional");conditionNums.Add(5);
-        conditions.Add(Random.Range(0, 2) == 0 ? "early bird" : "night owl");conditionNums.Add(5);
-        conditions.Add(Random.Range(0, 2) == 0 ? "careful" : "explorative");conditionNums.Add(5);
-        conditions.Add(Random.Range(0, 2) == 0 ? "non-psychic" : "psychic");conditionNums.Add(5);
+        // conditions.Add(Random.Range(0, 2) == 0 ? "introverted" : "extroverted");conditionNums.Add(5);
+        // conditions.Add(Random.Range(0, 2) == 0 ? "calm" : "emotional");conditionNums.Add(5);
+        // conditions.Add(Random.Range(0, 2) == 0 ? "early bird" : "night owl");conditionNums.Add(5);
+        // conditions.Add(Random.Range(0, 2) == 0 ? "careful" : "explorative");conditionNums.Add(5);
+        // conditions.Add(Random.Range(0, 2) == 0 ? "non-psychic" : "psychic");conditionNums.Add(5);
 
-        string gen; conditions.Add(gen = Random.Range(0, 2) == 0 ? "1st-gen" : "alumni"); conditionNums.Add(gen == "1st-gen"?5:5);
-        conditions.Add("patron");conditionNums.Add(5);
+        // string gen; conditions.Add(gen = Random.Range(0, 2) == 0 ? "1st-gen" : "alumni"); conditionNums.Add(gen == "1st-gen"?5:5);
+        // conditions.Add("patron");conditionNums.Add(5);
 
         System.Random rng = new System.Random();
         var selectedIndices = Enumerable.Range(0, conditions.Count)
