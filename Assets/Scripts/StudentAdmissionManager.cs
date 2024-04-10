@@ -207,7 +207,7 @@ public class StudentAdmissionManager : MonoBehaviour
                 for( int i = 0; i < MiniGoalManager.Instance.miniGoalDatas.Count; i++)
                 {
                     MiniGoalData goal = MiniGoalManager.Instance.miniGoalDatas[i];
-
+                    
                     switch (goal.label)
                     {
                         case "introverted":
