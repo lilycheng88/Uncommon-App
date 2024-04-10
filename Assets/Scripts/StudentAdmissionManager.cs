@@ -178,6 +178,8 @@ public class StudentAdmissionManager : MonoBehaviour
         if (CanAdmit(data))
         {
             SoundManager.Instance.PlaySFX("Admit");
+            SoundManager.Instance.PlaySFX("Click_OK");
+            SoundManager.Instance.PlaySFX("FileInCrush", 0.5f);
             if (!admittedStudentList.Contains(data))
             {
                 admittedStudentList.Add(data);
@@ -346,6 +348,8 @@ public class StudentAdmissionManager : MonoBehaviour
     public void RejectCurrentStudent()
     {
         SoundManager.Instance.PlaySFX("Reject");
+        SoundManager.Instance.PlaySFX("Click_OK");
+        SoundManager.Instance.PlaySFX("CrumbleCrush");
         StudentData data = studentInfo.data;
         if (data == null)
         {

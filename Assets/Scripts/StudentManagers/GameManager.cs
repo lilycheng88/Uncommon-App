@@ -106,11 +106,13 @@ public class GameManager : MonoBehaviour
         {
             chatScreenAnimator.SetBool("Expand",true);
             chatScreenOpen = true;
-        }else
+            SoundManager.Instance.PlaySFX("Click_ChatOpen");
+        }
+        else
         {
             chatScreenAnimator.SetBool("Expand",false);
             chatScreenOpen = false;
-
+            SoundManager.Instance.PlaySFX("Click_ChatClose");
         }
 
     }
