@@ -326,7 +326,7 @@ public class StudentAdmissionManager : MonoBehaviour
                 //======================
 
 
-                UpdateAllVisuals();
+                Invoke("UpdateAllVisuals", 0.8f);
             }
             RandomlyPresentAStudent();
         }
