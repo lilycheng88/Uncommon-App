@@ -42,11 +42,13 @@ public class ChatManager : MonoBehaviour
     {
         if (currentMessageData.messageContentList.Count > currentMessageIndex + 1)
         {
-            SetCurrentChat("none", currentMessageIndex + 1);   
+            SetCurrentChat("none", currentMessageIndex + 1);
+            SoundManager.Instance.PlaySFX("Click_OK");
 
-        }else
+        }
+        else
         {
-
+            SoundManager.Instance.PlaySFX("Click_Confirm");
         }
 
 
