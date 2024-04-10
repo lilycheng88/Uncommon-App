@@ -1,19 +1,20 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class LoginManager : MonoBehaviour
 {
-    public Selectable loginSelectable;
-    public Selectable passwordSelectable;
+    public TMP_InputField loginInputField;
+    public TMP_InputField passwordInputField;
     public string correctUsername = "1";
     public string correctPassword = "1";
-    public string nextSceneName = "JiahaoTestScene";
+    public string nextSceneName = "JiahaoTestScene"; // Name of the next scene
 
     public void CheckCredentials()
     {
-        string enteredUsername = GetInputFieldText(loginSelectable);
-        string enteredPassword = GetInputFieldText(passwordSelectable);
+        string enteredUsername = loginInputField.text;
+        string enteredPassword = passwordInputField.text;
 
         if (enteredUsername == correctUsername && enteredPassword == correctPassword)
         {
@@ -31,23 +32,9 @@ public class LoginManager : MonoBehaviour
         }
     }
 
-    private string GetInputFieldText(Selectable selectable)
-    {
-        InputField inputField = selectable.GetComponentInChildren<InputField>();
-        if (inputField != null)
-        {
-            return inputField.text;
-        }
-        else
-        {
-            Debug.LogWarning("No InputField component found on selectable: " + selectable.name);
-            return "";
-        }
-    }
-
     private void Update()
     {
-   
+        // Check if the user pressed Enter to attempt login
         if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
         {
             CheckCredentials();
