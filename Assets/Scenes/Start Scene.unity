@@ -185,6 +185,7 @@ GameObject:
   m_Component:
   - component: {fileID: 340674254}
   - component: {fileID: 340674255}
+  - component: {fileID: 340674256}
   m_Layer: 0
   m_Name: UI TRY-4.png (6)
   m_TagString: Untagged
@@ -192,21 +193,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &340674254
-Transform:
+--- !u!224 &340674254
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 340674253}
-  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -960.2, y: -540.074, z: 0}
-  m_LocalScale: {x: 1.0052067, y: 1.023835, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.1, y: 1.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 345298302}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -0, y: -0.09}
+  m_SizeDelta: {x: 1692, y: 952}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &340674255
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -259,6 +264,14 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!222 &340674256
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340674253}
+  m_CullTransparentMesh: 1
 --- !u!1 &345298298
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,7 +369,6 @@ RectTransform:
   m_Children:
   - {fileID: 980430927}
   - {fileID: 445941811}
-  - {fileID: 340674254}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1740,5 +1752,6 @@ SceneRoots:
   - {fileID: 532799964}
   - {fileID: 345298302}
   - {fileID: 1396558389}
+  - {fileID: 340674254}
   - {fileID: 1249222986}
   - {fileID: 763739120}
