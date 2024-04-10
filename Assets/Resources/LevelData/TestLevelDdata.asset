@@ -27,4 +27,8 @@ MonoBehaviour:
   patronPercentage: 39
   firstGenPercentage: 35
   stateSponsoredPercentage: 37
-  miniGoalPool: []
+  miniGoalPool:
+  - goal: 1st-gen
+    requiredNum: 5
+  - goal: alumni
+    requiredNum: 5
