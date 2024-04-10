@@ -13,25 +13,67 @@ MonoBehaviour:
   m_Name: DayOneChat
   m_EditorClassIdentifier: 
   messageContentList:
-  - message: Welcome back, I hope your arms better now
+  - message: Welcome. Warm congratulations on your new position as admissions officer
+      at Uncommon Academy, the most prestigious magical university in Unmeiia, as
+      well as the known world.
     sprite: {fileID: 0}
-  - message: As you can see, we've updated our admission portal
+  - message: 'As you may recall from our interview, I will be your supervisor during
+      your time here. '
     sprite: {fileID: 21300000, guid: 758ac31a9bff9ac4181f54de54a6ecb7, type: 3}
-  - message: Hopefully now accepting and rejecting students would be a much more
-      straight forward process
+  - message: "Apologies for the quick turnaround, but you\u2019ve been brought on
+      board right on the cusp of our first international admission season in 20 years.
+      It\u2019s a big day."
     sprite: {fileID: 0}
-  - message: I would follow your performance with great interest
+  - message: My instructions will have to be brief.
     sprite: {fileID: 0}
-  - message: sdqerqwerqwerqsdfgsdfgsdfgsdfgsdfgsdfgsdfgsdfgdfgsdfgsdfgsdfgsdfgsdfgsdfgsdfgsdfgsdfgsdfgsdfgsdfgsdfgsdfgsdfgsdfgsdfgsdfgdsfgsdfgsdfgsdfgsdfgsdfgsdfgsdfgsdfgsdfgsdfgsdfgsdfgsdfgdsfgsdfgsdfsdfgsdfgsdfgwer
+  - message: "On the left-hand side of the screen, you can see the student\u2019s
+      portrait, name, and base statistics: financial standing, and academic aptitude."
     sprite: {fileID: 0}
-  - message: I have too much money burning a hole in my pocket, this deplorable stage
-      cannot be allowed to continue
+  - message: "These base statistics will affect our school\u2019s overall financial
+      and academic performance scores, which are indicated on the right-hand side
+      of the screen. The degree to which they are affected may change from day-to-day,
+      depending on international averages."
     sprite: {fileID: 0}
-  - message: 123r123412341234
+  - message: 'Worry only about how your decisions impact them. '
     sprite: {fileID: 0}
-  - message: 
+  - message: The scholarship fund situated between the financial and academic scores
+      is expended whenever a student without a full finance bar is admitted to Uncommon
+      Academy. Unless the bar is completely full, they will not be able to attend
+      the academy out of pocket.
     sprite: {fileID: 0}
-  - message: 
+  - message: Keep an eye on your scholarship fund, because it will deplete quickly,
+      and eventually be diminished. Financially unstable students cannot be accepted
+      when the scholarship fund is insufficient.
     sprite: {fileID: 0}
-  - message: 
+  - message: 'To the left of the overall school scores are the student preferences
+      and demographics. These pieces of background information will be relevant in
+      the future. '
+    sprite: {fileID: 0}
+  - message: 'To the left of the overall school scores are the student preferences
+      and demographics. These pieces of background information will be relevant in
+      the future. '
+    sprite: {fileID: 0}
+  - message: For now, just familiarize yourself with where they are located. I will
+      contact you at a later time to explain their relevance.
+    sprite: {fileID: 0}
+  - message: When you have determined the aptitude of an applicant, you may select
+      either the admit or reject options from the bottom right-hand corner. Just
+      drag your selection to the student portrait and release, and the admissions
+      software will take care of the rest.
+    sprite: {fileID: 0}
+  - message: If I ever contact you with updates, just click on the chat icon at the
+      bottom left-hand corner of the screen. To return to the admissions page from
+      the chat log, just click on it again to minimize this window.
+    sprite: {fileID: 0}
+  - message: "One last thing\u2026"
+    sprite: {fileID: 0}
+  - message: 'As you already know, and as I reminded you at the beginning of this
+      conversation, this is our first international admission season since before
+      the war. A conflict spanning nearly 2 decades, leaving no corner of the known
+      world untouched. '
+    sprite: {fileID: 0}
+  - message: Keep in mind, as you perform your task, just how momentous of a time
+      this is for our institution. I cannot afford to be forgiving of mistakes.
+    sprite: {fileID: 0}
+  - message: That is all. Good luck.
     sprite: {fileID: 0}
