@@ -140,3 +140,5 @@ MonoBehaviour:
     SecondSpriteComponent: 4
   raceName: Elf
   raceDescription: Ear, Eye, Nose, Hair, Face, Mouth, Clothes
+  FirstNation: 0
+  SecondNation: 3

@@ -24,7 +24,7 @@ public class StudentInfo : MonoBehaviour
     [SerializeField] Image GImage;
     [SerializeField] Image HImage;
     //public TextMeshProUGUI 
-
+    [SerializeField] Image IImage;
 
     //========================
 
@@ -72,7 +72,11 @@ public class StudentInfo : MonoBehaviour
             HImage.enabled = false;
         }
 
-
+        if (data._ISprite != null)
+        {
+            IImage.enabled = true;
+            IImage.sprite = data._ISprite;
+        }
 
         studentNameText.text = data._studentName;
         financeSlider.value = data._finance;

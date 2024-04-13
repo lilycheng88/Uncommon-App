@@ -156,15 +156,39 @@ public class StudentAdmissionManager : MonoBehaviour
     {
         averageFinanceText.text = averageFinance.ToString();
         averageAcademicText.text = averageAcademic.ToString();
-        totalScholarshipText.text = totalScholarship.ToString();
+        if(totalScholarship < 200)
+        {
+            totalScholarshipText.text = "<shake a = 2>" + totalScholarship.ToString() + "</shake>";
+        }
+        else totalScholarshipText.text = totalScholarship.ToString();
+
         averageFinanceSlider.value = averageFinance;
         averageAcademicSlider.value = averageAcademic;
         totalScholarshipSlider.value = totalScholarship;
         averageAcademicGlobe.fillAmount = averageAcademic / 100f;
         studentAdmittedVSRequiredText.text = studentAdmitted.ToString() + "/" + studentRequired;
-        studentLeftText.text = studentLeft.ToString();
+        if (studentLeft < 10)
+        {
+            studentLeftText.text = "<shake a = 2>" + studentLeft.ToString() + "</shake>";
+        }
+        else studentLeftText.text = studentLeft.ToString();
     }
-
+    public void UpdateRejectVisuals()
+    {
+       /* averageFinanceText.text = averageFinance.ToString();
+        averageAcademicText.text = averageAcademic.ToString();
+        totalScholarshipText.text = totalScholarship.ToString();
+        averageFinanceSlider.value = averageFinance;
+        averageAcademicSlider.value = averageAcademic;
+        totalScholarshipSlider.value = totalScholarship;
+        averageAcademicGlobe.fillAmount = averageAcademic / 100f;
+        studentAdmittedVSRequiredText.text = studentAdmitted.ToString() + "/" + studentRequired;*/
+        if (studentLeft < 10)
+        {
+            studentLeftText.text = "<shake a = 2>" + studentLeft.ToString() + "</shake>";
+        }
+        else studentLeftText.text = studentLeft.ToString();
+    }
 
 
     public void AdmitCurrentStudent()
@@ -363,7 +387,7 @@ public class StudentAdmissionManager : MonoBehaviour
         }
         studentLeft -= 1;
         RandomlyPresentAStudent();
-        UpdateAllVisuals();
+        UpdateRejectVisuals();
     }
 
     public void WaitlistCurrentStudent()

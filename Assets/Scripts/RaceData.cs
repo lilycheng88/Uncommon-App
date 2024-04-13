@@ -25,6 +25,18 @@ public class RaceData : ScriptableObject
     public string raceName;
     public string raceDescription; // Description or other characteristics.
 
+    public enum NationType
+    {
+        Unmeiia,
+        Nystal,
+        Tendiyu,
+        Ovyeka,
+        Gessurd,
+        None
+    }
+
+    public NationType FirstNation;
+    public NationType SecondNation;
     private void OnEnable()
     {
         bodyPartList = new List<List<Sprite>> { ASpriteList, BSpriteList, CSpriteList, DSpriteList, ESpriteList, FSpriteList, GSpriteList, HSpriteList, ISpriteList, JSpriteList, KSpriteList, LSpriteList };

@@ -18,8 +18,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject[] gameTabs;
     [SerializeField] StudentAdmissionManager studentAdmissionManager;
     [SerializeField] NewspaperManager newspaperManager;
-    [SerializeField] Animator chatScreenAnimator;
-    private bool chatScreenOpen = false;
+    [SerializeField] Animator chatScreenAnimator, mapScreenAnimator;
+    private bool chatScreenOpen = false, mapScreenOpen = false;
+
 
     // Public accessor for the singleton instance
     public static GameManager Instance
@@ -112,6 +113,24 @@ public class GameManager : MonoBehaviour
         {
             chatScreenAnimator.SetBool("Expand",false);
             chatScreenOpen = false;
+            SoundManager.Instance.PlaySFX("Click_ChatClose");
+        }
+
+    }
+
+    public void ToggleMapScreen()
+    {
+        Debug.Log("Map!");
+        if (!mapScreenOpen)
+        {
+            mapScreenAnimator.SetBool("Expand", true);
+            mapScreenOpen = true;
+            SoundManager.Instance.PlaySFX("Click_ChatOpen");
+        }
+        else
+        {
+            mapScreenAnimator.SetBool("Expand", false);
+            mapScreenOpen = false;
             SoundManager.Instance.PlaySFX("Click_ChatClose");
         }
 

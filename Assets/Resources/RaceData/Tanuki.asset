@@ -45,5 +45,8 @@ MonoBehaviour:
   JSpriteList: []
   KSpriteList: []
   LSpriteList: []
+  bindedBodyParts: []
   raceName: Tanuki
   raceDescription: Ear, Eye, Nose, Hair, Face, Mouth, Clothes
+  FirstNation: 1
+  SecondNation: 0

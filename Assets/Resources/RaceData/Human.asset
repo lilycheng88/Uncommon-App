@@ -123,5 +123,8 @@ MonoBehaviour:
   JSpriteList: []
   KSpriteList: []
   LSpriteList: []
+  bindedBodyParts: []
   raceName: Human
   raceDescription: Ear, Eye, Nose, Hair, Face, Mouth, Clothes
+  FirstNation: 3
+  SecondNation: 1
