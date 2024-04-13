@@ -36,8 +36,23 @@ public class NewsData: ScriptableObject
 
 public class NewspaperManager : MonoBehaviour
 {
+    public static NewspaperManager Instance { get; private set; } // Singleton instance
     public List<NewsItem> newsItems;
-    [SerializeField] private NewspaperVisuals newspaperVisuals;
+    //[SerializeField] private NewspaperVisuals newspaperVisuals;
+
+        void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject); // Keeps the instance alive across scenes
+        }
+        else
+        {
+            Destroy(gameObject); // Destroys any duplicate instance
+        }
+    }
+
 
     void Start()
     {
@@ -76,18 +91,6 @@ public class NewspaperManager : MonoBehaviour
     }
 
 
-    // Checks and returns the description of the first news item whose condition is met
-    // public string CheckNewsConditions()
-    // {
-    //     foreach (var item in newsItems)
-    //     {
-    //         if (item.IsConditionMet())
-    //         {
-    //             return item.Description;
-    //         }
-    //     }
-    //     return null;
-    // }
 
     public List<NewsItem> SelectNews(int numberOfNewsToSelect)
     {
@@ -122,10 +125,37 @@ public class NewspaperManager : MonoBehaviour
             }
         }
 
-        newspaperVisuals.UpdateNewspaperVisuals(selectedNews);
+        //newspaperVisuals.UpdateNewspaperVisuals(selectedNews);
 
         
 
         return selectedNews;
+    }
+
+    public void CheckAllNewsEndings()
+    {
+        if (GameManager.Instance.inGame)
+        {
+            if (StudentAdmissionManager.Instance.averageAcademic >= StudentAdmissionManager.Instance.academicMidValue * 2 * 0.8f)
+            {
+                Debug.Log("scholarshipexcellence increased");
+                IncrementTriggerCount("ScholarlyExcellence", 1);
+            }
+
+            if (StudentAdmissionManager.Instance.totalScholarship >= StudentAdmissionManager.Instance.initialScholarship*0.3f)
+            {
+                Debug.Log("totalScholarship");
+                IncrementTriggerCount("ScholarshipWho", 1);
+            }
+            
+            // if (StudentAdmissionManager.Instance.firstGenStudent >= 5f)
+            // {
+            //     Debug.Log("firstGenAcademy");
+            //     StudentAdmissionManager.Instance.newspaperManager.IncrementTriggerCount("FirstGenAcademy", 1);
+            // }
+
+
+
+        }
     }
 }

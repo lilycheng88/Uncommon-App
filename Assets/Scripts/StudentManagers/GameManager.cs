@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
     {
            
         gameCalcScreen.SetActive(true);
-        studentAdmissionManager.CheckAllNewsEndings();
+        NewspaperManager.Instance.CheckAllNewsEndings();
         inGame = false;
         newspaperManager.SelectNews(3);
         gameParent.SetActive(false);

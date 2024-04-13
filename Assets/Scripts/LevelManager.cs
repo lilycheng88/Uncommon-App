@@ -25,7 +25,7 @@ public class LevelManager : MonoBehaviour
         StudentGenerationManager.Instance.alumniPercentage = levelData.alumniPercentage;
         StudentGenerationManager.Instance.patronPercentage = levelData.patronPercentage;
 
-        // Assuming this is within a method of your class
+       
         if (levelData.miniGoalPool.Count > 2)
         {
             // Create a list of indices based on the number of mini goals available

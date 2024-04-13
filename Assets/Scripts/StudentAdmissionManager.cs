@@ -77,13 +77,10 @@ public class StudentAdmissionManager : MonoBehaviour
     public float financeMultiplier = 0.1f;
     public float academicMultiplier = 0.2f;
 
-    bool inGame = true;
 
     //====Personal Info=====
 
     int firstGenStudent = 0;
-
-
 
     //======================
 
@@ -326,9 +323,9 @@ public class StudentAdmissionManager : MonoBehaviour
                 //======================
 
 
-                Invoke("UpdateAllVisuals", 0.8f);
+                Invoke("UpdateAllVisuals", 0.3f);
             }
-            RandomlyPresentAStudent();
+            Invoke("RandomlyPresentAStudent",0.3f);
         }
     }
 
@@ -362,8 +359,8 @@ public class StudentAdmissionManager : MonoBehaviour
             rejectedStudentList.Add(data);
         }
         studentLeft -= 1;
-        RandomlyPresentAStudent();
-        UpdateAllVisuals();
+        Invoke("RandomlyPresentAStudent",0.3f);
+        Invoke("UpdateAllVisuals", 0.3f);
     }
 
     public void WaitlistCurrentStudent()
@@ -374,7 +371,7 @@ public class StudentAdmissionManager : MonoBehaviour
         {
             waitlistedStudentList.Add(data);
         }
-        RandomlyPresentAStudent();
+        Invoke("RandomlyPresentAStudent",0.3f);
     }
 
 
@@ -442,30 +439,4 @@ public class StudentAdmissionManager : MonoBehaviour
         }
     }
 
-    public void CheckAllNewsEndings()
-    {
-        if (GameManager.Instance.inGame)
-        {
-            if (averageAcademic >= academicMidValue * 2 * 0.8f)
-            {
-                Debug.Log("scholarshipexcellence increased");
-                newspaperManager.IncrementTriggerCount("ScholarlyExcellence", 1);
-            }
-
-            if (totalScholarship >= initialScholarship*0.3f)
-            {
-                Debug.Log("totalScholarship");
-                newspaperManager.IncrementTriggerCount("ScholarshipWho", 1);
-            }
-            
-            if (firstGenStudent >= 5f)
-            {
-                Debug.Log("firstGenAcademy");
-                newspaperManager.IncrementTriggerCount("FirstGenAcademy", 1);
-            }
-
-
-
-        }
-    }
 }

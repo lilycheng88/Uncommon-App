@@ -12,21 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ca2e59f8d0ff4f62828d568cdc2f154, type: 3}
   m_Name: TestLevelDdata
   m_EditorClassIdentifier: 
-  goodStudentPercentage: 20
-  badStudentPercentage: 45
-  richStudentPercentage: 38
+  goodStudentPercentage: 45
+  badStudentPercentage: 29
+  richStudentPercentage: 51
   poorStudentPercentage: 62
   extroversionPercentage: 62
   magicalPersonalityPercentage: 24
-  workplacePercentage: 49
+  workplacePercentage: 0
   schedulePercentage: 35
   explorativityPercentage: 23
   psionicAffinityPercentage: 66
-  verteranPercentage: 33
-  alumniPercentage: 39
-  patronPercentage: 39
-  firstGenPercentage: 35
-  stateSponsoredPercentage: 37
+  verteranPercentage: 40
+  alumniPercentage: 49
+  patronPercentage: 49
+  firstGenPercentage: 48
+  stateSponsoredPercentage: 40
   miniGoalPool:
   - goal: 1st-gen
     requiredNum: 5

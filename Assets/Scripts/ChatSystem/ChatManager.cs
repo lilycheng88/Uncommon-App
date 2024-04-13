@@ -77,14 +77,16 @@ public class ChatManager : MonoBehaviour
         var message = Instantiate(messagePrefab, new Vector3(0, 0, 0), Quaternion.identity, messageParent);
 
         //===========Image Null Bypass=======
-        Transform ImageTransform = FindGrandchild(message.transform, "ImageMask");
+        Transform ImageTransform = FindGrandchild(message.transform, "ImageContent");
         if(ImageTransform != null)
         {
             //Debug.Log("ImageContent found!");
             Image imageComponent = ImageTransform.GetComponent<Image>();
             
+            
             if (imageComponent != null)
             {
+                imageComponent.gameObject.SetActive(true);
                 //Debug.Log("imageComponent Found!");
                 Sprite sprite = currentMessageData.messageContentList[currentMessageIndex].sprite;
                 if (sprite != null)
@@ -95,6 +97,8 @@ public class ChatManager : MonoBehaviour
                 {
                     ImageTransform.gameObject.SetActive(false);
                 }
+            }else{
+                imageComponent.gameObject.SetActive(false);
             }
         }
 
@@ -117,12 +121,7 @@ public class ChatManager : MonoBehaviour
                 }
             }
         }
-
-        
-
-        
-        
-        
+  
     }
 
         // Function to find a MessageData by its name
