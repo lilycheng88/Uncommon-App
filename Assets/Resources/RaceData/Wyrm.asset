@@ -135,5 +135,8 @@ MonoBehaviour:
   JSpriteList: []
   KSpriteList: []
   LSpriteList: []
+  bindedBodyParts: []
   raceName: Wyrm
   raceDescription: Ear, Eye, Nose, Hair, Face, Mouth, Clothes
+  FirstNation: 4
+  SecondNation: 2

@@ -29,6 +29,7 @@ public class StudentData
 
     public Sprite _HSprite;
 
+    public Sprite _ISprite;
 
 
     //=====================
@@ -57,6 +58,9 @@ public class StudentData
     public bool _isStateSponsored;
 
 
+    public string _nationality;
+
+    public RaceData.NationType _nationType;
 
 
     //==========

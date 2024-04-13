@@ -138,3 +138,5 @@ MonoBehaviour:
   bindedBodyParts: []
   raceName: Ogre
   raceDescription: Ear, Eye, Nose, Hair, Face, Mouth, Clothes
+  FirstNation: 2
+  SecondNation: 4

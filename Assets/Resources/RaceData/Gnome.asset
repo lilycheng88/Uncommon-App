@@ -126,3 +126,5 @@ MonoBehaviour:
   bindedBodyParts: []
   raceName: Gnome
   raceDescription: Ear, Eye, Nose, Hair, Face, Mouth, Clothes
+  FirstNation: 3
+  SecondNation: 2

@@ -7,6 +7,7 @@ public class StudentGenerationManager : MonoBehaviour
 {
     public static StudentGenerationManager Instance;
     //=====Testing=====
+    [Header("Basic Stats")]
     [Range(0.0f, 100.0f)]
     public int goodStudentPercentage;
     [Range(0.0f, 100.0f)]
@@ -15,9 +16,10 @@ public class StudentGenerationManager : MonoBehaviour
     public int richStudentPercentage;
     [Range(0.0f, 100.0f)]
     public int poorStudentPercentage;
-
+    [Space]
     //====Personal Info====
     //==scales==
+    [Header("Personal Info")]
     [Range(0.0f, 100.0f)]
     public int extroversionPercentage;
     [Range(0.0f, 100.0f)]
@@ -30,15 +32,18 @@ public class StudentGenerationManager : MonoBehaviour
     public int explorativityPercentage;
     [Range(0.0f, 100.0f)]
     public int psionicAffinityPercentage;
-
-
+    [Space]
     [Range(0.0f, 100.0f)]
     public int verteranPercentage;
     [Range(0.0f, 100.0f)]
     public int alumniPercentage;
     [Range(0.0f, 100.0f)]
     public int patronPercentage;
-    
+    [Space]
+
+    [Header("Nation Info")]
+    [Range(0.0f, 100.0f)]
+    public int firstNationPercentage;
 
 
     //==========
@@ -118,7 +123,7 @@ public class StudentGenerationManager : MonoBehaviour
         
         string race = data._studentRace;
         
-        if (race == "Elf" || race == "Tanuki" || race == "Gnome" || race == "Human" || race == "Wyrm" || race == "Ogre")
+        if (race != null/*race == "Elf" || race == "Tanuki" || race == "Gnome" || race == "Human" || race == "Wyrm" || race == "Ogre"*/)
         {
             RaceData raceData = raceDatas.Find(raceData => raceData.raceName == race);
             List<Sprite> dataSpriteList = new List<Sprite>() { data._ASprite,data._BSprite,data._CSprite,data._DSprite,data._ESprite,data._FSprite,data._GSprite};
@@ -140,6 +145,46 @@ public class StudentGenerationManager : MonoBehaviour
             string firstName = firstNames[Random.Range(0, firstNames.Count)];
             string lastName = lastNames[Random.Range(0, lastNames.Count)];
             data._studentName = "<bounce a=0.1 f=0.3 w=1>"+firstName + " " + lastName+"</bounce>";
+
+            //=======National Information======
+
+            bool isLocal = (Random.Range(0, 100) < firstNationPercentage);
+            if (isLocal)
+            {
+                data._nationType = raceData.FirstNation;                
+            }
+            else
+            {
+                data._nationType = raceData.SecondNation;
+            }
+            switch (data._nationType)
+            {
+                case RaceData.NationType.Unmeiia:
+                    data._nationality = "Unmeiia";
+                    data._ISprite = raceData.ISpriteList[0];
+                    break;
+                case RaceData.NationType.Nystal:
+                    data._nationality = "Nystal";
+                    data._ISprite = raceData.ISpriteList[1];
+                    break;
+                case RaceData.NationType.Tendiyu:
+                    data._nationality = "Tendiyu";
+                    data._ISprite = raceData.ISpriteList[2];
+                    break;
+                case RaceData.NationType.Ovyeka:
+                    data._nationality = "Ovyeka";
+                    data._ISprite = raceData.ISpriteList[3];
+                    break;
+                case RaceData.NationType.Gessurd:
+                    data._nationality = "Gessurd";
+                    data._ISprite = raceData.ISpriteList[4];
+                    break;
+                case RaceData.NationType.None:
+                    data._nationality = " ";
+                    data._ISprite = null;
+                    break;
+            }
+            Debug.Log("This student is from " + data._nationality);
         }
 
         //===Finance and academic====
@@ -233,9 +278,7 @@ public class StudentGenerationManager : MonoBehaviour
         }
         data._psionicAffinity = Mathf.Clamp(Mathf.RoundToInt(Random.Range(1, 5) + m), 1, 5);
         //=======
-
-
-
+        
 
 
 
