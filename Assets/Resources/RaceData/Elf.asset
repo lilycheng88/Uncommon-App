@@ -131,7 +131,12 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 512813c878cc1ed4983958b2a2edfca3, type: 3}
   - {fileID: 21300000, guid: c7e0f1b7eb47deb46a794b838c27aa52, type: 3}
   HSpriteList: []
-  ISpriteList: []
+  ISpriteList:
+  - {fileID: 21300000, guid: 17f1ac12f088f4b47977fddd43abc354, type: 3}
+  - {fileID: 21300000, guid: 339251057d292534496ffc0ca0cd2b1e, type: 3}
+  - {fileID: 21300000, guid: 2feeb7f524757aa498594d6b53736801, type: 3}
+  - {fileID: 21300000, guid: f17c3d158615a784e9ec87324f8a619f, type: 3}
+  - {fileID: 21300000, guid: 06e70285ed9208347b5633260b18e775, type: 3}
   JSpriteList: []
   KSpriteList: []
   LSpriteList: []
