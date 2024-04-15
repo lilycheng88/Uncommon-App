@@ -45,6 +45,9 @@ public class StudentGenerationManager : MonoBehaviour
     [Range(0.0f, 100.0f)]
     public int firstNationPercentage;
 
+    [Range(0f,100.0f)]
+    [SerializeField] float lengedaryStudentPercentage;
+
 
     //==========
 
@@ -61,13 +64,20 @@ public class StudentGenerationManager : MonoBehaviour
 
     //========Race===========  
     public List<string> raceList = new List<string>();
-    private List<RaceData> raceDatas = new List<RaceData>(); 
-    
+    private List<RaceData> raceDatas = new List<RaceData>();
+
 
 
 
     //========================
 
+    //======Legendary Student=======
+    public List<StudentData> allLegendaryStudentList;
+    private List<StudentData> remainingLegendaryStudentList;
+
+
+
+    //==============================
 
     //=================
 
@@ -113,6 +123,14 @@ public class StudentGenerationManager : MonoBehaviour
         raceDatas.AddRange(raceDataArray);
         //==========================
 
+        //========Legendary Student======
+        //Initializing student data list
+        remainingLegendaryStudentList = allLegendaryStudentList;
+
+
+
+        //===============================
+
     }
 
     public StudentData RandomGenerateStudent()
@@ -157,35 +175,62 @@ public class StudentGenerationManager : MonoBehaviour
             {
                 data._nationType = raceData.SecondNation;
             }
-            switch (data._nationType)
+
+            if (raceData.ISpriteList.Count > 0)
             {
-                case RaceData.NationType.Unmeiia:
-                    data._nationality = "Unmeiia";
-                    data._ISprite = raceData.ISpriteList[0];
-                    break;
-                case RaceData.NationType.Nystal:
-                    data._nationality = "Nystal";
-                    data._ISprite = raceData.ISpriteList[1];
-                    break;
-                case RaceData.NationType.Tendiyu:
-                    data._nationality = "Tendiyu";
-                    data._ISprite = raceData.ISpriteList[2];
-                    break;
-                case RaceData.NationType.Ovyeka:
-                    data._nationality = "Ovyeka";
-                    data._ISprite = raceData.ISpriteList[3];
-                    break;
-                case RaceData.NationType.Gessurd:
-                    data._nationality = "Gessurd";
-                    data._ISprite = raceData.ISpriteList[4];
-                    break;
-                case RaceData.NationType.None:
-                    data._nationality = " ";
-                    data._ISprite = null;
-                    break;
+                switch (data._nationType)
+                {
+                    case RaceData.NationType.Unmeiia:
+                        data._nationality = "Unmeiia";
+                        data._ISprite = raceData.ISpriteList[0];
+                        break;
+                    case RaceData.NationType.Nystal:
+                        data._nationality = "Nystal";
+                        data._ISprite = raceData.ISpriteList[1];
+                        break;
+                    case RaceData.NationType.Tendiyu:
+                        data._nationality = "Tendiyu";
+                        data._ISprite = raceData.ISpriteList[2];
+                        break;
+                    case RaceData.NationType.Ovyeka:
+                        data._nationality = "Ovyeka";
+                        data._ISprite = raceData.ISpriteList[3];
+                        break;
+                    case RaceData.NationType.Gessurd:
+                        data._nationality = "Gessurd";
+                        data._ISprite = raceData.ISpriteList[4];
+                        break;
+                    case RaceData.NationType.None:
+                        data._nationality = " ";
+                        data._ISprite = null;
+                        break;
+                }
             }
             Debug.Log("This student is from " + data._nationality);
         }
+
+        //=====Legendary Student Check======
+
+        float ff = Random.Range(0,100);
+        if(ff < lengedaryStudentPercentage)
+        {
+            if (remainingLegendaryStudentList.Count > 0) {
+                StudentData d = remainingLegendaryStudentList[Random.Range(0, remainingLegendaryStudentList.Count)];
+                remainingLegendaryStudentList.Remove(d);
+                data = d;
+                Debug.Log("Legendary Student Spawned!!!!");
+                return data;
+
+
+            }
+        }
+
+        //if not legendary studnent, set var to false
+        data._isLegendaryStudent = false;
+
+        //==================================
+
+
 
         //===Finance and academic====
         data._finance = Random.Range(0, 100);
@@ -293,3 +338,4 @@ public class StudentGenerationManager : MonoBehaviour
     }
 
 }
+

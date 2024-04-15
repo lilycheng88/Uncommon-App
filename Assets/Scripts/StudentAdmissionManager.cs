@@ -12,7 +12,7 @@ public class StudentAdmissionManager : MonoBehaviour
     //
     public static StudentAdmissionManager Instance { get; private set; } // Singleton instance
 
-    [SerializeField] StudentInfo studentInfo;
+    public  StudentInfo studentInfo;
     [SerializeField] PreferencesManager preferencesManager;
     [SerializeField] BooleanManager booleanManager;
 
@@ -80,7 +80,7 @@ public class StudentAdmissionManager : MonoBehaviour
 
     //====Personal Info=====
 
-    int firstGenStudent = 0;
+    public int firstGenStudent = 0;
 
     //======================
 

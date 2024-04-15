@@ -19,7 +19,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] StudentAdmissionManager studentAdmissionManager;
     [SerializeField] NewspaperManager newspaperManager;
     [SerializeField] Animator chatScreenAnimator, mapScreenAnimator;
-    private bool chatScreenOpen = false, mapScreenOpen = false;
+    [SerializeField] GameObject legendaryStudentPanel;
+    private bool chatScreenOpen = false, mapScreenOpen = false,legendaryStudentPanelOpen = false;
 
 
     // Public accessor for the singleton instance
@@ -37,6 +38,7 @@ public class GameManager : MonoBehaviour
                 {
                     GameObject obj = new GameObject("GameManager");
                     instance = obj.AddComponent<GameManager>();
+
                 }
             }
             return instance;
@@ -133,6 +135,23 @@ public class GameManager : MonoBehaviour
             mapScreenOpen = false;
             SoundManager.Instance.PlaySFX("Click_ChatClose");
         }
+
+    }
+
+    public void ToggleLegendaryStudentPanel()
+    {
+        if(!legendaryStudentPanelOpen)
+        {
+            legendaryStudentPanelOpen = true;
+            legendaryStudentPanel.SetActive(true);
+        }
+        else
+        {
+            legendaryStudentPanelOpen = false;
+            legendaryStudentPanel.SetActive(false);
+
+        }
+
 
     }
 }

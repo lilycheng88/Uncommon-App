@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class NewsItem
 {
     public string Label;
@@ -8,6 +9,7 @@ public class NewsItem
     public string Description;
     public int TriggerCount;
     public int RequiredTriggerCount;
+    public Sprite icon;
 
     
 
@@ -26,26 +28,18 @@ public class NewsItem
     }
 }
 
-[CreateAssetMenu(menuName = "NewsItem")]
-public class NewsData: ScriptableObject
-{
-    public string Label;
-    public string Header;
-    public string Description;
-}
-
 public class NewspaperManager : MonoBehaviour
 {
     public static NewspaperManager Instance { get; private set; } // Singleton instance
     public List<NewsItem> newsItems;
-    //[SerializeField] private NewspaperVisuals newspaperVisuals;
+    [SerializeField] private NewspaperVisuals newspaperVisuals;
 
         void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // Keeps the instance alive across scenes
+            //DontDestroyOnLoad(gameObject); // Keeps the instance alive across scenes
         }
         else
         {
@@ -61,17 +55,17 @@ public class NewspaperManager : MonoBehaviour
 
     private void InitializeNewsItems()
     {
-        newsItems = new List<NewsItem>();
+        //newsItems = new List<NewsItem>();
         {
             // Initialization of newsItems with an example
-            NewsItem empty = new NewsItem("emtpy", "EMPTY", " ", 1);
-            newsItems.Add(empty);
-            NewsItem scholarlyExcellenece = new NewsItem("ScholarlyExcellence", "ScholarlyExcellence!","Students are so good. Oh Yeah.", 1);
-            newsItems.Add(scholarlyExcellenece);
-            NewsItem scholarshipWho = new NewsItem("ScholarshipWho", "Scholarship who?", "by Cristina Fey \n According to our sources inside the hallowed halls of Uncommon Academy, it seems like the admissions office is pinching their proverbial pennies tighter than they ever have before. 80% of their financial aid has been left undistributed after today’s round of acceptances. Academy hopefuls beware: you may be paying out of pocket much more than you expected this year…", 1);
-            newsItems.Add(scholarshipWho);
-            NewsItem firstGenAcademy = new NewsItem("FirstGenAcademy","1ST GENERATION STUDENTS FIND A HOME AT UNCOMMON ACADEMY", "by Ipa Nemea \n Today’s Uncommon Academy admission statistics have finally been revealed, to the elation and chagrin of many applicants. UA’s campus will be full of fresh faces this year, as double the projected number of 1st generation students have been admitted! Many approve of this change in direction for the prestigious university, while some others question whether or not the school’s pedigree will remain intact. Only time will tell…",1);
-            newsItems.Add(firstGenAcademy);
+            // NewsItem empty = new NewsItem("emtpy", "EMPTY", " ", 1);
+            // newsItems.Add(empty);
+            // NewsItem scholarlyExcellenece = new NewsItem("ScholarlyExcellence", "ScholarlyExcellence!","Students are so good. Oh Yeah.", 1);
+            // newsItems.Add(scholarlyExcellenece);
+            // NewsItem scholarshipWho = new NewsItem("ScholarshipWho", "Scholarship who?", "by Cristina Fey \n According to our sources inside the hallowed halls of Uncommon Academy, it seems like the admissions office is pinching their proverbial pennies tighter than they ever have before. 80% of their financial aid has been left undistributed after today’s round of acceptances. Academy hopefuls beware: you may be paying out of pocket much more than you expected this year…", 1);
+            // newsItems.Add(scholarshipWho);
+            // NewsItem firstGenAcademy = new NewsItem("FirstGenAcademy","1ST GENERATION STUDENTS FIND A HOME AT UNCOMMON ACADEMY", "by Ipa Nemea \n Today’s Uncommon Academy admission statistics have finally been revealed, to the elation and chagrin of many applicants. UA’s campus will be full of fresh faces this year, as double the projected number of 1st generation students have been admitted! Many approve of this change in direction for the prestigious university, while some others question whether or not the school’s pedigree will remain intact. Only time will tell…",1);
+            // newsItems.Add(firstGenAcademy);
         };
     }
 
@@ -125,10 +119,8 @@ public class NewspaperManager : MonoBehaviour
             }
         }
 
-        //newspaperVisuals.UpdateNewspaperVisuals(selectedNews);
-
-        
-
+        newspaperVisuals.UpdateVisuals(selectedNews[0],selectedNews[1],selectedNews[2]);
+        Debug.Log(selectedNews[0].Label + selectedNews[1].Label + selectedNews[2].Label);
         return selectedNews;
     }
 
@@ -148,11 +140,11 @@ public class NewspaperManager : MonoBehaviour
                 IncrementTriggerCount("ScholarshipWho", 1);
             }
             
-            // if (StudentAdmissionManager.Instance.firstGenStudent >= 5f)
-            // {
-            //     Debug.Log("firstGenAcademy");
-            //     StudentAdmissionManager.Instance.newspaperManager.IncrementTriggerCount("FirstGenAcademy", 1);
-            // }
+            if (StudentAdmissionManager.Instance.firstGenStudent >= 5f)
+            {
+                Debug.Log("firstGenAcademy");
+                StudentAdmissionManager.Instance.newspaperManager.IncrementTriggerCount("FirstGenAcademy", 1);
+            }
 
 
 

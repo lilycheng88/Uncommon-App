@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+[System.Serializable]
 public class StudentData
 {
 
@@ -64,6 +65,8 @@ public class StudentData
 
 
     //==========
+
+    public bool _isLegendaryStudent;
 
 
 
