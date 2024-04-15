@@ -1027,7 +1027,7 @@ MonoBehaviour:
       the landscape as far as the eye can see. Many of these fields were ravaged
       by the war and must be retilled.
     emblem: {fileID: 21300000, guid: 2feeb7f524757aa498594d6b53736801, type: 3}
-  - stateName: Oyveki
+  - stateName: Oyveka
     description: 'Oyveka tends toward mild summers and harsh winters. Farming is
       only lucrative in certain seasons, and so herding, foraging, and food preservation
       is of great importance there. Certain Oykevi communities may choose to migrate
@@ -4800,9 +4800,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Oyveki
-
-'
+  m_text: Oyveka
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d69a70905a1ec48f2a808782809020de, type: 2}
   m_sharedMaterial: {fileID: 1871626305224760578, guid: d69a70905a1ec48f2a808782809020de, type: 2}
@@ -6363,6 +6361,67 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1001 &392044812
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2840961897050443702, guid: 442e570b7b32e4be7baf39bc1ff6e263, type: 3}
+      propertyPath: m_Name
+      value: PauseManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 7294002407378705595, guid: 442e570b7b32e4be7baf39bc1ff6e263, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8180059186635969653, guid: 442e570b7b32e4be7baf39bc1ff6e263, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 933.91425
+      objectReference: {fileID: 0}
+    - target: {fileID: 8180059186635969653, guid: 442e570b7b32e4be7baf39bc1ff6e263, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 443.3275
+      objectReference: {fileID: 0}
+    - target: {fileID: 8180059186635969653, guid: 442e570b7b32e4be7baf39bc1ff6e263, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8180059186635969653, guid: 442e570b7b32e4be7baf39bc1ff6e263, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8180059186635969653, guid: 442e570b7b32e4be7baf39bc1ff6e263, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8180059186635969653, guid: 442e570b7b32e4be7baf39bc1ff6e263, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8180059186635969653, guid: 442e570b7b32e4be7baf39bc1ff6e263, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8180059186635969653, guid: 442e570b7b32e4be7baf39bc1ff6e263, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8180059186635969653, guid: 442e570b7b32e4be7baf39bc1ff6e263, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8180059186635969653, guid: 442e570b7b32e4be7baf39bc1ff6e263, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 442e570b7b32e4be7baf39bc1ff6e263, type: 3}
 --- !u!1 &394036829
 GameObject:
   m_ObjectHideFlags: 0
@@ -7056,7 +7115,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &445503940
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17262,7 +17321,7 @@ GameObject:
   - component: {fileID: 1072571726}
   - component: {fileID: 1072571725}
   m_Layer: 0
-  m_Name: Oyveki
+  m_Name: Oyveka
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17360,7 +17419,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 55735618}
         m_TargetAssemblyTypeName: MapManager, Assembly-CSharp
-        m_MethodName: SetOyveki
+        m_MethodName: SetOyveka
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -33639,3 +33698,4 @@ SceneRoots:
   - {fileID: 1816549177}
   - {fileID: 610602337}
   - {fileID: 1387444610}
+  - {fileID: 392044812}
