@@ -12,7 +12,7 @@ public class StudentAdmissionManager : MonoBehaviour
     //
     public static StudentAdmissionManager Instance { get; private set; } // Singleton instance
 
-    public  StudentInfo studentInfo;
+    public StudentInfo studentInfo;
     [SerializeField] PreferencesManager preferencesManager;
     [SerializeField] BooleanManager booleanManager;
 
@@ -151,6 +151,7 @@ public class StudentAdmissionManager : MonoBehaviour
 
     public void UpdateAllVisuals()
     {
+        LegendaryStudentManager.Instance.ClearLegendaryStudentVisuals();
         averageFinanceText.text = averageFinance.ToString();
         averageAcademicText.text = averageAcademic.ToString();
         if(totalScholarship < 200)
