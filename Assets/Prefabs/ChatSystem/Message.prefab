@@ -1028,9 +1028,9 @@ MonoBehaviour:
   onMessage:
     m_PersistentCalls:
       m_Calls: []
-  waitForNormalChars: 0.02
-  waitLong: 0.1
-  waitMiddle: 0.05
+  waitForNormalChars: 0.01
+  waitLong: 0.05
+  waitMiddle: 0.02
   avoidMultiplePunctuactionWait: 0
   waitForNewLines: 0
   waitForLastCharacter: 1
