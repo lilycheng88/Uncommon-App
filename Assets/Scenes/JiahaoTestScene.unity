@@ -1795,7 +1795,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &101252908
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7545,7 +7545,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &445503940
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8868,8 +8868,8 @@ MonoBehaviour:
   waitlistedStudentContentParent: {fileID: 1842189397}
   newspaperManager: {fileID: 638456634}
   gameAnimator: {fileID: 48466428}
-  studentLeft: 50
-  studentRequired: 5
+  studentLeft: 25
+  studentRequired: 20
   patronScholarshipBonus: 50
   studentAdmitted: 0
   financeRequired: 100
@@ -8881,8 +8881,8 @@ MonoBehaviour:
   initialScholarship: 500
   financeDangerLine: 40
   academicDangerLine: 40
-  financeMultiplier: 0.3
-  academicMultiplier: 0.7
+  financeMultiplier: 0.1
+  academicMultiplier: 0.3
   firstGenStudent: 0
 --- !u!1 &491151445
 GameObject:
@@ -8913,10 +8913,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 953569baf33604eec887d955a1cb2335, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goodStudentPercentage: 40
-  badStudentPercentage: 40
-  richStudentPercentage: 40
-  poorStudentPercentage: 40
+  goodStudentPercentage: 29
+  badStudentPercentage: 42
+  richStudentPercentage: 33
+  poorStudentPercentage: 49
   extroversionPercentage: 39
   magicalPersonalityPercentage: 60
   workplacePercentage: 67
@@ -8925,7 +8925,7 @@ MonoBehaviour:
   psionicAffinityPercentage: 40
   verteranPercentage: 29
   alumniPercentage: 28
-  patronPercentage: 70
+  patronPercentage: 29
   firstNationPercentage: 0
   lengedaryStudentPercentage: 100
   firstGenPercentage: 37
@@ -20223,7 +20223,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1219255865
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21899,7 +21899,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &1296735241
 Animator:
   serializedVersion: 5
@@ -28309,7 +28309,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1674283743
 RectTransform:
   m_ObjectHideFlags: 0
