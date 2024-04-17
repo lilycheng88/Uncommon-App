@@ -25,25 +25,25 @@ MonoBehaviour:
       It\u2019s a big day."
     sprite: {fileID: 0}
   - message: My instructions will have to be brief.
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: dee2c29c0fdf2534fb17fc02f8d72a29, type: 3}
   - message: "On the left-hand side of the screen, you can see the student\u2019s
       portrait, name, and base statistics: financial standing, and academic aptitude."
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 9c5132fde94437f4d9d0c314bf9303c8, type: 3}
   - message: "These base statistics will affect our school\u2019s overall academic
       and financial performance scores. Keep an eye on how they are weighted."
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 704adb58ac684b7428e7037df30a40d9, type: 3}
   - message: 'The scholarship fund situated beneath the academic and finance scores
       is expended whenever a student without a full finance bar is admitted to Uncommon
       Academy. Unless the bar is completely full, they will not be able to attend
       the academy out of pocket. '
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 1ff54d188baefa54487e043ca81d043b, type: 3}
   - message: Keep an eye on your scholarship fund, because it can run out. Students
       lacking finances cannot be accepted when the scholarship fund is depleted.
     sprite: {fileID: 0}
   - message: To the left of the overall school scores are the student preferences
       and demographics. These pieces of background information will be relevant in
       the future.
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 2518896090bce7141aac78a890f65c71, type: 3}
   - message: For now, just familiarize yourself with where they are located. They
       will be relevant later.
     sprite: {fileID: 0}
@@ -55,7 +55,7 @@ MonoBehaviour:
   - message: If I ever contact you with updates, click on the chat icon at the bottom
       left-hand corner of the screen. To return to the admissions page from the chat
       log, just click on it again to minimize this window.
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: f1f6aa68fc8dc9d46aef5d6614e385fd, type: 3}
   - message: "One last thing\u2026"
     sprite: {fileID: 0}
   - message: 'As you already know, and as I reminded you at the beginning of this
@@ -63,8 +63,8 @@ MonoBehaviour:
       the war. A conflict spanning nearly 2 decades, leaving no corner of the known
       world untouched. '
     sprite: {fileID: 0}
-  - message: That is all. Good luck.
-    sprite: {fileID: 0}
   - message: 'Keep in mind, as you perform your task, just how momentous of a time
       this is for our institution. I cannot afford to be forgiving of mistakes. '
+    sprite: {fileID: 0}
+  - message: That is all. Good luck.
     sprite: {fileID: 0}
