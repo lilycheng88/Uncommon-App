@@ -7,6 +7,8 @@ public class LoginManager : MonoBehaviour
 {
     public TMP_InputField loginInputField;
     public TMP_InputField passwordInputField;
+    public GameObject blackScreen;
+    public Animator animator;
     public string correctUsername = "1";
     public string correctPassword = "1";
     public string nextSceneName = "JiahaoTestScene"; // Name of the next scene
@@ -42,7 +44,8 @@ public class LoginManager : MonoBehaviour
         if (enteredUsername == correctUsername && enteredPassword == correctPassword)
         {
             // Credentials match, load the next scene
-            SceneManager.LoadScene(nextSceneName);
+            blackScreen.SetActive(true);
+            animator.SetBool("Correct", true);
         }
         else
         {

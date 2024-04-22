@@ -30,6 +30,7 @@ public class StudentAdmissionManager : MonoBehaviour
     [SerializeField] Slider averageFinanceSlider;
     [SerializeField] Slider averageAcademicSlider;
     [SerializeField] Slider totalScholarshipSlider;
+    [SerializeField] TextFormater textFormater;
 
     [SerializeField] TextMeshProUGUI studentLeftText;
     [SerializeField] TextMeshProUGUI studentAdmittedVSRequiredText;
@@ -115,18 +116,24 @@ public class StudentAdmissionManager : MonoBehaviour
         {
             if (studentAdmitted > studentRequired)
             {
-                GameManager.Instance.GameLose();
+                GameManager.Instance.win = false;              
+                GameManager.Instance.LoadOut();
+                //GameManager.Instance.GameLose();
             }
 
             if (studentLeft <= 0)
             {
                 if (studentAdmitted < studentRequired)
                 {
-                    GameManager.Instance.GameLose();
+                    GameManager.Instance.win = false;
+                    GameManager.Instance.LoadOut();
+                    //GameManager.Instance.GameLose();
                 }
                 else
                 {
-                    GameManager.Instance.GameCalc();
+                    //GameManager.Instance.GameCalc();
+                    GameManager.Instance.win = true;
+                    GameManager.Instance.LoadOut();
                 }
 
             }
@@ -135,11 +142,15 @@ public class StudentAdmissionManager : MonoBehaviour
             {
                 if (averageFinance > financeDangerLine && averageAcademic > academicDangerLine)
                 {
-                    GameManager.Instance.GameCalc();
+                    //GameManager.Instance.GameCalc();
+                    GameManager.Instance.win = true;
+                    GameManager.Instance.LoadOut();
                 }
                 else
                 {
-                    GameManager.Instance.GameLose();
+                    //GameManager.Instance.GameLose();
+                    GameManager.Instance.win = false;
+                    GameManager.Instance.LoadOut();
                 }
 
             }
@@ -407,6 +418,7 @@ public class StudentAdmissionManager : MonoBehaviour
         studentInfo.UpdateStudentInfo(data);
         preferencesManager.SetBars(data._extroversion-1,data._magicalPersonality-1,data._schedule-1,data._explorativity-1,data._psionicAffinity-1);
         booleanManager.SetChecks(data._isFirstGen,data._isAlumni,data._isPatron);
+        textFormater.Determine();
 
     }
 

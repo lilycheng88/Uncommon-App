@@ -20,5 +20,6 @@ public class PreferencesManager : MonoBehaviour
         {
             bars[i].GetComponent<BarRender>().SetImage(nums[i]);
         }
+
     }
 }
