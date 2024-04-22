@@ -18,12 +18,14 @@ public class MiniGoal : MonoBehaviour
     [SerializeField] TextMeshProUGUI requiredAndCurrentNumTxt;
 
     [SerializeField] TextMeshProUGUI rewardTxt;
+    [SerializeField] Image completeImage;
 
     //=================
 
     void Start()
     {
         UpdateVisuals();
+        completeImage.enabled = false;
     }
 
     public void UpdateVisuals (){
@@ -35,6 +37,7 @@ public class MiniGoal : MonoBehaviour
         {
             colorOpen =  "<color=#32a852>";
             colorClose = "</color>";
+            completeImage.enabled = true;
         }
         requiredAndCurrentNumTxt.text = colorOpen + data.currentCount.ToString() + colorClose+ "/" + colorOpen +data.targetCount.ToString() + colorClose;
         //requiredAndCurrentNumTxt.text = "<color=red> blablabla </color>";

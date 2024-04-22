@@ -10,6 +10,7 @@ public class ChatManager : MonoBehaviour
     //===========References============
     [SerializeField] GameObject messagePrefab;
     [SerializeField] Transform messageParent;
+    [SerializeField] GameObject newChatIcon;
     List<MessageData> messageDatas = new List<MessageData>();
 
     //=================================
@@ -44,7 +45,10 @@ public class ChatManager : MonoBehaviour
         {
             SetCurrentChat("none", currentMessageIndex + 1);
             SoundManager.Instance.PlaySFX("Click_OK");
-
+            if(currentMessageData.messageContentList.Count == currentMessageIndex + 1)
+            {
+                newChatIcon.SetActive(false);
+            }
         }
         else
         {

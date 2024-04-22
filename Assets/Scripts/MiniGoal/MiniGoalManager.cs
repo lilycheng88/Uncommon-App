@@ -48,7 +48,7 @@ public class MiniGoalManager : MonoBehaviour
     void InitializeRewardDictionary()
     {
         rewardDictionary.Add(0,"Add <incr a=1 f=1 w=1><b><i>300$</b></i></incr> to scholarship");
-        rewardDictionary.Add(1, "Add <incr a=1 f=1 w=1><b><i>10 students</b></i></incr> to student pool");
+        rewardDictionary.Add(1, "Add <incr a=1 f=1 w=1><b><i>10</b></i></incr> to student pool");
 
     }
 

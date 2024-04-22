@@ -31,7 +31,9 @@ public class MiniGoalData
         {
             // Optionally notify the system that this goal is completed
             Debug.Log($"Goal completed: {description}");
-            MiniGoalManager.Instance.ReplaceMiniGoal(this);
+            //========temorarily takeout=========
+            //MiniGoalManager.Instance.ReplaceMiniGoal(this); 
+            
 
             switch(rewardType )
             {

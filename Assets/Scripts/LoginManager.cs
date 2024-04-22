@@ -11,6 +11,29 @@ public class LoginManager : MonoBehaviour
     public string correctPassword = "1";
     public string nextSceneName = "JiahaoTestScene"; // Name of the next scene
 
+    private void Update()
+    {
+        // Check if the user pressed Tab to move to the next input field
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            // Check which input field is currently selected and move to the next one
+            if (loginInputField.isFocused)
+            {
+                passwordInputField.Select();
+            }
+            else if (passwordInputField.isFocused)
+            {
+                loginInputField.Select();
+            }
+        }
+
+        // Check if the user pressed Enter to attempt login
+        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
+        {
+            CheckCredentials();
+        }
+    }
+
     public void CheckCredentials()
     {
         string enteredUsername = loginInputField.text;
@@ -29,15 +52,6 @@ public class LoginManager : MonoBehaviour
             Debug.Log("Correct Password: " + correctPassword);
             Debug.Log("Incorrect username or password!");
             // Optionally, display an error message to the player
-        }
-    }
-
-    private void Update()
-    {
-        // Check if the user pressed Enter to attempt login
-        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
-        {
-            CheckCredentials();
         }
     }
 }
