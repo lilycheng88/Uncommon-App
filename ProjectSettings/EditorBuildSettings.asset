@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/StartScene.unity
+    guid: f299c8809bd384b5f9827d3e9826049a
+  - enabled: 1
     path: Assets/Scenes/JiahaoTestScene.unity
     guid: 26d3fa873c39f4a478ecb0c9df1978a1
   m_configObjects: {}

@@ -20648,6 +20648,8 @@ GameObject:
   - component: {fileID: 1237909085}
   - component: {fileID: 1237909089}
   - component: {fileID: 1237909088}
+  - component: {fileID: 1237909090}
+  - component: {fileID: 1237909091}
   m_Layer: 5
   m_Name: ChatAppButton
   m_TagString: Untagged
@@ -20731,6 +20733,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1237909090}
+        m_TargetAssemblyTypeName: ButtonJumper, Assembly-CSharp
+        m_MethodName: Stop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1237909086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20795,6 +20809,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates: []
+--- !u!114 &1237909090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1237909083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d99f3328e10e474d8e3f96e8261a191, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &1237909091
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1237909083}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7f98f331ac1b1274698054c17f2d9312, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1252809200
 GameObject:
   m_ObjectHideFlags: 0
@@ -30868,6 +30915,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   messagePrefab: {fileID: 2198018297549969624, guid: 607c1f6fe41ec4707891e9a3455f7984, type: 3}
   messageParent: {fileID: 461544156}
+  newChatIcon: {fileID: 677700590}
 --- !u!1 &1771926128
 GameObject:
   m_ObjectHideFlags: 0
