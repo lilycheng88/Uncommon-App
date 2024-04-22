@@ -8775,7 +8775,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 567874755}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.8189894e-11}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18728,8 +18728,8 @@ GameObject:
   - component: {fileID: 1237909085}
   - component: {fileID: 1237909089}
   - component: {fileID: 1237909088}
-  - component: {fileID: 1237909090}
   - component: {fileID: 1237909091}
+  - component: {fileID: 1237909090}
   m_Layer: 5
   m_Name: ChatAppButton
   m_TagString: Untagged
@@ -18889,6 +18889,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates: []
+--- !u!114 &1237909090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1237909083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d99f3328e10e474d8e3f96e8261a191, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &1237909091
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1237909083}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7f98f331ac1b1274698054c17f2d9312, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1253953788
 GameObject:
   m_ObjectHideFlags: 0
@@ -26739,6 +26772,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   messagePrefab: {fileID: 2198018297549969624, guid: 607c1f6fe41ec4707891e9a3455f7984, type: 3}
   messageParent: {fileID: 461544156}
+  newChatIcon: {fileID: 677700590}
 --- !u!1 &1774796449
 GameObject:
   m_ObjectHideFlags: 0
