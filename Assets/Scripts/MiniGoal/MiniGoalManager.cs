@@ -73,7 +73,7 @@ public class MiniGoalManager : MonoBehaviour
         conditions = selectedIndices.Select(index => conditions[index]).ToList();
         conditionNums = selectedIndices.Select(index => conditionNums[index]).ToList();
         
-
+        
         for(int i = 0; i < conditions.Count; i++)
         {
             AddGoal(new MiniGoalData (conditions[i],"Admit "+conditionNums[i] + " " + conditions[i] + "</b></i>" + " Students",conditionNums[i]));

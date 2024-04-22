@@ -1,65 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     private static GameManager instance;
-
     public bool inGame = true;
     [SerializeField] GameObject gameLoseScreen;
     [SerializeField] GameObject gameCalcScreen;
-
     [SerializeField] GameObject gameParent;
-
     [SerializeField] GameObject[] gameTabs;
     [SerializeField] StudentAdmissionManager studentAdmissionManager;
     [SerializeField] NewspaperManager newspaperManager;
     [SerializeField] Animator chatScreenAnimator, mapScreenAnimator;
     [SerializeField] GameObject legendaryStudentPanel;
-    private bool chatScreenOpen = false, mapScreenOpen = false,legendaryStudentPanelOpen = false;
-
+    private bool chatScreenOpen = false, mapScreenOpen = false, legendaryStudentPanelOpen = false;
+    public LevelManager currentLevelManager;
+    public List<LevelData> levelDataList = new();
+    public int currentLevelID = 0;
 
     // Public accessor for the singleton instance
     public static GameManager Instance
     {
         get
         {
-            // If instance is null, try to find an existing instance in the scene
             if (instance == null)
             {
                 instance = FindObjectOfType<GameManager>();
-
-                // If no instance exists in the scene, create a new one
                 if (instance == null)
                 {
                     GameObject obj = new GameObject("GameManager");
                     instance = obj.AddComponent<GameManager>();
-
                 }
             }
             return instance;
         }
-    }
-
-    public void GameLose()
-    {
-        inGame = false;
-
-        gameLoseScreen.SetActive(true);
-    }
-
-    public void GameCalc()
-    {
-           
-        gameCalcScreen.SetActive(true);
-        NewspaperManager.Instance.CheckAllNewsEndings();
-        inGame = false;
-        newspaperManager.SelectNews(3);
-        gameParent.SetActive(false);
     }
 
     private void Awake()
@@ -68,10 +44,21 @@ public class GameManager : MonoBehaviour
         if (instance != null && instance != this)
         {
             Destroy(gameObject);
+            return;
         }
         else
         {
             instance = this;
+            LoadCurrentLevelID(); // Load the current level ID
+            currentLevelManager = GameObject.FindGameObjectWithTag("levelManager").GetComponent<LevelManager>();
+            if (currentLevelID < levelDataList.Count)
+            {
+                currentLevelManager.levelData = levelDataList[currentLevelID];
+            }
+            else
+            {
+                Debug.LogError("Level ID out of range!");
+            }
         }
     }
 
@@ -79,79 +66,77 @@ public class GameManager : MonoBehaviour
     {
         gameTabs[0].GetComponent<Animator>().SetTrigger("LoadIn");
     }
+
+    public void GameLose()
+    {
+        inGame = false;
+        gameLoseScreen.SetActive(true);
+    }
+
+    public void GameCalc()
+    {
+        gameCalcScreen.SetActive(true);
+        NewspaperManager.Instance.CheckAllNewsEndings();
+        inGame = false;
+        newspaperManager.SelectNews(3);
+        gameParent.SetActive(false);
+        currentLevelID += 1; // Update level ID
+        SaveCurrentLevelID(); // Save the updated level ID
+        // ReloadCurrentScene(); // Optional: reload the scene if needed
+    }
+
     public void ReloadCurrentScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    private void SaveCurrentLevelID()
+    {
+        PlayerPrefs.SetInt("CurrentLevelID", currentLevelID);
+        PlayerPrefs.Save();
+    }
+
+    private void LoadCurrentLevelID()
+    {
+        if (PlayerPrefs.HasKey("CurrentLevelID"))
+        {
+            currentLevelID = PlayerPrefs.GetInt("CurrentLevelID");
+        }
+    }
+
+    // Method to clear PlayerPrefs with a context menu option
+    [ContextMenu("Clear PlayerPrefs")]
+    public void ClearPlayerPrefs()
+    {
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
+        Debug.Log("PlayerPrefs cleared!");
     }
 
     public void SwitchToTab(GameObject tab)
     {
         foreach (GameObject go in gameTabs)
         {
-            if (go == tab)
-            {
-
-                // If the current GameObject in the loop is the target, set it active.
-                go.SetActive(true);
-            }
-            else
-            {
-                // Otherwise, set the GameObject inactive.
-                go.SetActive(false);
-            }
+            go.SetActive(go == tab);
         }
-
     }
 
     public void ToggleChatScreen()
     {
-        if(!chatScreenOpen)
-        {
-            chatScreenAnimator.SetBool("Expand",true);
-            chatScreenOpen = true;
-            SoundManager.Instance.PlaySFX("Click_ChatOpen");
-        }
-        else
-        {
-            chatScreenAnimator.SetBool("Expand",false);
-            chatScreenOpen = false;
-            SoundManager.Instance.PlaySFX("Click_ChatClose");
-        }
-
+        chatScreenAnimator.SetBool("Expand", chatScreenOpen = !chatScreenOpen);
+        SoundManager.Instance.PlaySFX(chatScreenOpen ? "Click_ChatOpen" : "Click_ChatClose");
     }
 
     public void ToggleMapScreen()
     {
-        Debug.Log("Map!");
-        if (!mapScreenOpen)
-        {
-            mapScreenAnimator.SetBool("Expand", true);
-            mapScreenOpen = true;
-            SoundManager.Instance.PlaySFX("Click_ChatOpen");
-        }
-        else
-        {
-            mapScreenAnimator.SetBool("Expand", false);
-            mapScreenOpen = false;
-            SoundManager.Instance.PlaySFX("Click_ChatClose");
-        }
-
+        mapScreenOpen = !mapScreenOpen;
+        mapScreenAnimator.SetBool("Expand", mapScreenOpen);
+        SoundManager.Instance.PlaySFX(mapScreenOpen ? "Click_ChatOpen" : "Click_ChatClose");
     }
 
     public void ToggleLegendaryStudentPanel()
     {
-        if(!legendaryStudentPanelOpen)
-        {
-            legendaryStudentPanelOpen = true;
-            legendaryStudentPanel.SetActive(true);
-        }
-        else
-        {
-            legendaryStudentPanelOpen = false;
-            legendaryStudentPanel.SetActive(false);
-
-        }
-
-
+        legendaryStudentPanelOpen = !legendaryStudentPanelOpen;
+        legendaryStudentPanel.SetActive(legendaryStudentPanelOpen);
     }
 }

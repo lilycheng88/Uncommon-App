@@ -66,7 +66,7 @@ public class StudentData
 
     //==========
 
-    public bool _isLegendaryStudent;
+    public int _legendaryStudentID;
 
 
 

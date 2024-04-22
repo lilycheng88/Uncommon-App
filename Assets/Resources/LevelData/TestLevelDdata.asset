@@ -32,3 +32,6 @@ MonoBehaviour:
     requiredNum: 5
   - goal: alumni
     requiredNum: 5
+  features:
+  - includedFeature: 0
+  - includedFeature: 1

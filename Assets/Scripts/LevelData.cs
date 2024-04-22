@@ -7,6 +7,12 @@ using UnityEngine;
 public class LevelData : ScriptableObject
 {
 
+    [Header("How many student in total")]
+    public int studentLeft;
+
+    [Header("Student Required")]
+    public int studentRequired = 7;
+
     //=====Testing=====
     [Range(0.0f, 100.0f)]
     public int goodStudentPercentage;
@@ -39,6 +45,7 @@ public class LevelData : ScriptableObject
     public int alumniPercentage;
     [Range(0.0f, 100.0f)]
     public int patronPercentage;
+
     
 
 
@@ -53,6 +60,7 @@ public class LevelData : ScriptableObject
 
     public List<MiniGoalOptions> miniGoalPool = new();
 
+    public List<Feature> features = new();
 
 }
 
@@ -64,4 +72,11 @@ public class MiniGoalOptions
     public int requiredNum;
     
     
+}
+
+[System.Serializable]
+public class Feature
+{
+    public enum feature { miniGoals, preferences, booleans, legendaryStudents}
+    public feature includedFeature;
 }

@@ -9,9 +9,11 @@ public class LegendaryStudentManager : MonoBehaviour
     public static LegendaryStudentManager Instance;
     [SerializeField] Animator studentInfoAnimator;
     StudentData lastStudentData;
-    GameObject isLegendaryStudentVisuals;
+    GameObject legendaryStudentVisuals;
     [SerializeField] List<Image> bodyParts;
+    public List<LegendaryStudentVisuals> legendaryStudentVisualsList = new();
 
+    public bool moreAcademicLessMoneyEffect;
 
     private void Awake()
     {
@@ -36,7 +38,7 @@ public void ScanStudent()
         {
             lastStudentData = currentStudent;
             studentInfoAnimator.SetTrigger("Scan");
-            if (currentStudent._isLegendaryStudent)
+            if (currentStudent._legendaryStudentID != 0)
             {
                 bodyParts[0].sprite = lastStudentData._ASprite;
                 bodyParts[1].sprite = lastStudentData._BSprite;
@@ -52,14 +54,7 @@ public void ScanStudent()
                     bodyParts[6].enabled = false;
                 }
 
-                if (lastStudentData._HSprite != null) 
-                {
-                    bodyParts[7].enabled = true;
-                    bodyParts[7].sprite = lastStudentData._HSprite;
-                }else{
-                    bodyParts[7].enabled = false;
-                }
-                //if(lastStudentData._ISprite != null) bodyParts[8].sprite = lastStudentData._ISprite;
+                bodyParts[7].sprite = lastStudentData._HSprite;
 
             float initialValue = 1f; // Starting value
             float finalValue = -0.1f; // Ending value, consider changing to a positive value if this is outside expected range
@@ -73,6 +68,9 @@ public void ScanStudent()
                     bodyPart.material.SetFloat("_FadeAmount", value); // Apply the interpolated value to the shader property
                 }).SetEase(Ease.InOutQuad); // Optional: Set the easing function
             }
+
+            var id = legendaryStudentVisualsList[currentStudent._legendaryStudentID - 1];
+            id.SetLockState(false);
         }
     }
 }

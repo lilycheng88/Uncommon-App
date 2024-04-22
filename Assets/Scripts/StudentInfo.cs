@@ -83,5 +83,11 @@ public class StudentInfo : MonoBehaviour
         academicSlider.value = data._academic;
     }
 
+    public void ScanStudent()
+    {
+
+
+    }
+
 
 }

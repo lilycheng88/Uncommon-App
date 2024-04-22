@@ -226,7 +226,7 @@ public class StudentGenerationManager : MonoBehaviour
         }
 
         //if not legendary studnent, set var to false
-        data._isLegendaryStudent = false;
+        data._legendaryStudentID = 0;
 
         //==================================
 
@@ -235,6 +235,8 @@ public class StudentGenerationManager : MonoBehaviour
         //===Finance and academic====
         data._finance = Random.Range(0, 100);
         data._academic = Random.Range(0, 100);
+
+        
 
         int a = Random.Range(0, 100);
         if(a < Mathf.Min(goodStudentPercentage,100))
@@ -254,6 +256,12 @@ public class StudentGenerationManager : MonoBehaviour
         else if (f < Mathf.Min(poorStudentPercentage + richStudentPercentage,100))
         {
             data._finance = Random.Range(0, 20);
+        }
+
+        if(LegendaryStudentManager.Instance.moreAcademicLessMoneyEffect)
+        {
+            data._finance = Mathf.Max(0,data._finance - 30);
+            data._academic = Mathf.Min(100, data._academic + 40);
         }
         //============================
 
