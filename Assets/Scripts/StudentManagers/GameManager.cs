@@ -7,13 +7,15 @@ public class GameManager : MonoBehaviour
 {
     private static GameManager instance;
     public bool inGame = true;
+    public bool win = false;
     [SerializeField] GameObject gameLoseScreen;
     [SerializeField] GameObject gameCalcScreen;
     [SerializeField] GameObject gameParent;
+    public GameObject blackScreen;
     [SerializeField] GameObject[] gameTabs;
     [SerializeField] StudentAdmissionManager studentAdmissionManager;
     [SerializeField] NewspaperManager newspaperManager;
-    [SerializeField] Animator chatScreenAnimator, mapScreenAnimator;
+    [SerializeField] Animator chatScreenAnimator, mapScreenAnimator,mainScreenAnimator;
     [SerializeField] GameObject legendaryStudentPanel;
     private bool chatScreenOpen = false, mapScreenOpen = false, legendaryStudentPanelOpen = false;
     public LevelManager currentLevelManager;
@@ -64,7 +66,9 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        gameTabs[0].GetComponent<Animator>().SetTrigger("LoadIn");
+        mainScreenAnimator = gameTabs[0].GetComponent<Animator>();
+        mainScreenAnimator.SetTrigger("LoadIn");
+        
     }
 
     public void GameLose()
@@ -83,6 +87,23 @@ public class GameManager : MonoBehaviour
         currentLevelID += 1; // Update level ID
         SaveCurrentLevelID(); // Save the updated level ID
         // ReloadCurrentScene(); // Optional: reload the scene if needed
+    }
+
+    public void LoadOut()
+    {
+        inGame = false;
+        mainScreenAnimator.SetTrigger("LoadOut");
+    }
+    public void WinOrNot()
+    {
+        if (win)
+        {
+            GameCalc();
+        }
+        else
+        {
+            GameLose();
+        }
     }
 
     public void ReloadCurrentScene()
@@ -129,8 +150,7 @@ public class GameManager : MonoBehaviour
 
     public void ToggleMapScreen()
     {
-        mapScreenOpen = !mapScreenOpen;
-        mapScreenAnimator.SetBool("Expand", mapScreenOpen);
+        mapScreenAnimator.SetBool("Expand", mapScreenOpen = !mapScreenOpen);
         SoundManager.Instance.PlaySFX(mapScreenOpen ? "Click_ChatOpen" : "Click_ChatClose");
     }
 

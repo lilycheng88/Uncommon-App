@@ -49,6 +49,7 @@ public class StudentGenerationManager : MonoBehaviour
     [SerializeField] float lengedaryStudentPercentage;
 
 
+
     //==========
 
 
@@ -84,7 +85,7 @@ public class StudentGenerationManager : MonoBehaviour
     //======Visuals Inits========
     public List<string> firstNames;
     [SerializeField] List<string> lastNames;
-
+    [SerializeField] TextFormater textFormater;
     //================================
 
 
@@ -138,7 +139,6 @@ public class StudentGenerationManager : MonoBehaviour
         StudentData data = new StudentData();
         data._studentRace = raceList[Random.Range(0, raceList.Count)];
         //=======Visuals=========
-        
         string race = data._studentRace;
         
         if (race != null/*race == "Elf" || race == "Tanuki" || race == "Gnome" || race == "Human" || race == "Wyrm" || race == "Ogre"*/)
@@ -206,6 +206,7 @@ public class StudentGenerationManager : MonoBehaviour
                         break;
                 }
             }
+
             Debug.Log("This student is from " + data._nationality);
         }
 
