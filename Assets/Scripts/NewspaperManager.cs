@@ -91,7 +91,7 @@ public class NewspaperManager : MonoBehaviour
         List<NewsItem> metConditions = new List<NewsItem>();
         List<NewsItem> selectedNews = new List<NewsItem>();
 
-        Debug.Log("Selecting Students");
+        Debug.Log("Selecting News");
         foreach (var item in newsItems)
         {
             Debug.Log("checking item" + item.Label);
