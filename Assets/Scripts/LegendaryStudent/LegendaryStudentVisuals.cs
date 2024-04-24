@@ -12,6 +12,7 @@ public class LegendaryStudentVisuals : MonoBehaviour
     public int legendaryStudentID;
     public GameObject confirmSelectPanel;
     public GameObject confirmCancelPanel;
+    public LegendaryConfirmUI confirmUI;
 
     // Start is called before the first frame update
     void Start()
@@ -54,46 +55,11 @@ public class LegendaryStudentVisuals : MonoBehaviour
     {
         if (!studentLocked)
         {
-            if (studentSelected)
-            {
-                Debug.Log("opening cancel panel");
-                confirmCancelPanel.SetActive(true);
-            }
-            else
-            {
-                confirmSelectPanel.SetActive(true);
-            }
+            //if (isOn) {
+                //ConfirmUI.
+            //}
         }
-    }
-
-    public void remainedToggled(){
-        GetComponent<Toggle>().isOn = true;
-    }
-
-    public void ConfirmToggleLegendaryStudentActivate(bool activating)
-    {
-        if(!activating)
-        {
-            studentSelected = false;
-            LegendaryStudentManager.Instance.moreAcademicLessMoneyEffect = false;
-            GetComponent<Toggle>().isOn = false;
-        }else{
-            if (StudentAdmissionManager.Instance.totalScholarship >= 50)
-            {
-                StudentAdmissionManager.Instance.totalScholarship -= 50;
-                StudentAdmissionManager.Instance.UpdateAllVisuals();
-                studentSelected = true;
-                confirmSelectPanel.SetActive(false);
-                if (legendaryStudentID == 1)
-                {
-                    LegendaryStudentManager.Instance.moreAcademicLessMoneyEffect = true;
-                    
-                }
-            }
-            
-
-        }
-
+        
     }
 
     

@@ -126,7 +126,7 @@ public class NewspaperManager : MonoBehaviour
 
     public void CheckAllNewsEndings()
     {
-        if (GameManager.Instance.inGame)
+        //if (GameManager.Instance.inGame)
         {
             if (StudentAdmissionManager.Instance.averageAcademic >= StudentAdmissionManager.Instance.academicMidValue * 2 * 0.8f)
             {

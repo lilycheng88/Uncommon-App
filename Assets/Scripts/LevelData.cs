@@ -13,6 +13,8 @@ public class LevelData : ScriptableObject
     [Header("Student Required")]
     public int studentRequired = 7;
 
+    public int initialScholarship = 500;
+
     //=====Testing=====
     [Range(0.0f, 100.0f)]
     public int goodStudentPercentage;

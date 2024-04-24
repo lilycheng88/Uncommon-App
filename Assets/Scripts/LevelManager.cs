@@ -33,6 +33,8 @@ public class LevelManager : MonoBehaviour
         StudentGenerationManager.Instance.patronPercentage = levelData.patronPercentage;
         StudentAdmissionManager.Instance.studentLeft = levelData.studentLeft;
         StudentAdmissionManager.Instance.studentRequired = levelData.studentRequired;
+        StudentAdmissionManager.Instance.initialScholarship = levelData.initialScholarship;
+            StudentAdmissionManager.Instance.totalScholarship = levelData.initialScholarship;
         StudentAdmissionManager.Instance.UpdateAllVisuals();
          
 

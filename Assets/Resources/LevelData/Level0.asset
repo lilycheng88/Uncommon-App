@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   studentLeft: 40
   studentRequired: 10
+  initialScholarship: 300
   goodStudentPercentage: 21
   badStudentPercentage: 29
   richStudentPercentage: 40

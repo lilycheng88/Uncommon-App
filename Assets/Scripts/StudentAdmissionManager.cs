@@ -107,7 +107,7 @@ public class StudentAdmissionManager : MonoBehaviour
             return;
         }
 
-        totalScholarship = initialScholarship;
+        
 
     }
 
