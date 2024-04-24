@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Level0
   m_EditorClassIdentifier: 
   studentLeft: 40
-  studentRequired: 10
+  studentRequired: 5
   goodStudentPercentage: 21
   badStudentPercentage: 29
   richStudentPercentage: 40

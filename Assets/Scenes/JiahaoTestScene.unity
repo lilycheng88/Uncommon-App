@@ -18728,8 +18728,6 @@ GameObject:
   - component: {fileID: 1237909085}
   - component: {fileID: 1237909089}
   - component: {fileID: 1237909088}
-  - component: {fileID: 1237909090}
-  - component: {fileID: 1237909091}
   m_Layer: 5
   m_Name: ChatAppButton
   m_TagString: Untagged
@@ -18813,7 +18811,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1237909090}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ButtonJumper, Assembly-CSharp
         m_MethodName: Stop
         m_Mode: 1
@@ -19156,6 +19154,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b1af0f8f93e0748ee99d8ff21add4191, type: 2}
   - {fileID: 11400000, guid: 0da93eca338ae48ccab9f19f3bb46273, type: 2}
   - {fileID: 11400000, guid: ef549ec0501e44583beae7e7ee9e54f0, type: 2}
+  - {fileID: 11400000, guid: f3dd248e47caf468c911cacc00108fbe, type: 2}
+  - {fileID: 11400000, guid: 700b3693f99344fb3bfeea045f4f4ec4, type: 2}
   currentLevelID: 0
 --- !u!1 &1274818114
 GameObject:
@@ -26739,6 +26739,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   messagePrefab: {fileID: 2198018297549969624, guid: 607c1f6fe41ec4707891e9a3455f7984, type: 3}
   messageParent: {fileID: 461544156}
+  newChatIcon: {fileID: 0}
 --- !u!1 &1774796449
 GameObject:
   m_ObjectHideFlags: 0
