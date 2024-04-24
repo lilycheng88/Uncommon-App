@@ -73,7 +73,6 @@ public class GameManager : MonoBehaviour
 
     public void GameLose()
     {
-        inGame = false;
         gameLoseScreen.SetActive(true);
     }
 
@@ -81,7 +80,6 @@ public class GameManager : MonoBehaviour
     {
         gameCalcScreen.SetActive(true);
         NewspaperManager.Instance.CheckAllNewsEndings();
-        inGame = false;
         newspaperManager.SelectNews(3);
         gameParent.SetActive(false);
         currentLevelID += 1; // Update level ID
@@ -91,6 +89,10 @@ public class GameManager : MonoBehaviour
 
     public void LoadOut()
     {
+        if (win)
+        {
+            SoundManager.Instance.PlaySFX("Clear");
+        }
         inGame = false;
         mainScreenAnimator.SetTrigger("LoadOut");
     }

@@ -10,19 +10,32 @@ public class StudentAdmissionManager : MonoBehaviour
     //Student Admission Manager
     //Manages admitted, waitlisted, and rejected students
     //
+
     public static StudentAdmissionManager Instance { get; private set; } // Singleton instance
 
+    [Header("Component References")]
     public StudentInfo studentInfo;
     [SerializeField] PreferencesManager preferencesManager;
     [SerializeField] BooleanManager booleanManager;
+    public NewspaperManager newspaperManager;
 
+    public Animator gameAnimator;
     [SerializeField] Animator studentImageAnimator;
     [SerializeField] StudentGenerationManager studentGenerationManager;
+    [SerializeField] TextFormater textFormater;
 
     public List<StudentData> admittedStudentList = new List<StudentData>();
     public List<StudentData> rejectedStudentList = new List<StudentData>();
     public List<StudentData> waitlistedStudentList = new List<StudentData>();
 
+
+    
+
+    [Header("Game Variable Texts")]
+    [SerializeField] Color colorUrgent;
+    [SerializeField] Color colorSafe;
+    [SerializeField] TextMeshProUGUI studentLeftText;
+    [SerializeField] TextMeshProUGUI studentAdmittedVSRequiredText;
     [SerializeField] TextMeshProUGUI averageFinanceText;
     [SerializeField] TextMeshProUGUI averageAcademicText;
     [SerializeField] TextMeshProUGUI totalScholarshipText;
@@ -30,20 +43,14 @@ public class StudentAdmissionManager : MonoBehaviour
     [SerializeField] Slider averageFinanceSlider;
     [SerializeField] Slider averageAcademicSlider;
     [SerializeField] Slider totalScholarshipSlider;
-    [SerializeField] TextFormater textFormater;
 
-    [SerializeField] TextMeshProUGUI studentLeftText;
-    [SerializeField] TextMeshProUGUI studentAdmittedVSRequiredText;
-
-
+    [Header("Game Object References")]
     public GameObject studentContentInfoPrefab;
     public GameObject admittedStudentContentParent;
     public GameObject rejectedStudentContentParent;
     public GameObject waitlistedStudentContentParent;
 
-    public NewspaperManager newspaperManager;
-
-    public Animator gameAnimator;
+    
 
 
     [Header("===========================")]
@@ -133,6 +140,7 @@ public class StudentAdmissionManager : MonoBehaviour
                 {
                     //GameManager.Instance.GameCalc();
                     GameManager.Instance.win = true;
+                    SoundManager.Instance.PlaySFX("Clear");
                     GameManager.Instance.LoadOut();
                 }
 
@@ -163,24 +171,65 @@ public class StudentAdmissionManager : MonoBehaviour
     public void UpdateAllVisuals()
     {
         LegendaryStudentManager.Instance.ClearLegendaryStudentVisuals();
-        averageFinanceText.text = averageFinance.ToString();
-        averageAcademicText.text = averageAcademic.ToString();
-        if(totalScholarship < 200)
+        if(averageFinance <= financeDangerLine)
         {
+            averageFinanceText.color = colorUrgent;
+            averageFinanceText.text = "<shake a = 2>" + averageFinance.ToString() + "</shake>";
+        }
+        else
+        {
+            averageFinanceText.color = colorSafe;
+            averageFinanceText.text = averageFinance.ToString();
+        }
+        if (averageAcademic <= academicDangerLine)
+        {
+            averageAcademicText.color = colorUrgent;
+            averageAcademicText.text = "<shake a = 2>" + averageFinance.ToString() + "</shake>";
+        }
+        else
+        {
+            averageAcademicText.color = colorSafe;
+            averageAcademicText.text = averageAcademic.ToString();
+        }
+
+        if(totalScholarship <= 200)
+        {
+            totalScholarshipText.color = colorUrgent;
             totalScholarshipText.text = "<shake a = 2>" + totalScholarship.ToString() + "</shake>";
         }
-        else totalScholarshipText.text = totalScholarship.ToString();
+        else
+        {
+            totalScholarshipText.color=colorSafe;
+            totalScholarshipText.text = totalScholarship.ToString();
+        }
+            
 
         averageFinanceSlider.value = averageFinance;
         averageAcademicSlider.value = averageAcademic;
         totalScholarshipSlider.value = totalScholarship;
         averageAcademicGlobe.fillAmount = averageAcademic / 100f;
-        studentAdmittedVSRequiredText.text = studentAdmitted.ToString() + "/" + studentRequired;
-        if (studentLeft < 10)
+        if(studentLeft + studentAdmitted <= studentRequired)
         {
+            studentAdmittedVSRequiredText.color = colorUrgent;
+            studentAdmittedVSRequiredText.text = "<shake a = 2>" + studentAdmitted.ToString() + "/" + studentRequired + "</shake>";
+
+        }
+        else
+        {
+            studentAdmittedVSRequiredText.color = colorSafe;
+            studentAdmittedVSRequiredText.text = studentAdmitted.ToString() + "/" + studentRequired;
+        }
+        
+        if (studentLeft <= 10)
+        {
+            studentLeftText.color = colorUrgent;
             studentLeftText.text = "<shake a = 2>" + studentLeft.ToString() + "</shake>";
         }
-        else studentLeftText.text = studentLeft.ToString();
+        else
+        {
+            studentLeftText.color = colorSafe;
+            studentLeftText.text = studentLeft.ToString();
+        }
     }
     public void UpdateRejectVisuals()
     {
@@ -207,162 +256,165 @@ public class StudentAdmissionManager : MonoBehaviour
         {
             data = studentInfo.data;
         }
-
-        if (CanAdmit(data))
+        if(GameManager.Instance.inGame)
         {
-            SoundManager.Instance.PlaySFX("Admit");
-            SoundManager.Instance.PlaySFX("Click_OK");
-            SoundManager.Instance.PlaySFX("FileInCrush", 0.5f);
-            if (!admittedStudentList.Contains(data))
+            if (CanAdmit(data))
             {
-                admittedStudentList.Add(data);
-            }
-            if (data != null)
-            {
-                gameAnimator.SetTrigger("Accept");
-                studentAdmitted += 1;
-                studentLeft -= 1;
-                totalScholarship -= (financeRequired - data._finance);
-                if (totalScholarship < 0)
+                SoundManager.Instance.PlaySFX("Admit");
+                SoundManager.Instance.PlaySFX("Click_OK");
+                SoundManager.Instance.PlaySFX("FileInCrush", 0.5f);
+                if (!admittedStudentList.Contains(data))
                 {
-                    totalScholarship = 0;
+                    admittedStudentList.Add(data);
                 }
-                
-                if(data._isPatron)
+                if (data != null)
                 {
-                    totalScholarship += patronScholarshipBonus;
-                }
-
-                averageFinance += Mathf.RoundToInt((data._finance - financeMidValue) * financeMultiplier);
-                averageAcademic += Mathf.RoundToInt((data._academic - academicMidValue) * academicMultiplier);
-
-                firstGenStudent += data._isFirstGen? 1:0;
-
-                //===Mini Goal Datas===
-                for( int i = 0; i < MiniGoalManager.Instance.miniGoalDatas.Count; i++)
-                {
-                    MiniGoalData goal = MiniGoalManager.Instance.miniGoalDatas[i];
-                    
-                    switch (goal.label)
+                    gameAnimator.SetTrigger("Accept");
+                    studentAdmitted += 1;
+                    studentLeft -= 1;
+                    totalScholarship -= (financeRequired - data._finance);
+                    if (totalScholarship < 0)
                     {
-                        case "introverted":
-                            if(data._extroversion <= 2)
-                            {
-                                MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
-                            }
-
-                        break;
-
-                        case "extroverted":
-                            if(data._extroversion >= 4)
-                            {
-                                MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
-                            }
-
-                        break;
-
-                        case "calm":
-                            if(data._magicalPersonality <= 2)
-                            {
-                                MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
-                            }
-
-                        break;
-
-                        case "emotional":
-                            if(data._magicalPersonality >= 4)
-                            {
-                                MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
-                            }
-
-                        break;
-
-                        case "night owl":
-                            if(data._schedule <= 2)
-                            {
-                                MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
-                            }
-
-                        break;
-
-                        case "early bird":
-                            if(data._schedule >= 4)
-                            {
-                                MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
-                            }
-
-                        break;
-
-                        case "careful":
-                            if(data._explorativity <= 2)
-                            {
-                                MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
-                            }
-
-                        break;
-                    
-                        case "explorative":
-                            if(data._explorativity <= 4)
-                            {
-                                MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
-                            }
-
-                        break;
-
-                        case "non-psychic":
-                            if(data._psionicAffinity <= 2)
-                            {
-                                MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
-                            }
-
-                        break;
-
-                        case "psychic":
-                            if(data._psionicAffinity >= 4)
-                            {
-                                MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
-                            }
-
-                        break;
-
-                        case "1st-gen":
-                            if(data._isFirstGen)
-                            {
-                                MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
-                            }
-
-                        break;
-
-                        case "alumni":
-                            if(data._isAlumni)
-                            {
-                                MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
-                            }
-
-                        break;
-
-                        case "patron":
-                            if(data._isPatron)
-                            {
-                                MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
-                            }
-
-                        break;
-
+                        totalScholarship = 0;
                     }
 
+                    if (data._isPatron)
+                    {
+                        totalScholarship += patronScholarshipBonus;
+                    }
+
+                    averageFinance += Mathf.RoundToInt((data._finance - financeMidValue) * financeMultiplier);
+                    averageAcademic += Mathf.RoundToInt((data._academic - academicMidValue) * academicMultiplier);
+
+                    firstGenStudent += data._isFirstGen ? 1 : 0;
+
+                    //===Mini Goal Datas===
+                    for (int i = 0; i < MiniGoalManager.Instance.miniGoalDatas.Count; i++)
+                    {
+                        MiniGoalData goal = MiniGoalManager.Instance.miniGoalDatas[i];
+
+                        switch (goal.label)
+                        {
+                            case "introverted":
+                                if (data._extroversion <= 2)
+                                {
+                                    MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
+                                }
+
+                                break;
+
+                            case "extroverted":
+                                if (data._extroversion >= 4)
+                                {
+                                    MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
+                                }
+
+                                break;
+
+                            case "calm":
+                                if (data._magicalPersonality <= 2)
+                                {
+                                    MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
+                                }
+
+                                break;
+
+                            case "emotional":
+                                if (data._magicalPersonality >= 4)
+                                {
+                                    MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
+                                }
+
+                                break;
+
+                            case "night owl":
+                                if (data._schedule <= 2)
+                                {
+                                    MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
+                                }
+
+                                break;
+
+                            case "early bird":
+                                if (data._schedule >= 4)
+                                {
+                                    MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
+                                }
+
+                                break;
+
+                            case "careful":
+                                if (data._explorativity <= 2)
+                                {
+                                    MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
+                                }
+
+                                break;
+
+                            case "explorative":
+                                if (data._explorativity <= 4)
+                                {
+                                    MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
+                                }
+
+                                break;
+
+                            case "non-psychic":
+                                if (data._psionicAffinity <= 2)
+                                {
+                                    MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
+                                }
+
+                                break;
+
+                            case "psychic":
+                                if (data._psionicAffinity >= 4)
+                                {
+                                    MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
+                                }
+
+                                break;
+
+                            case "1st-gen":
+                                if (data._isFirstGen)
+                                {
+                                    MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
+                                }
+
+                                break;
+
+                            case "alumni":
+                                if (data._isAlumni)
+                                {
+                                    MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
+                                }
+
+                                break;
+
+                            case "patron":
+                                if (data._isPatron)
+                                {
+                                    MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
+                                }
+
+                                break;
+
+                        }
+
+                    }
+                    MiniGoalManager.Instance.UpdateMiniGoalVisuals();
+
+
+
+                    //======================
+
+
+                    Invoke("UpdateAllVisuals", 0.3f);
                 }
-                MiniGoalManager.Instance.UpdateMiniGoalVisuals();
-
-
-
-                //======================
-
-
-                Invoke("UpdateAllVisuals", 0.3f);
+                Invoke("RandomlyPresentAStudent", 0.3f);
             }
-            Invoke("RandomlyPresentAStudent",0.3f);
         }
+        
     }
 
     public bool CanAdmit(StudentData data)
@@ -380,23 +432,27 @@ public class StudentAdmissionManager : MonoBehaviour
 
     public void RejectCurrentStudent()
     {
-        SoundManager.Instance.PlaySFX("Reject");
-        SoundManager.Instance.PlaySFX("Click_OK");
-        SoundManager.Instance.PlaySFX("CrumbleCrush");
-        StudentData data = studentInfo.data;
-        if (data == null)
+        if(GameManager.Instance.inGame)
         {
-            data = studentInfo.data;
-        }
+            SoundManager.Instance.PlaySFX("Reject");
+            SoundManager.Instance.PlaySFX("Click_OK");
+            SoundManager.Instance.PlaySFX("CrumbleCrush");
+            StudentData data = studentInfo.data;
+            if (data == null)
+            {
+                data = studentInfo.data;
+            }
 
-        if (!rejectedStudentList.Contains(data))
-        {
-            gameAnimator.SetTrigger("Reject");
-            rejectedStudentList.Add(data);
+            if (!rejectedStudentList.Contains(data))
+            {
+                gameAnimator.SetTrigger("Reject");
+                rejectedStudentList.Add(data);
+            }
+            studentLeft -= 1;
+            Invoke("RandomlyPresentAStudent", 0.3f);
+            Invoke("UpdateAllVisuals", 0.3f);
         }
-        studentLeft -= 1;
-        Invoke("RandomlyPresentAStudent",0.3f);
-        Invoke("UpdateAllVisuals", 0.3f);
+        
     }
 
     public void WaitlistCurrentStudent()
