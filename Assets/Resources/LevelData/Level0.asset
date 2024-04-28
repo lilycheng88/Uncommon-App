@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ca2e59f8d0ff4f62828d568cdc2f154, type: 3}
   m_Name: Level0
   m_EditorClassIdentifier: 
+  academicMultiplier: 2
+  financeMultiplier: 2
   studentLeft: 40
-  studentRequired: 10
+  studentRequired: 5
   initialScholarship: 300
   goodStudentPercentage: 21
   badStudentPercentage: 29
@@ -30,9 +32,5 @@ MonoBehaviour:
   patronPercentage: 49
   firstGenPercentage: 48
   stateSponsoredPercentage: 40
-  miniGoalPool:
-  - goal: 1st-gen
-    requiredNum: 5
-  - goal: alumni
-    requiredNum: 5
+  miniGoalPool: []
   features: []

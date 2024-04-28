@@ -31,10 +31,13 @@ public class LevelManager : MonoBehaviour
         StudentGenerationManager.Instance.verteranPercentage = levelData.verteranPercentage;
         StudentGenerationManager.Instance.alumniPercentage = levelData.alumniPercentage;
         StudentGenerationManager.Instance.patronPercentage = levelData.patronPercentage;
+        
+        StudentAdmissionManager.Instance.academicMultiplier = levelData.academicMultiplier;
+        StudentAdmissionManager.Instance.financeMultiplier = levelData.financeMultiplier;
         StudentAdmissionManager.Instance.studentLeft = levelData.studentLeft;
         StudentAdmissionManager.Instance.studentRequired = levelData.studentRequired;
         StudentAdmissionManager.Instance.initialScholarship = levelData.initialScholarship;
-            StudentAdmissionManager.Instance.totalScholarship = levelData.initialScholarship;
+        StudentAdmissionManager.Instance.totalScholarship = levelData.initialScholarship;
         StudentAdmissionManager.Instance.UpdateAllVisuals();
          
 

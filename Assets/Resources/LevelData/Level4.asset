@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ca2e59f8d0ff4f62828d568cdc2f154, type: 3}
   m_Name: Level4
   m_EditorClassIdentifier: 
-  studentLeft: 30
-  studentRequired: 1
+  academicMultiplier: 0.1
+  financeMultiplier: 0.3
+  studentLeft: 35
+  studentRequired: 20
+  initialScholarship: 500
   goodStudentPercentage: 5
   badStudentPercentage: 29
   richStudentPercentage: 14
@@ -30,7 +33,7 @@ MonoBehaviour:
   firstGenPercentage: 48
   stateSponsoredPercentage: 40
   miniGoalPool:
-  - goal: night owl
+  - goal: emotional
     requiredNum: 5
   - goal: 1st-gen
     requiredNum: 5

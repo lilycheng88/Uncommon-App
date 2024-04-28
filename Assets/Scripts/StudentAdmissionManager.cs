@@ -184,7 +184,7 @@ public class StudentAdmissionManager : MonoBehaviour
         if (averageAcademic <= academicDangerLine)
         {
             averageAcademicText.color = colorUrgent;
-            averageAcademicText.text = "<shake a = 2>" + averageFinance.ToString() + "</shake>";
+            averageAcademicText.text = "<shake a = 2>" + averageAcademic.ToString() + "</shake>";
         }
         else
         {
