@@ -33,6 +33,8 @@ MonoBehaviour:
   miniGoalPool:
   - goal: 1st-gen
     requiredNum: 5
-  - goal: alumni
+  - goal: legacy
     requiredNum: 5
-  features: []
+  features:
+  - includedFeature: 0
+  - includedFeature: 2

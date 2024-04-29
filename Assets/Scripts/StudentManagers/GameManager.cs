@@ -113,13 +113,13 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    private void SaveCurrentLevelID()
+    public void SaveCurrentLevelID()
     {
         PlayerPrefs.SetInt("CurrentLevelID", currentLevelID);
         PlayerPrefs.Save();
     }
 
-    private void LoadCurrentLevelID()
+    public void LoadCurrentLevelID()
     {
         if (PlayerPrefs.HasKey("CurrentLevelID"))
         {

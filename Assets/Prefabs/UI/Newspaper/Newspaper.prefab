@@ -450,7 +450,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8514805474345844069
 RectTransform:
   m_ObjectHideFlags: 0
@@ -520,6 +520,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7ff89b8bc731ab479454fe93df29bcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
 --- !u!1 &554696691743708108
 GameObject:
   m_ObjectHideFlags: 0
@@ -996,7 +997,7 @@ MonoBehaviour:
   m_fontSizeMin: 20
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 16
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 4096
   m_textAlignment: 65535
   m_characterSpacing: -5
@@ -1356,7 +1357,7 @@ MonoBehaviour:
   m_fontSizeMin: 20
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 16
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 4096
   m_textAlignment: 65535
   m_characterSpacing: -5
@@ -1570,10 +1571,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: sdfgsdfgsdfgsldkjfgklsnadf;laksjzdf;kliahsdlkfhgasdkufhjaskdjhfaskdbhfakjsdhfkjashdfjhaskdjhfalk;sdnflsjkdnfkasjhdfo;aisjdf;oajsd;ofijas;'dofja;sldkjf;alksdjf;lakhsd;lfkjasl;dkfjka;lskdjf;laksdjf;lkaj;lsdf
-    easdfasdfasdfasdf fasdfasdfasdfd sadfasdfasdfasdf asdfasdfasdf asdfasdfasdfasdfasdf
-    sadfasdfasdfasdfasddfasdf asdfasdfasdfasdfasdfasdfasdfq/weiurlqihwerhqweljkhrklqweugrkqvekjfhvkjqdhvfhqwvdfjhqvwe,fhvq,wmenbfq,mwebnf.,qjwenf.klqweflkqnwe.lfknq/lwkefn/lqk
-    newkn fqlwenk f/lqknkw e/lkfknq/lweknfk/qlweknkf/l qknwe/l
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d69a70905a1ec48f2a808782809020de, type: 2}
   m_sharedMaterial: {fileID: 1871626305224760578, guid: d69a70905a1ec48f2a808782809020de, type: 2}
@@ -1603,11 +1601,11 @@ MonoBehaviour:
   m_fontSize: 30
   m_fontSizeBase: 30
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 30
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 16
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: -5
@@ -2811,10 +2809,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: sdfgsdfgsdfgsldkjfgklsnadf;laksjzdf;kliahsdlkfhgasdkufhjaskdjhfaskdbhfakjsdhfkjashdfjhaskdjhfalk;sdnflsjkdnfkasjhdfo;aisjdf;oajsd;ofijas;'dofja;sldkjf;alksdjf;lakhsd;lfkjasl;dkfjka;lskdjf;laksdjf;lkaj;lsdf
-    easdfasdfasdfasdf fasdfasdfasdfd sadfasdfasdfasdf asdfasdfasdf asdfasdfasdfasdfasdf
-    sadfasdfasdfasdfasddfasdf asdfasdfasdfasdfasdfasdfasdfq/weiurlqihwerhqweljkhrklqweugrkqvekjfhvkjqdhvfhqwvdfjhqvwe,fhvq,wmenbfq,mwebnf.,qjwenf.klqweflkqnwe.lfknq/lwkefn/lqk
-    newkn fqlwenk f/lqknkw e/lkfknq/lweknfk/qlweknkf/l qknwe/l
+  m_text: asdfaaaadaljsndfklhasdpoifhknaposidfoiausdfoiuahsdoiufhnaosiudfjnoaiusdnfoiuasjndpofasl;dkfm
+    alskkdfoo
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d69a70905a1ec48f2a808782809020de, type: 2}
   m_sharedMaterial: {fileID: 1871626305224760578, guid: d69a70905a1ec48f2a808782809020de, type: 2}
@@ -2848,7 +2844,7 @@ MonoBehaviour:
   m_fontSizeMin: 30
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 16
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: -5
@@ -3128,11 +3124,11 @@ MonoBehaviour:
   m_fontSize: 30
   m_fontSizeBase: 30
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 20
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 16
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: -5
@@ -5827,11 +5823,11 @@ MonoBehaviour:
   m_fontSize: 30
   m_fontSizeBase: 30
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 20
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 16
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: -5

@@ -89,6 +89,8 @@ public class StudentAdmissionManager : MonoBehaviour
     //====Personal Info=====
 
     public int firstGenStudent = 0;
+    public int alumniStudent = 0;
+    public int patronStudent = 0;
 
     //======================
 
@@ -287,6 +289,14 @@ public class StudentAdmissionManager : MonoBehaviour
                     averageAcademic += Mathf.RoundToInt((data._academic - academicMidValue) * academicMultiplier);
 
                     firstGenStudent += data._isFirstGen ? 1 : 0;
+                    alumniStudent += data._isAlumni ? 1 : 0;
+                    patronStudent += data._isPatron ? 1 : 0;
+
+                    //===Legendary====
+                    LegendaryStudentManager.Instance.UnlockCurrentScanedLegendaryStudent();
+                    StudentGenerationManager.Instance.remainingLegendaryStudentList.Remove(data);
+
+                    //================
 
                     //===Mini Goal Datas===
                     for (int i = 0; i < MiniGoalManager.Instance.miniGoalDatas.Count; i++)
@@ -383,7 +393,7 @@ public class StudentAdmissionManager : MonoBehaviour
 
                                 break;
 
-                            case "alumni":
+                            case "legacy":
                                 if (data._isAlumni)
                                 {
                                     MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
@@ -405,11 +415,12 @@ public class StudentAdmissionManager : MonoBehaviour
                     MiniGoalManager.Instance.UpdateMiniGoalVisuals();
 
 
-
                     //======================
 
 
                     Invoke("UpdateAllVisuals", 0.3f);
+
+                    
                 }
                 Invoke("RandomlyPresentAStudent", 0.3f);
             }
@@ -445,12 +456,20 @@ public class StudentAdmissionManager : MonoBehaviour
 
             if (!rejectedStudentList.Contains(data))
             {
-                gameAnimator.SetTrigger("Reject");
+                
                 rejectedStudentList.Add(data);
             }
+            gameAnimator.SetTrigger("Reject");
             studentLeft -= 1;
             Invoke("RandomlyPresentAStudent", 0.3f);
             Invoke("UpdateAllVisuals", 0.3f);
+
+            //==========legendary=============
+            LegendaryStudentManager.Instance.ClearCurrentScannedLegendaryStudent();
+
+
+
+            //================================
         }
         
     }

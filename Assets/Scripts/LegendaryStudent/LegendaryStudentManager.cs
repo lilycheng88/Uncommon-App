@@ -3,91 +3,167 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using System.Linq;
 
 public class LegendaryStudentManager : MonoBehaviour
 {
     public static LegendaryStudentManager Instance;
     [SerializeField] Animator studentInfoAnimator;
-    StudentData lastStudentData;
-    GameObject legendaryStudentVisuals;
+    StudentData lastStudentData; 
     [SerializeField] List<Image> bodyParts;
     public List<LegendaryStudentVisuals> legendaryStudentVisualsList = new();
-
     public bool moreAcademicLessMoneyEffect;
+    public int currentScannedLegendaryStudentID = -1;
+    public List<bool> legendaryStudentUnlockStates = new();
 
     private void Awake()
     {
-        // Check if an instance already exists
+        // Singleton pattern enforcement
         if (Instance == null)
         {
-            Instance = this; // Assign this instance as the singleton instance
+            Instance = this;
+            DontDestroyOnLoad(gameObject);  // Optionally make this object persistent
         }
         else
         {
-            Destroy(gameObject); // Destroy this instance because another one already exists
+            Destroy(gameObject);
             return;
         }
+
+        InitializeUnlockStates();
         
     }
 
-    
-public void ScanStudent()
-{
-    StudentData currentStudent = StudentAdmissionManager.Instance.studentInfo.data;
-        if (currentStudent != lastStudentData)
+    void Start()
+    {
+        LoadUnlockStates();
+    }
+
+    private void InitializeUnlockStates()
+    {
+        // Initialize unlock states if not loaded
+        if (legendaryStudentUnlockStates.Count == 0)
         {
-            lastStudentData = currentStudent;
-            studentInfoAnimator.SetTrigger("Scan");
-            if (currentStudent._legendaryStudentID != 0)
-            {
-                bodyParts[0].sprite = lastStudentData._ASprite;
-                bodyParts[1].sprite = lastStudentData._BSprite;
-                bodyParts[2].sprite = lastStudentData._CSprite;
-                bodyParts[3].sprite = lastStudentData._DSprite;
-                bodyParts[4].sprite = lastStudentData._ESprite;
-                bodyParts[5].sprite = lastStudentData._FSprite;
-                if (lastStudentData._GSprite != null)
-                {
-                    bodyParts[6].enabled = true;
-                    bodyParts[6].sprite = lastStudentData._GSprite;
-                } else {
-                    bodyParts[6].enabled = false;
-                }
-
-                bodyParts[7].sprite = lastStudentData._HSprite;
-
-            float initialValue = 1f; // Starting value
-            float finalValue = -0.1f; // Ending value, consider changing to a positive value if this is outside expected range
-            float duration = 2f; // Duration in seconds
-
-            foreach (Image bodyPart in bodyParts)
-            {
-                
-                bodyPart.material = new Material(bodyPart.material); // Create a new material instance for each body part
-                DOVirtual.Float(initialValue, finalValue, duration, value => {
-                    bodyPart.material.SetFloat("_FadeAmount", value); // Apply the interpolated value to the shader property
-                }).SetEase(Ease.InOutQuad); // Optional: Set the easing function
-            }
-
-            var id = legendaryStudentVisualsList[currentStudent._legendaryStudentID - 1];
-            id.SetLockState(false);
+            legendaryStudentUnlockStates = new List<bool>(new bool[legendaryStudentVisualsList.Count]);
         }
     }
-}
+
+    private void OnApplicationQuit()
+    {
+        SaveUnlockStates();
+    }
+
+    public void SaveUnlockStates()
+    {
+        Debug.Log("Saving legendarystudent data");
+        string data = string.Join(",", legendaryStudentUnlockStates.Select(b => b ? "1" : "0"));
+        PlayerPrefs.SetString("UnlockStates", data);
+        PlayerPrefs.Save();
+    }
+
+    public void LoadUnlockStates()
+    {
+        string savedData = PlayerPrefs.GetString("UnlockStates", "");
+        if (!string.IsNullOrEmpty(savedData))
+        {
+            Debug.Log("loading unlock states");
+            List<bool> savedStates = savedData.Split(',').Select(s => s == "1").ToList();
+            for (int i = 0; i < savedStates.Count; i++)
+            {
+                Debug.Log("setting " + i + "to " + savedStates[i]);
+                legendaryStudentVisualsList[i].SetLockState(!savedStates[i]);
+                legendaryStudentUnlockStates[i] = savedStates[i];
+            }
+        }
+    }
+
+    public void ClearSavedData()
+    {
+        PlayerPrefs.DeleteKey("UnlockStates");
+        PlayerPrefs.Save();
+        // Optionally reset states after clearing
+        legendaryStudentUnlockStates = new List<bool>(new bool[legendaryStudentVisualsList.Count]);
+        foreach (var visuals in legendaryStudentVisualsList)
+        {
+            visuals.SetLockState(false);
+        }
+    }
+    
+    public void ScanStudent()
+    {
+        StudentData currentStudent = StudentAdmissionManager.Instance.studentInfo.data;
+            if (currentStudent != lastStudentData)
+            {
+                lastStudentData = currentStudent;
+                studentInfoAnimator.SetTrigger("Scan");
+                if (currentStudent._legendaryStudentID != 0)
+                {
+                    bodyParts[0].sprite = lastStudentData._ASprite;
+                    bodyParts[1].sprite = lastStudentData._BSprite;
+                    bodyParts[2].sprite = lastStudentData._CSprite;
+                    bodyParts[3].sprite = lastStudentData._DSprite;
+                    bodyParts[4].sprite = lastStudentData._ESprite;
+                    bodyParts[5].sprite = lastStudentData._FSprite;
+                    if (lastStudentData._GSprite != null)
+                    {
+                        bodyParts[6].enabled = true;
+                        bodyParts[6].sprite = lastStudentData._GSprite;
+                    } else {
+                        bodyParts[6].enabled = false;
+                    }
+
+                    bodyParts[7].sprite = lastStudentData._HSprite;
+
+                float initialValue = 1f; // Starting value
+                float finalValue = -0.1f; // Ending value, consider changing to a positive value if this is outside expected range
+                float duration = 2f; // Duration in seconds
+
+                foreach (Image bodyPart in bodyParts)
+                {
+                    
+                    bodyPart.material = new Material(bodyPart.material); // Create a new material instance for each body part
+                    DOVirtual.Float(initialValue, finalValue, duration, value => {
+                        bodyPart.material.SetFloat("_FadeAmount", value); // Apply the interpolated value to the shader property
+                    }).SetEase(Ease.InOutQuad); // Optional: Set the easing function
+                }
+
+                currentScannedLegendaryStudentID = currentStudent._legendaryStudentID - 1;
+                
+            }
+        }
+    }
+
+    public void UnlockCurrentScanedLegendaryStudent()
+    {
+        if (currentScannedLegendaryStudentID >= 0)
+        {
+            var id = legendaryStudentVisualsList[currentScannedLegendaryStudentID];
+            id.SetLockState(false);
+            legendaryStudentUnlockStates[currentScannedLegendaryStudentID] = true;
+            SaveUnlockStates();
+        }
+    }
+
+    public void ClearCurrentScannedLegendaryStudent()
+    {
+        currentScannedLegendaryStudentID = -1;
+    }
 
 
 
    public void ClearLegendaryStudentVisuals()
    {
-    foreach (Image bodyPart in bodyParts)
+        foreach (Image bodyPart in bodyParts)
         {
-            
-            bodyPart.material = new Material(bodyPart.material); // Create a new material instance for each body part
-            bodyPart.material.SetFloat("_FadeAmount", 1); // Apply the interpolated value to the shader property
-            
+            if (bodyPart != null)
+            {
+                bodyPart.material = new Material(bodyPart.material); // Create a new material instance for each body part
+                bodyPart.material.SetFloat("_FadeAmount", 1); // Apply the interpolated value to the shader property
+            }
         }
 
    }
+
 
 
    

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 public class StudentGenerationManager : MonoBehaviour
 {
@@ -74,7 +75,7 @@ public class StudentGenerationManager : MonoBehaviour
 
     //======Legendary Student=======
     public List<StudentData> allLegendaryStudentList;
-    private List<StudentData> remainingLegendaryStudentList;
+    public List<StudentData> remainingLegendaryStudentList;
 
 
 
@@ -211,18 +212,21 @@ public class StudentGenerationManager : MonoBehaviour
         }
 
         //=====Legendary Student Check======
-
-        float ff = Random.Range(0,100);
-        if(ff < lengedaryStudentPercentage)
+        if (GameManager.Instance.levelDataList[GameManager.Instance.currentLevelID].features.Exists(f => f.includedFeature == Feature.feature.legendaryStudents))
         {
-            if (remainingLegendaryStudentList.Count > 0) {
-                StudentData d = remainingLegendaryStudentList[Random.Range(0, remainingLegendaryStudentList.Count)];
-                remainingLegendaryStudentList.Remove(d);
-                data = d;
-                Debug.Log("Legendary Student Spawned!!!!");
-                return data;
+            float ff = Random.Range(0, 100);
+            if (ff < lengedaryStudentPercentage)
+            {
+                if (remainingLegendaryStudentList.Count > 0)
+                {
+                    StudentData d = remainingLegendaryStudentList[Random.Range(0, remainingLegendaryStudentList.Count)];
+                    //remainingLegendaryStudentList.Remove(d);
+                    data = d;
+                    Debug.Log("Legendary Student Spawned!!!!");
+                    return data;
 
 
+                }
             }
         }
 

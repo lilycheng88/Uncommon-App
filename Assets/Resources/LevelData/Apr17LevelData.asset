@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ca2e59f8d0ff4f62828d568cdc2f154, type: 3}
   m_Name: Apr17LevelData
   m_EditorClassIdentifier: 
+  studentLeft: 0
+  studentRequired: 7
+  initialScholarship: 500
   goodStudentPercentage: 0
   badStudentPercentage: 0
   richStudentPercentage: 0
@@ -28,3 +31,4 @@ MonoBehaviour:
   firstGenPercentage: 0
   stateSponsoredPercentage: 0
   miniGoalPool: []
+  features: []

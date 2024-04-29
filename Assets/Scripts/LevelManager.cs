@@ -9,6 +9,9 @@ public class LevelManager : MonoBehaviour
     public LevelData levelData;
     public List<GameObject> featureObjects = new();
 
+    [Header("Used in editor, set and hit button before running the game")]
+    public int levelNumberToSet = 0;
+
     void Start()
     {
         Initialzie();
@@ -34,7 +37,7 @@ public class LevelManager : MonoBehaviour
         StudentAdmissionManager.Instance.studentLeft = levelData.studentLeft;
         StudentAdmissionManager.Instance.studentRequired = levelData.studentRequired;
         StudentAdmissionManager.Instance.initialScholarship = levelData.initialScholarship;
-            StudentAdmissionManager.Instance.totalScholarship = levelData.initialScholarship;
+        StudentAdmissionManager.Instance.totalScholarship = levelData.initialScholarship;
         StudentAdmissionManager.Instance.UpdateAllVisuals();
          
 
@@ -62,6 +65,7 @@ public class LevelManager : MonoBehaviour
                 if(feature.includedFeature == Feature.feature.legendaryStudents)
                 {
                     featureObjects[3].SetActive(true);
+                    featureObjects[4].SetActive(true);
                 }
             }
         }
@@ -108,9 +112,9 @@ public class LevelManager : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetCurrentLevel(int number)
     {
-        
+        GameManager.Instance.currentLevelID = levelNumberToSet;
+        GameManager.Instance.SaveCurrentLevelID();
     }
 }

@@ -143,9 +143,22 @@ public class NewspaperManager : MonoBehaviour
             if (StudentAdmissionManager.Instance.firstGenStudent >= 5f)
             {
                 Debug.Log("firstGenAcademy");
-                StudentAdmissionManager.Instance.newspaperManager.IncrementTriggerCount("FirstGenAcademy", 1);
+                IncrementTriggerCount("FirstGenAcademy", 1);
             }
 
+            if(StudentAdmissionManager.Instance.alumniStudent >= 5f)
+            {
+                Debug.Log("AlumniAcademy");
+                IncrementTriggerCount("AlumniAcademy", 1);
+
+            }
+
+            if(StudentAdmissionManager.Instance.patronStudent >= 5f)
+            {
+                Debug.Log("PatronAcademy");
+                IncrementTriggerCount("PatronAcademy", 1);
+
+            }
 
 
         }
