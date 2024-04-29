@@ -260,7 +260,7 @@ public class StudentAdmissionManager : MonoBehaviour
         }
         if(GameManager.Instance.inGame)
         {
-            if (CanAdmit(data))
+            if (CanAdmit(data)) 
             {
                 SoundManager.Instance.PlaySFX("Admit");
                 SoundManager.Instance.PlaySFX("Click_OK");

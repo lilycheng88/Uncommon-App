@@ -108,16 +108,22 @@ public class LegendaryStudentVisuals : MonoBehaviour, IPointerEnterHandler, IPoi
             {
                 LegendaryStudentManager.Instance.moreAcademicLessMoneyEffect = true;
                 LegendaryStudentManager.Instance.legendaryEffectIcon[0].SetActive(true);
+                LegendaryStudentManager.Instance.legendaryEffectIcon[1].SetActive(false);
+                LegendaryStudentManager.Instance.legendaryEffectIcon[2].SetActive(false);
             }
             if(legendaryStudentID == 1)
             {
                 LegendaryStudentManager.Instance.unmeiiaNystalFreeEffect= true;
                 LegendaryStudentManager.Instance.legendaryEffectIcon[1].SetActive(true);
+                LegendaryStudentManager.Instance.legendaryEffectIcon[0].SetActive(false);
+                LegendaryStudentManager.Instance.legendaryEffectIcon[2].SetActive(false);
             }
             if(legendaryStudentID == 2)
             {
                 LegendaryStudentManager.Instance.patronAddPoolEffect = true;
                 LegendaryStudentManager.Instance.legendaryEffectIcon[2].SetActive(true);
+                LegendaryStudentManager.Instance.legendaryEffectIcon[0].SetActive(false);
+                LegendaryStudentManager.Instance.legendaryEffectIcon[1].SetActive(false);
             }
 
             return true;
@@ -132,6 +138,7 @@ public class LegendaryStudentVisuals : MonoBehaviour, IPointerEnterHandler, IPoi
         {
             LegendaryStudentManager.Instance.moreAcademicLessMoneyEffect = false;
             LegendaryStudentManager.Instance.legendaryEffectIcon[0].SetActive(false);
+
         }
         if(legendaryStudentID == 1)
         {
