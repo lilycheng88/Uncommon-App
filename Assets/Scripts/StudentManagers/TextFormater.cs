@@ -100,15 +100,15 @@ public class TextFormater : MonoBehaviour
             }
             if (targetData._explorativity > 3)
             {
-                calm.text = "<incr a=0.8 f=1 w=1></incr>Careful";
-                calm.color = No;
-                emotion.text = "<incr a=0.8 f=1 w=1>Explorative</incr>";
-                emotion.color = Yes;
+                care.text = "<incr a=0.8 f=1 w=1></incr>Careful";
+                care.color = No;
+                explore.text = "<incr a=0.8 f=1 w=1>Emotional</incr>";
+                explore.color = Yes;
             }
             if(targetData._explorativity == 3)
             {
-                calm.text = "<incr a=1 f=1 w=1></incr>Careful";
-                calm.color = No;
+                care.text = "<incr a=1 f=1 w=1></incr>Careful";
+                care.color = No;
                 explore.text = "<incr a=1 f=1 w=1></incr>Explorative";
                 explore.color = No;
             }
