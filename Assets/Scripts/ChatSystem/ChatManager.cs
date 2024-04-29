@@ -53,6 +53,7 @@ public class ChatManager : MonoBehaviour
         else
         {
             SoundManager.Instance.PlaySFX("Click_Confirm");
+            newChatIcon.SetActive(false);
         }
 
 

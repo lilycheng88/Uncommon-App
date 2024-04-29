@@ -33,9 +33,10 @@ MonoBehaviour:
   firstGenPercentage: 48
   stateSponsoredPercentage: 40
   miniGoalPool:
-  - goal: 1st-gen
+  - goal: extroverted
     requiredNum: 5
-  - goal: legacy
+  - goal: night owl
     requiredNum: 5
   features:
   - includedFeature: 1
+  - includedFeature: 0
