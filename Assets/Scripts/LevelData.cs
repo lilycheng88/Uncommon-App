@@ -6,7 +6,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "LevelData", menuName = "Levels", order = 0)]
 public class LevelData : ScriptableObject
 {
-
+    [Header("Multipliers")]
+    public float academicMultiplier;
+    public float financeMultiplier;
     [Header("How many student in total")]
     public int studentLeft;
 

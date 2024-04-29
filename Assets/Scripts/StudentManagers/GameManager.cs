@@ -89,10 +89,6 @@ public class GameManager : MonoBehaviour
 
     public void LoadOut()
     {
-        if (win)
-        {
-            SoundManager.Instance.PlaySFX("Clear");
-        }
         inGame = false;
         mainScreenAnimator.SetTrigger("LoadOut");
     }
