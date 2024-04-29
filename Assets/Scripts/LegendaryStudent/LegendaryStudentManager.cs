@@ -13,8 +13,11 @@ public class LegendaryStudentManager : MonoBehaviour
     [SerializeField] List<Image> bodyParts;
     public List<LegendaryStudentVisuals> legendaryStudentVisualsList = new();
     public bool moreAcademicLessMoneyEffect;
+    public bool unmeiiaNystalFreeEffect;
+    public bool patronAddPoolEffect;
     public int currentScannedLegendaryStudentID = -1;
     public List<bool> legendaryStudentUnlockStates = new();
+    public List<GameObject> legendaryEffectIcon = new();
 
     private void Awake()
     {

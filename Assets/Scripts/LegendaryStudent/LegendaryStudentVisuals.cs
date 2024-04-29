@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using Unity.VisualScripting;
 
 public class LegendaryStudentVisuals : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
@@ -16,6 +17,7 @@ public class LegendaryStudentVisuals : MonoBehaviour, IPointerEnterHandler, IPoi
     public LegendaryConfirmUI confirmUI;
     bool isHovering = false;
     public int hireCost = 50;
+    
 
     // Start is called before the first frame update
     void Awake()
@@ -105,10 +107,17 @@ public class LegendaryStudentVisuals : MonoBehaviour, IPointerEnterHandler, IPoi
             if(legendaryStudentID == 0)
             {
                 LegendaryStudentManager.Instance.moreAcademicLessMoneyEffect = true;
+                LegendaryStudentManager.Instance.legendaryEffectIcon[0].SetActive(true);
             }
             if(legendaryStudentID == 1)
             {
-                LegendaryStudentManager.Instance.moreAcademicLessMoneyEffect = true;
+                LegendaryStudentManager.Instance.unmeiiaNystalFreeEffect= true;
+                LegendaryStudentManager.Instance.legendaryEffectIcon[1].SetActive(true);
+            }
+            if(legendaryStudentID == 2)
+            {
+                LegendaryStudentManager.Instance.patronAddPoolEffect = true;
+                LegendaryStudentManager.Instance.legendaryEffectIcon[2].SetActive(true);
             }
 
             return true;
@@ -122,6 +131,17 @@ public class LegendaryStudentVisuals : MonoBehaviour, IPointerEnterHandler, IPoi
         if(legendaryStudentID == 0)
         {
             LegendaryStudentManager.Instance.moreAcademicLessMoneyEffect = false;
+            LegendaryStudentManager.Instance.legendaryEffectIcon[0].SetActive(false);
+        }
+        if(legendaryStudentID == 1)
+        {
+            LegendaryStudentManager.Instance.unmeiiaNystalFreeEffect= false;
+            LegendaryStudentManager.Instance.legendaryEffectIcon[1].SetActive(false);
+        }
+        if(legendaryStudentID == 2)
+        {
+            LegendaryStudentManager.Instance.patronAddPoolEffect = false;
+            LegendaryStudentManager.Instance.legendaryEffectIcon[2].SetActive(false);
         }
     }
 

@@ -11,6 +11,7 @@ public class MiniGoalData
     public int currentCount;
     public bool IsCompleted;
     public int rewardType;
+    public bool done = false;
 
     public MiniGoalData(string label, string description,int targetCount)
     {
@@ -27,13 +28,13 @@ public class MiniGoalData
         currentCount += amount;
        
         if (currentCount >= targetCount) IsCompleted = true;
-        if (IsCompleted)
+        if (IsCompleted & !done)
         {
             // Optionally notify the system that this goal is completed
             Debug.Log($"Goal completed: {description}");
             //========temorarily takeout=========
             //MiniGoalManager.Instance.ReplaceMiniGoal(this); 
-            
+            done = true;
 
             switch(rewardType )
             {
