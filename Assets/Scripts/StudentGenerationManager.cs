@@ -265,7 +265,7 @@ public class StudentGenerationManager : MonoBehaviour
 
         if(LegendaryStudentManager.Instance.moreAcademicLessMoneyEffect)
         {
-            data._finance = Mathf.Max(0,data._finance - 30);
+            data._finance = Mathf.Max(0,data._finance - 20);
             data._academic = Mathf.Min(100, data._academic + 40);
         }
         //============================

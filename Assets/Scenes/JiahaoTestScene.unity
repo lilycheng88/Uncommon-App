@@ -1758,7 +1758,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fbcfb24d7848441da922e6e9e1bc2d90, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 01b39eb646c444c53b9e885360191a3f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2272,7 +2272,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &130636383
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2412,7 +2412,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fbcfb24d7848441da922e6e9e1bc2d90, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 01b39eb646c444c53b9e885360191a3f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8329,15 +8329,15 @@ MonoBehaviour:
     _studentRace: 
     _academic: 70
     _finance: 90
-    _ASprite: {fileID: 21300000, guid: 595f0bbfb7d56c8499c38d61723adec0, type: 3}
-    _BSprite: {fileID: 21300000, guid: bf1d03d0bbec1b548acd7f2140e5b54a, type: 3}
+    _ASprite: {fileID: 21300000, guid: 795f507b4d321422c8ba0546c25b4674, type: 3}
+    _BSprite: {fileID: 21300000, guid: acc80d9a1960747f8a7f576d3c4cc794, type: 3}
     _CSprite: {fileID: 21300000, guid: 8c8866e93eaebe24dbbe22fc7a80873c, type: 3}
-    _DSprite: {fileID: 21300000, guid: 4118bc0e85607874a8a3f8ced35a9c7b, type: 3}
-    _ESprite: {fileID: 21300000, guid: eb37c30b9256a6c4d826e6737444f49e, type: 3}
-    _FSprite: {fileID: 21300000, guid: 92e8e501e9659f1468a3ea1c664678c3, type: 3}
-    _GSprite: {fileID: 21300000, guid: 512813c878cc1ed4983958b2a2edfca3, type: 3}
+    _DSprite: {fileID: 21300000, guid: 308b4744e00d845cd952205896862d87, type: 3}
+    _ESprite: {fileID: 21300000, guid: 5bf61b008bd2c4dfbb4e1f7337771417, type: 3}
+    _FSprite: {fileID: 21300000, guid: 2298e8d3ee0ca4bea9d6640183c24221, type: 3}
+    _GSprite: {fileID: 21300000, guid: adde15f90218049249f6ffe1b213b2fe, type: 3}
     _HSprite: {fileID: 0}
-    _ISprite: {fileID: 21300000, guid: 2feeb7f524757aa498594d6b53736801, type: 3}
+    _ISprite: {fileID: 21300000, guid: 326d685a2c7e04113891ac930315c078, type: 3}
     _extroversion: 3
     _magicalPersonality: 3
     _workplace: 4
@@ -13459,7 +13459,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &859786205
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13569,7 +13569,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fbcfb24d7848441da922e6e9e1bc2d90, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 01b39eb646c444c53b9e885360191a3f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -22429,8 +22429,8 @@ MonoBehaviour:
   legendaryStudentUnlockStates: 
   legendaryEffectIcon:
   - {fileID: 859786204}
-  - {fileID: 859786204}
-  - {fileID: 859786204}
+  - {fileID: 1935851953}
+  - {fileID: 130636382}
 --- !u!4 &1387444610
 Transform:
   m_ObjectHideFlags: 0
@@ -31767,7 +31767,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1935851954
 RectTransform:
   m_ObjectHideFlags: 0
@@ -31907,7 +31907,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fbcfb24d7848441da922e6e9e1bc2d90, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 01b39eb646c444c53b9e885360191a3f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
