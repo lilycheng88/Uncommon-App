@@ -14781,7 +14781,7 @@ MonoBehaviour:
   - {fileID: 724982103}
   - {fileID: 101252907}
   - {fileID: 308610238}
-  levelNumberToSet: 4
+  levelNumberToSet: 2
 --- !u!1 &957325993
 GameObject:
   m_ObjectHideFlags: 0
@@ -20035,7 +20035,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a282e640009b45b46bbeb20656d92ffd, type: 2}
   - {fileID: 11400000, guid: 68b5cbae4416fb14a8460b0209695dde, type: 2}
   - {fileID: 11400000, guid: e4050e340fdc5a5499fec79f7cbd2396, type: 2}
-  currentLevelID: 4
+  currentLevelID: 2
 --- !u!1 &1274818114
 GameObject:
   m_ObjectHideFlags: 0

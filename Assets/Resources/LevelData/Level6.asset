@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ca2e59f8d0ff4f62828d568cdc2f154, type: 3}
   m_Name: Level6
   m_EditorClassIdentifier: 
-  academicMultiplier: 0.4
-  financeMultiplier: 0.2
+  academicMultiplier: 0.2
+  financeMultiplier: 0.4
   studentLeft: 30
   studentRequired: 20
   initialScholarship: 400
   goodStudentPercentage: 7
   badStudentPercentage: 28
-  richStudentPercentage: 17
+  richStudentPercentage: 22
   poorStudentPercentage: 71
   extroversionPercentage: 62
   magicalPersonalityPercentage: 24
@@ -30,12 +30,12 @@ MonoBehaviour:
   verteranPercentage: 40
   alumniPercentage: 49
   patronPercentage: 49
-  firstGenPercentage: 48
+  firstGenPercentage: 30
   stateSponsoredPercentage: 40
   miniGoalPool:
   - goal: introverted
     requiredNum: 5
-  - goal: patron
+  - goal: 1st-gen
     requiredNum: 5
   features:
   - includedFeature: 1

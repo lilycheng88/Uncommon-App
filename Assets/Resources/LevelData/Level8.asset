@@ -12,20 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ca2e59f8d0ff4f62828d568cdc2f154, type: 3}
   m_Name: Level8
   m_EditorClassIdentifier: 
-  academicMultiplier: 0.7
-  financeMultiplier: 0.8
+  academicMultiplier: 0.8
+  financeMultiplier: 0.7
   studentLeft: 25
   studentRequired: 20
   initialScholarship: 300
   goodStudentPercentage: 4
   badStudentPercentage: 31
-  richStudentPercentage: 9
+  richStudentPercentage: 15
   poorStudentPercentage: 80
-  extroversionPercentage: 62
-  magicalPersonalityPercentage: 24
+  extroversionPercentage: 61
+  magicalPersonalityPercentage: 40
   workplacePercentage: 0
   schedulePercentage: 35
-  explorativityPercentage: 23
+  explorativityPercentage: 26
   psionicAffinityPercentage: 66
   verteranPercentage: 40
   alumniPercentage: 49

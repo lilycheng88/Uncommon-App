@@ -17,7 +17,7 @@ MonoBehaviour:
   studentLeft: 20
   studentRequired: 20
   initialScholarship: 250
-  goodStudentPercentage: 3
+  goodStudentPercentage: 6
   badStudentPercentage: 50
   richStudentPercentage: 7
   poorStudentPercentage: 90
