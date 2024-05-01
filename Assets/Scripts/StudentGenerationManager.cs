@@ -134,13 +134,18 @@ public class StudentGenerationManager : MonoBehaviour
         //========Legendary Student======
         //Initializing student data list
         remainingLegendaryStudentList = allLegendaryStudentList;
-        for (var i = 0; i < LegendaryStudentManager.Instance.legendaryStudentUnlockStates.Count; i ++)
+        Debug.Log("there is " + LegendaryStudentManager.Instance.legendaryStudentUnlockStates.Count + "in unlockstates.count");
+        Debug.Log("there is" + remainingLegendaryStudentList.Count + " in remaining leg student list");
+        for (var i = LegendaryStudentManager.Instance.legendaryStudentUnlockStates.Count - 1; i >= 0; i--)
         {
-            if(LegendaryStudentManager.Instance.legendaryStudentUnlockStates[i]==true)
+            Debug.Log("Checking for unlocked legendary");
+            if (LegendaryStudentManager.Instance.legendaryStudentUnlockStates[i])
             {
-                remainingLegendaryStudentList.Remove(allLegendaryStudentList[i]);
+                Debug.Log("Unlock state " + i + " is " + LegendaryStudentManager.Instance.legendaryStudentUnlockStates[i]);
+                remainingLegendaryStudentList.Remove(allLegendaryStudentList[i]);  // Adjusted index here
             }
         }
+
 
 
 

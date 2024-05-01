@@ -380,7 +380,7 @@ public class StudentAdmissionManager : MonoBehaviour
                                 break;
 
                             case "explorative":
-                                if (data._explorativity <= 4)
+                                if (data._explorativity >= 4)
                                 {
                                     MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
                                 }
