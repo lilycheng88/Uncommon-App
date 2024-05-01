@@ -125,14 +125,26 @@ public class StudentGenerationManager : MonoBehaviour
         raceDatas.AddRange(raceDataArray);
         //==========================
 
+
+
+    }
+    
+    void Start()
+    {
         //========Legendary Student======
         //Initializing student data list
         remainingLegendaryStudentList = allLegendaryStudentList;
+        for (var i = 0; i < LegendaryStudentManager.Instance.legendaryStudentUnlockStates.Count; i ++)
+        {
+            if(LegendaryStudentManager.Instance.legendaryStudentUnlockStates[i]==true)
+            {
+                remainingLegendaryStudentList.Remove(allLegendaryStudentList[i]);
+            }
+        }
 
 
 
         //===============================
-
     }
 
     public StudentData RandomGenerateStudent()
