@@ -13,15 +13,12 @@ MonoBehaviour:
   m_Name: Level 2 Chat
   m_EditorClassIdentifier: 
   messageContentList:
-  - message: I'm a hamburger
+  - message: 'Attention: new fields have been added for your Mini Goals. '
     sprite: {fileID: 0}
-  - message: You are also a hamburger
-    sprite: {fileID: 0}
-  - message: Aren't we all just hamburgers?
-    sprite: {fileID: 0}
-  - message: Gosh, I could have a hamburger right now
-    sprite: {fileID: 0}
-  - message: Look at you, little burgerino
-    sprite: {fileID: 0}
-  - message: Come to papa
+  - message: 'Now, in addition to student preferences, you will see a panel denoting
+      student demographics: legacy students, 1st generation students, and patron
+      students. '
+    sprite: {fileID: 21300000, guid: 458189834c8fb504fadc46144c9e0c85, type: 3}
+  - message: Pay attention to how these students can benefit your scholarship fund.
+      Good luck.
     sprite: {fileID: 0}

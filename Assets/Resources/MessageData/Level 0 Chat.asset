@@ -13,62 +13,55 @@ MonoBehaviour:
   m_Name: Level 0 Chat
   m_EditorClassIdentifier: 
   messageContentList:
-  - message: 'Welcome. Warm congratulations on your new position as admissions officer
+  - message: Welcome. Warm congratulations on your new position as admissions officer
       at <wave a=0.1 f=1 w=1><b>Uncommon Academy</b></wave>, the most prestigious
-      magical university in Unmeiia, as well as the known world. '
+      magical university in Unmeiia, as well as the known world.
     sprite: {fileID: 0}
-  - message: As you may recall from our interview, I will be your supervisor during
-      your time here.
+  - message: 'As you may recall from our interview, I will be your supervisor during
+      your time here. '
     sprite: {fileID: 0}
   - message: "Apologies for the quick turnaround, but you\u2019ve been brought on
       board right on the cusp of our first international admission season in <wave
       a=0.1 f=1 w=1><b>20 years</b></wave>. It\u2019s a big day."
     sprite: {fileID: 0}
   - message: My instructions will have to be brief.
-    sprite: {fileID: 21300000, guid: dee2c29c0fdf2534fb17fc02f8d72a29, type: 3}
+    sprite: {fileID: 21300000, guid: 317d502fd4ce5554db134c4aa2ea6466, type: 3}
   - message: 'On the left-hand side of the screen, you can see the student portrait,
       name, and base statistics: <wave a=0.1 f=1 w=1><b>financial standing</b></wave>,
-      and <wave a=0.1 f=1 w=1><b>academic aptitude</b></wave>. '
-    sprite: {fileID: 21300000, guid: 9c5132fde94437f4d9d0c314bf9303c8, type: 3}
+      and <wave a=0.1 f=1 w=1><b>academic aptitude</b></wave>.'
+    sprite: {fileID: 21300000, guid: c55a517eff256124ba8abe84ec0db818, type: 3}
   - message: "These base statistics will affect our school\u2019s overall <wave a=0.1
       f=1 w=1><b>academic</b></wave> and <wave a=0.1 f=1 w=1><b>financial</b></wave>
       performance scores. Keep an eye on how they are weighted. "
-    sprite: {fileID: 21300000, guid: 704adb58ac684b7428e7037df30a40d9, type: 3}
-  - message: 'The  <wave a=0.1 f=1 w=1><b>scholarship fund</b></wave> situated beneath
+    sprite: {fileID: 21300000, guid: dfb17fe6531b3194b9512a7f6c70dd49, type: 3}
+  - message: 'The  <wave a=0.1 f=1 w=1><b>scholarship fund</b></wave> situated above
       the academic and finance scores is expended whenever a student without a full
       finance bar is admitted to Uncommon Academy. Unless the bar is completely full,
       they will not be able to attend the academy out of pocket. '
-    sprite: {fileID: 21300000, guid: 1ff54d188baefa54487e043ca81d043b, type: 3}
-  - message: 'Keep an eye on your <wave a=0.1 f=1 w=1><b>scholarship fund</b></wave>,
-      because it can run out. Students lacking finances <color=#DF5749>cannot</color>
-      be accepted when the scholarship fund is depleted. '
     sprite: {fileID: 0}
-  - message: To the left of the overall school scores are the student preferences
-      and demographics. These pieces of background information will be relevant in
-      the future.
-    sprite: {fileID: 21300000, guid: 2518896090bce7141aac78a890f65c71, type: 3}
-  - message: For now, just familiarize yourself with where they are located. They
-      will be relevant later.
+  - message: Keep an eye on your <wave a=0.1 f=1 w=1><b>scholarship fund</b></wave>,
+      because it can run out. Students lacking finances <color=#DF5749>cannot</color>
+      be accepted when the scholarship fund is depleted.
     sprite: {fileID: 0}
   - message: 'When you are ready to make a decision, you may select either the <color=#47B34C><bounce
       a=0.1 f=0.5 w=1><b>Admit</b></bounce></color> or <color=#DF5749><bounce a=0.1
       f=0.5 w=1><b>Reject</b></bounce></color> options from the bottom right-hand
       corner. Just click, and the admissions software will take care of the rest. '
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 47adc0b8d166ba940955b8727af55f18, type: 3}
   - message: If I ever contact you with updates, click on the <wave a=0.1 f=1 w=1><b>chat
       icon</b></wave> at the bottom left-hand corner of the screen. To return to
       the admissions page from the chat log, just click on it again to minimize this
       window.
-    sprite: {fileID: 21300000, guid: f1f6aa68fc8dc9d46aef5d6614e385fd, type: 3}
+    sprite: {fileID: 21300000, guid: 7a46c88ebbfb1a845be13786676bf408, type: 3}
   - message: "<wave a=0.1 f=1 w=1><b>One last thing\u2026</b></wave>"
+    sprite: {fileID: 0}
+  - message: Keep in mind, as you perform your task, just how momentous of a time
+      this is for our institution. I cannot afford to be forgiving of mistakes.
     sprite: {fileID: 0}
   - message: 'As you already know, and as I reminded you at the beginning of this
       conversation, this is our first international admission season since before
       the war. A conflict spanning nearly 2 decades, leaving no corner of the known
       world untouched. '
     sprite: {fileID: 0}
-  - message: 'Keep in mind, as you perform your task, just how momentous of a time
-      this is for our institution. I cannot afford to be forgiving of mistakes. '
-    sprite: {fileID: 0}
-  - message: That is all. <wave a=0.1 f=1 w=1><b>Good luck</b></wave>.
+  - message: That is all for now. <wave a=0.1 f=1 w=1><b>Good luck</b></wave>.
     sprite: {fileID: 0}
