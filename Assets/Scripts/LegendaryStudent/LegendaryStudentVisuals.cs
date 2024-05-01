@@ -10,6 +10,7 @@ public class LegendaryStudentVisuals : MonoBehaviour, IPointerEnterHandler, IPoi
     public bool studentLocked = true;
     public List<GameObject> unlockedVisuals = new();
     public List<GameObject> lockedVisuals = new();
+    public List<GameObject> effectVisuals = new();
     public bool studentSelected = false;
     public int legendaryStudentID;
     public GameObject confirmSelectPanel;
@@ -57,6 +58,21 @@ public class LegendaryStudentVisuals : MonoBehaviour, IPointerEnterHandler, IPoi
         }
     }
 
+    public void ActivateEffectsVisuals()
+    {
+        foreach (GameObject unlockedVisual in effectVisuals)
+        {
+            unlockedVisual.SetActive(true);
+        }
+    }
+
+        public void DectivateEffectsVisuals()
+    {
+        foreach (GameObject unlockedVisual in effectVisuals)
+        {
+            unlockedVisual.SetActive(false);
+        }
+    }
     public void ToggleLegendaryStudentActivate()
     {
         if (!confirmUI.isPanelOpen)
@@ -104,12 +120,16 @@ public class LegendaryStudentVisuals : MonoBehaviour, IPointerEnterHandler, IPoi
             Debug.Log("calculated confirm condition as true");
             StudentAdmissionManager.Instance.totalScholarship -= hireCost;
             StudentAdmissionManager.Instance.UpdateAllVisuals();
+            ActivateEffectsVisuals();
             if(legendaryStudentID == 0)
             {
+                
                 LegendaryStudentManager.Instance.moreAcademicLessMoneyEffect = true;
                 LegendaryStudentManager.Instance.legendaryEffectIcon[0].SetActive(true);
                 LegendaryStudentManager.Instance.legendaryEffectIcon[1].SetActive(false);
                 LegendaryStudentManager.Instance.legendaryEffectIcon[2].SetActive(false);
+                LegendaryStudentManager.Instance.legendaryStudentVisualsList[1].DectivateEffectsVisuals();
+                LegendaryStudentManager.Instance.legendaryStudentVisualsList[2].DectivateEffectsVisuals();
             }
             if(legendaryStudentID == 1)
             {
@@ -117,6 +137,8 @@ public class LegendaryStudentVisuals : MonoBehaviour, IPointerEnterHandler, IPoi
                 LegendaryStudentManager.Instance.legendaryEffectIcon[1].SetActive(true);
                 LegendaryStudentManager.Instance.legendaryEffectIcon[0].SetActive(false);
                 LegendaryStudentManager.Instance.legendaryEffectIcon[2].SetActive(false);
+                LegendaryStudentManager.Instance.legendaryStudentVisualsList[0].DectivateEffectsVisuals();
+                LegendaryStudentManager.Instance.legendaryStudentVisualsList[2].DectivateEffectsVisuals();
             }
             if(legendaryStudentID == 2)
             {
@@ -124,6 +146,8 @@ public class LegendaryStudentVisuals : MonoBehaviour, IPointerEnterHandler, IPoi
                 LegendaryStudentManager.Instance.legendaryEffectIcon[2].SetActive(true);
                 LegendaryStudentManager.Instance.legendaryEffectIcon[0].SetActive(false);
                 LegendaryStudentManager.Instance.legendaryEffectIcon[1].SetActive(false);
+                LegendaryStudentManager.Instance.legendaryStudentVisualsList[1].DectivateEffectsVisuals();
+                LegendaryStudentManager.Instance.legendaryStudentVisualsList[0].DectivateEffectsVisuals();
             }
 
             return true;
@@ -147,9 +171,11 @@ public class LegendaryStudentVisuals : MonoBehaviour, IPointerEnterHandler, IPoi
         }
         if(legendaryStudentID == 2)
         {
+            
             LegendaryStudentManager.Instance.patronAddPoolEffect = false;
             LegendaryStudentManager.Instance.legendaryEffectIcon[2].SetActive(false);
         }
+        DectivateEffectsVisuals();
     }
 
     

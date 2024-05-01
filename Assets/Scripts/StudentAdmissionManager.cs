@@ -278,7 +278,7 @@ public class StudentAdmissionManager : MonoBehaviour
                     var scholarshipCost = (financeRequired - data._finance);
                     if (LegendaryStudentManager.Instance.unmeiiaNystalFreeEffect)
                     {
-                        if(data._nationality == "Unmeiia" || data._nationality == "Nystal")
+                        if(data._nationality == "Tendiyu" || data._nationality == "Gessurd")
                         {
                             scholarshipCost = 0;
                         }
@@ -380,7 +380,7 @@ public class StudentAdmissionManager : MonoBehaviour
                                 break;
 
                             case "explorative":
-                                if (data._explorativity <= 4)
+                                if (data._explorativity >= 4)
                                 {
                                     MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
                                 }
