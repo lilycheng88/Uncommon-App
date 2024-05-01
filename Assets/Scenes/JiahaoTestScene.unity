@@ -4911,6 +4911,7 @@ GameObject:
   - component: {fileID: 284943721}
   - component: {fileID: 284943723}
   - component: {fileID: 284943722}
+  - component: {fileID: 284943724}
   m_Layer: 5
   m_Name: UnlockedStudentDescription
   m_TagString: Untagged
@@ -4926,7 +4927,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 284943720}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.000018445}
+  m_LocalPosition: {x: 0, y: 0, z: 0.000014851}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4934,8 +4935,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -398, y: -351.68994}
-  m_SizeDelta: {x: 537.39, y: 343.6828}
+  m_AnchoredPosition: {x: -390.80978, y: -357.33005}
+  m_SizeDelta: {x: 527.35, y: 354.97}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &284943722
 MonoBehaviour:
@@ -4957,11 +4958,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Having attended many of their family's luxurious whiskey-tasting parties,
-    this student has cultivated a vast network of wealthy patrons who would love
-    to send their darlings to UA for a discounted price. Admitting Patron students
-    now adds students to the student pool, rather than adding to the scholarship
-    pool.
+  m_text: Due to this student's noble lineage and political influence, they have
+    pulled some strings and convinced the Gessurd Noble Alliance and the Tendiyu
+    government to allocate additional federal funds to college education.<slide a=0.1
+    f=1 w=1> <color=#8a7d08>Admitting students from Gessurd and Tendiyu comes at
+    no scholarship cost,</color></slide>but<slide a=0.1 f=1 w=1> <color=#b50716>all
+    other students require more scholarship to admit.</color></slide>
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d69a70905a1ec48f2a808782809020de, type: 2}
   m_sharedMaterial: {fileID: 1871626305224760578, guid: d69a70905a1ec48f2a808782809020de, type: 2}
@@ -4988,7 +4990,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26.05
+  m_fontSize: 23.45
   m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5024,7 +5026,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -14.689621, y: 0, z: -5.8760986, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -5038,6 +5040,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 284943720}
   m_CullTransparentMesh: 1
+--- !u!114 &284943724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284943720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8ace8ced0e81c847968cdca0aeda757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typewriterStartsAutomatically: 0
+  animationLoop: 0
+  timeScale: 0
+  _text: 
+  useDynamicScaling: 1
+  referenceFontSize: 10
+  isResettingTimeOnNewText: 1
+  useDefaultDatabases: 1
+  databaseBehaviors: {fileID: 0}
+  databaseAppearances: {fileID: 0}
+  useDefaultStyleSheet: 1
+  styleSheet: {fileID: 0}
+  databaseActions: {fileID: 0}
+  defaultAppearancesTags:
+  - size
+  defaultDisappearancesTags:
+  - fade
+  defaultBehaviorsTags: []
+  defaultTagsMode: 0
 --- !u!1 &295508177
 GameObject:
   m_ObjectHideFlags: 0
@@ -5049,6 +5082,7 @@ GameObject:
   - component: {fileID: 295508178}
   - component: {fileID: 295508180}
   - component: {fileID: 295508179}
+  - component: {fileID: 295508181}
   m_Layer: 5
   m_Name: LockedStudentDescription
   m_TagString: Untagged
@@ -5072,7 +5106,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -369.79, y: -358.1544}
+  m_AnchoredPosition: {x: -369.79, y: -363}
   m_SizeDelta: {x: 537.39, y: 351.1466}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &295508179
@@ -5095,10 +5129,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "1. This student grew up in the frigid north, nestled between towering
-    mountain peaks.\n2. This student\u2019s family is well known for their successful
-    whiskey business.\n3. This student likes to go to wild parties, and socializes
-    with a wide range of people.\n"
+  m_text: "1. This student grew up in the <color=#24bcd6><slide a=0.1 f=1 w=1>frigid
+    north</color></slide>,nestled between <color=#19a83f><slide a=0.1 f=1 w=1>towering
+    mountain peaks</color></slide>.\n2. This student\u2019s family is well known
+    for their <color=#baa90f><slide a=0.1 f=1 w=1>successful whiskey business</color></slide>.\n3.
+    This student likes to go to <color=#5a1db5><rainb f=1 w=1>wild parties</color></rainb>,
+    and <color=#5a1db5><slide a=0.1 f=1 w=1>socializes with a wide range of people.</color></slide>\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d69a70905a1ec48f2a808782809020de, type: 2}
   m_sharedMaterial: {fileID: 1871626305224760578, guid: d69a70905a1ec48f2a808782809020de, type: 2}
@@ -5125,7 +5161,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26.6
+  m_fontSize: 21.75
   m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5161,7 +5197,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 5.854187, y: 0, z: 5.8540335, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -5175,6 +5211,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 295508177}
   m_CullTransparentMesh: 1
+--- !u!114 &295508181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295508177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8ace8ced0e81c847968cdca0aeda757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typewriterStartsAutomatically: 0
+  animationLoop: 0
+  timeScale: 0
+  _text: 
+  useDynamicScaling: 1
+  referenceFontSize: 10
+  isResettingTimeOnNewText: 1
+  useDefaultDatabases: 1
+  databaseBehaviors: {fileID: 0}
+  databaseAppearances: {fileID: 0}
+  useDefaultStyleSheet: 1
+  styleSheet: {fileID: 0}
+  databaseActions: {fileID: 0}
+  defaultAppearancesTags:
+  - size
+  defaultDisappearancesTags:
+  - fade
+  defaultBehaviorsTags: []
+  defaultTagsMode: 0
 --- !u!1 &304569506
 GameObject:
   m_ObjectHideFlags: 0
@@ -12011,7 +12078,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 697431025}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.000014462}
+  m_LocalPosition: {x: 0, y: 0, z: -1.4779e-11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12019,8 +12086,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -381.33, y: -354.16}
-  m_SizeDelta: {x: 546.06, y: 342.8181}
+  m_AnchoredPosition: {x: -376.34, y: -354.16003}
+  m_SizeDelta: {x: 530.4996, y: 331.7035}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &697431027
 MonoBehaviour:
@@ -12042,10 +12109,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ' This student has connections to the most talented STEM students in their
+  m_text: This student has connections to the most talented STEM students in their
     old school district, thanks to their efforts in Mathelete and Science Fair programs.
-    Students generated have<color=#cf4444>lower finance</color>, but much higher
-    academic scores.'
+    Students generated have<slide a=0.1 f=1 w=1> <color=#b50716>lower finance</color></slide>,
+    but<slide a=0.1 f=1 w=1> <color=#8a7d08>much higher academic scores</color></slide>.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d69a70905a1ec48f2a808782809020de, type: 2}
   m_sharedMaterial: {fileID: 1871626305224760578, guid: d69a70905a1ec48f2a808782809020de, type: 2}
@@ -12072,7 +12139,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 29.95
+  m_fontSize: 25.15
   m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -12108,7 +12175,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 8.11972, y: 0, z: 2.2229004, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -15864,7 +15931,7 @@ MonoBehaviour:
   - {fileID: 724982103}
   - {fileID: 101252907}
   - {fileID: 308610238}
-  levelNumberToSet: 4
+  levelNumberToSet: 6
 --- !u!1 &957325993
 GameObject:
   m_ObjectHideFlags: 0
@@ -21786,7 +21853,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a282e640009b45b46bbeb20656d92ffd, type: 2}
   - {fileID: 11400000, guid: 68b5cbae4416fb14a8460b0209695dde, type: 2}
   - {fileID: 11400000, guid: e4050e340fdc5a5499fec79f7cbd2396, type: 2}
-  currentLevelID: 4
+  currentLevelID: 6
 --- !u!1 &1274818114
 GameObject:
   m_ObjectHideFlags: 0
@@ -30514,6 +30581,7 @@ GameObject:
   - component: {fileID: 1733219791}
   - component: {fileID: 1733219793}
   - component: {fileID: 1733219792}
+  - component: {fileID: 1733219794}
   m_Layer: 5
   m_Name: UnlockedStudentDescription
   m_TagString: Untagged
@@ -30538,7 +30606,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -369.79, y: -363}
-  m_SizeDelta: {x: 537.39, y: 351.1466}
+  m_SizeDelta: {x: 537.8, y: 351.1466}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1733219792
 MonoBehaviour:
@@ -30560,11 +30628,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Due to this student's noble lineage and political influence, they have
-    pulled some strings and convinced the Gessurd Noble Alliance and the Tendiyu
-    government to allocate additional federal funds to college education. Admitting
-    students from Gessurd and Tendiyu comes at no scholarship cost, but all other
-    students require more scholarship to admit.
+  m_text: Having attended many of their family's luxurious whiskey-tasting parties,
+    this student has cultivated a vast network of wealthy patrons who would love
+    to send their darlings to UA for a discounted price. <slide a=0.1 f=1 w=1> <color=#8a7d08>Admitting
+    Patron students now adds students to the student pool,</color></slide> <slide
+    a=0.1 f=1 w=1> <color=#b50716>rather than adding to the scholarship pool</color></slide>
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d69a70905a1ec48f2a808782809020de, type: 2}
   m_sharedMaterial: {fileID: 1871626305224760578, guid: d69a70905a1ec48f2a808782809020de, type: 2}
@@ -30591,7 +30659,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24.05
+  m_fontSize: 23.4
   m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -30627,7 +30695,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -4.220337, y: 0, z: -9.751312, w: 9.751297}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -30641,6 +30709,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1733219790}
   m_CullTransparentMesh: 1
+--- !u!114 &1733219794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733219790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8ace8ced0e81c847968cdca0aeda757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typewriterStartsAutomatically: 0
+  animationLoop: 0
+  timeScale: 0
+  _text: 
+  useDynamicScaling: 1
+  referenceFontSize: 10
+  isResettingTimeOnNewText: 1
+  useDefaultDatabases: 1
+  databaseBehaviors: {fileID: 0}
+  databaseAppearances: {fileID: 0}
+  useDefaultStyleSheet: 1
+  styleSheet: {fileID: 0}
+  databaseActions: {fileID: 0}
+  defaultAppearancesTags:
+  - size
+  defaultDisappearancesTags:
+  - fade
+  defaultBehaviorsTags: []
+  defaultTagsMode: 0
 --- !u!1 &1734048911
 GameObject:
   m_ObjectHideFlags: 0
@@ -37667,6 +37766,7 @@ GameObject:
   - component: {fileID: 2119635773}
   - component: {fileID: 2119635775}
   - component: {fileID: 2119635774}
+  - component: {fileID: 2119635776}
   m_Layer: 5
   m_Name: LockedStudentDescription
   m_TagString: Untagged
@@ -37682,7 +37782,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2119635772}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.000027953}
+  m_LocalPosition: {x: 0, y: 0, z: 0.000027956}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -37690,8 +37790,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -398, y: -357.3318}
-  m_SizeDelta: {x: 537.39, y: 354.9665}
+  m_AnchoredPosition: {x: -398, y: -357.33}
+  m_SizeDelta: {x: 517.3208, y: 354.97}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2119635774
 MonoBehaviour:
@@ -37713,14 +37813,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '1. This student is from a place on the flat plains of the east, surrounded
-    by glittering ivory towers.
+  m_text: '1. This student is from a place on the <color=#19a83f><slide a=0.1 f=1
+    w=1>flat plains</color></slide>of the east, surrounded by <color=#b7b0c2><slide
+    a=0.1 f=1 w=1>glittering ivory towers</color></slide>.
 
-    2. This student comes from a noble family of
-    great prestige.
+    2. This student comes
+    from a <color=#baa90f><slide a=0.1 f=1 w=1>noble family of great prestige</color></slide>.
 
-    4. This student has good business sense, and never goes
-    into anything without a plan.'
+    4.
+    This student has <color=#5a1db5><slide a=0.1 f=1 w=1>good business sense</color></slide>,
+    and <color=#1a0440><slide a=0.1 f=1 w=1>never goes into anything without a plan</color></slide>.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d69a70905a1ec48f2a808782809020de, type: 2}
   m_sharedMaterial: {fileID: 1871626305224760578, guid: d69a70905a1ec48f2a808782809020de, type: 2}
@@ -37747,7 +37849,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 27.15
+  m_fontSize: 22
   m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -37797,6 +37899,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2119635772}
   m_CullTransparentMesh: 1
+--- !u!114 &2119635776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119635772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8ace8ced0e81c847968cdca0aeda757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typewriterStartsAutomatically: 0
+  animationLoop: 0
+  timeScale: 0
+  _text: 
+  useDynamicScaling: 1
+  referenceFontSize: 10
+  isResettingTimeOnNewText: 1
+  useDefaultDatabases: 1
+  databaseBehaviors: {fileID: 0}
+  databaseAppearances: {fileID: 0}
+  useDefaultStyleSheet: 1
+  styleSheet: {fileID: 0}
+  databaseActions: {fileID: 0}
+  defaultAppearancesTags:
+  - size
+  defaultDisappearancesTags:
+  - fade
+  defaultBehaviorsTags: []
+  defaultTagsMode: 0
 --- !u!21 &2129519081
 Material:
   serializedVersion: 8
@@ -38634,14 +38767,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '1. This student grew up smelling the sea breeze and watching spiny palm
-    trees sway.
+  m_text: '1. This student grew up <color=#1e2d78><slide a=0.1 f=1 w=1>smelling the
+    sea breeze </color></slide>and <color=#19a83f><slide a=0.1 f=1 w=1>watching spiny
+    palm trees sway</color></slide>.
 
-    2. This student graduated at the top of their class from Vista
+    2. This student graduated at the<slide
+    a=0.1 f=1 w=1> <color=#baa90f>top of their class </slide></color> from Vista
     Public High School.
 
-    3. <color=#cf4444><bounce a=0.1 f=1 w=1>This student
-    likes to stay up late into the night.</color></bounce>'
+    3. This student likes to <color=#1a0440><slide a=0.1
+    f=1 w=1>stay up late </color></slide>into the night.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d69a70905a1ec48f2a808782809020de, type: 2}
   m_sharedMaterial: {fileID: 1871626305224760578, guid: d69a70905a1ec48f2a808782809020de, type: 2}
@@ -38668,7 +38803,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25.95
+  m_fontSize: 23.9
   m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -38704,7 +38839,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -2.2229614, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -38947,8 +39082,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -381.33, y: -354.16}
-  m_SizeDelta: {x: 546.06, y: 342.8181}
+  m_AnchoredPosition: {x: -379.67, y: -354.16}
+  m_SizeDelta: {x: 523.8306, y: 342.8181}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6273490679670665748
 MonoBehaviour:
@@ -39140,7 +39275,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &8403737757974690533
 MonoBehaviour:
   m_ObjectHideFlags: 0
