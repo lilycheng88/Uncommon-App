@@ -274,7 +274,18 @@ public class StudentAdmissionManager : MonoBehaviour
                     gameAnimator.SetTrigger("Accept");
                     studentAdmitted += 1;
                     studentLeft -= 1;
-                    totalScholarship -= (financeRequired - data._finance);
+
+                    var scholarshipCost = (financeRequired - data._finance);
+                    if (LegendaryStudentManager.Instance.unmeiiaNystalFreeEffect)
+                    {
+                        if(data._nationality == "Unmeiia" || data._nationality == "Nystal")
+                        {
+                            scholarshipCost = 0;
+                        }
+                        Mathf.RoundToInt(scholarshipCost * 1.3f);
+
+                    }
+                    totalScholarship -= scholarshipCost;
                     if (totalScholarship < 0)
                     {
                         totalScholarship = 0;
@@ -282,7 +293,14 @@ public class StudentAdmissionManager : MonoBehaviour
 
                     if (data._isPatron)
                     {
-                        totalScholarship += patronScholarshipBonus;
+                        if (LegendaryStudentManager.Instance.patronAddPoolEffect)
+                        {
+                            studentLeft += 5;
+                        }
+                        else
+                        {
+                            totalScholarship += patronScholarshipBonus;
+                        }
                     }
 
                     averageFinance += Mathf.RoundToInt((data._finance - financeMidValue) * financeMultiplier);

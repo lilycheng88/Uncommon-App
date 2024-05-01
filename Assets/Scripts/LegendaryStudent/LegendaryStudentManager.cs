@@ -34,12 +34,12 @@ public class LegendaryStudentManager : MonoBehaviour
         }
 
         InitializeUnlockStates();
-        
+        LoadUnlockStates();
     }
 
     void Start()
     {
-        LoadUnlockStates();
+        
     }
 
     private void InitializeUnlockStates()
@@ -123,11 +123,15 @@ public class LegendaryStudentManager : MonoBehaviour
 
                 foreach (Image bodyPart in bodyParts)
                 {
-                    
-                    bodyPart.material = new Material(bodyPart.material); // Create a new material instance for each body part
-                    DOVirtual.Float(initialValue, finalValue, duration, value => {
-                        bodyPart.material.SetFloat("_FadeAmount", value); // Apply the interpolated value to the shader property
-                    }).SetEase(Ease.InOutQuad); // Optional: Set the easing function
+                    bodyPart.material = new Material(bodyPart.material);  // Create a new material instance for each body part
+
+                    // Create the tween and assign a tag
+                    DOVirtual.Float(initialValue, finalValue, duration, value =>
+                    {
+                        bodyPart.material.SetFloat("_FadeAmount", value);  // Apply the interpolated value to the shader property
+                    })
+                    .SetEase(Ease.InOutQuad)  // Optional: Set the easing function
+                    .SetId(bodyPart.GetInstanceID());  // Set a unique ID based on the instance of the bodyPart
                 }
 
                 currentScannedLegendaryStudentID = currentStudent._legendaryStudentID - 1;
@@ -156,6 +160,7 @@ public class LegendaryStudentManager : MonoBehaviour
 
    public void ClearLegendaryStudentVisuals()
    {
+        KillTweens();
         foreach (Image bodyPart in bodyParts)
         {
             if (bodyPart != null)
@@ -166,6 +171,16 @@ public class LegendaryStudentManager : MonoBehaviour
         }
 
    }
+
+    // Method to stop all tweens
+    public void KillTweens()
+    {
+        foreach (Image bodyPart in bodyParts)
+        {
+            DOTween.Kill(bodyPart.GetInstanceID());  // Kills all tweens with this specific ID
+        }
+    }
+
 
 
 
