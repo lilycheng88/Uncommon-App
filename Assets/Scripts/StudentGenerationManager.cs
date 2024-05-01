@@ -125,14 +125,26 @@ public class StudentGenerationManager : MonoBehaviour
         raceDatas.AddRange(raceDataArray);
         //==========================
 
+
+
+    }
+    
+    void Start()
+    {
         //========Legendary Student======
         //Initializing student data list
         remainingLegendaryStudentList = allLegendaryStudentList;
+        for (var i = 0; i < LegendaryStudentManager.Instance.legendaryStudentUnlockStates.Count; i ++)
+        {
+            if(LegendaryStudentManager.Instance.legendaryStudentUnlockStates[i]==true)
+            {
+                remainingLegendaryStudentList.Remove(allLegendaryStudentList[i]);
+            }
+        }
 
 
 
         //===============================
-
     }
 
     public StudentData RandomGenerateStudent()
@@ -265,7 +277,7 @@ public class StudentGenerationManager : MonoBehaviour
 
         if(LegendaryStudentManager.Instance.moreAcademicLessMoneyEffect)
         {
-            data._finance = Mathf.Max(0,data._finance - 30);
+            data._finance = Mathf.Max(0,data._finance - 20);
             data._academic = Mathf.Min(100, data._academic + 40);
         }
         //============================
