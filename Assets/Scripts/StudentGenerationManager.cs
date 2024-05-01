@@ -134,8 +134,6 @@ public class StudentGenerationManager : MonoBehaviour
         //========Legendary Student======
         //Initializing student data list
         remainingLegendaryStudentList = allLegendaryStudentList;
-        Debug.Log("there is " + LegendaryStudentManager.Instance.legendaryStudentUnlockStates.Count + "in unlockstates.count");
-        Debug.Log("there is" + remainingLegendaryStudentList.Count + " in remaining leg student list");
         for (var i = LegendaryStudentManager.Instance.legendaryStudentUnlockStates.Count - 1; i >= 0; i--)
         {
             Debug.Log("Checking for unlocked legendary");
