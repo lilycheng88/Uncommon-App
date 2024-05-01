@@ -11995,6 +11995,7 @@ GameObject:
   - component: {fileID: 697431026}
   - component: {fileID: 697431028}
   - component: {fileID: 697431027}
+  - component: {fileID: 697431029}
   m_Layer: 5
   m_Name: UnlockedDescription
   m_TagString: Untagged
@@ -12043,7 +12044,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: ' This student has connections to the most talented STEM students in their
     old school district, thanks to their efforts in Mathelete and Science Fair programs.
-    Students generated have lower finance, but much higher academic scores.'
+    Students generated have<color=#cf4444>lower finance</color>, but much higher
+    academic scores.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d69a70905a1ec48f2a808782809020de, type: 2}
   m_sharedMaterial: {fileID: 1871626305224760578, guid: d69a70905a1ec48f2a808782809020de, type: 2}
@@ -12120,6 +12122,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 697431025}
   m_CullTransparentMesh: 1
+--- !u!114 &697431029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697431025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8ace8ced0e81c847968cdca0aeda757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typewriterStartsAutomatically: 0
+  animationLoop: 0
+  timeScale: 0
+  _text: 
+  useDynamicScaling: 1
+  referenceFontSize: 10
+  isResettingTimeOnNewText: 1
+  useDefaultDatabases: 1
+  databaseBehaviors: {fileID: 0}
+  databaseAppearances: {fileID: 0}
+  useDefaultStyleSheet: 1
+  styleSheet: {fileID: 0}
+  databaseActions: {fileID: 0}
+  defaultAppearancesTags:
+  - size
+  defaultDisappearancesTags:
+  - fade
+  defaultBehaviorsTags: []
+  defaultTagsMode: 0
 --- !u!1 &721236673
 GameObject:
   m_ObjectHideFlags: 0
@@ -38607,7 +38640,8 @@ MonoBehaviour:
     2. This student graduated at the top of their class from Vista
     Public High School.
 
-    3. This student likes to stay up late into the night.'
+    3. <color=#cf4444><bounce a=0.1 f=1 w=1>This student
+    likes to stay up late into the night.</color></bounce>'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d69a70905a1ec48f2a808782809020de, type: 2}
   m_sharedMaterial: {fileID: 1871626305224760578, guid: d69a70905a1ec48f2a808782809020de, type: 2}
@@ -38634,7 +38668,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 29.2
+  m_fontSize: 25.95
   m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -39099,6 +39133,7 @@ GameObject:
   - component: {fileID: 5951798215941550189}
   - component: {fileID: 7197698888912835254}
   - component: {fileID: 3406103070131341786}
+  - component: {fileID: 8403737757974690533}
   m_Layer: 5
   m_Name: LockedStudentDescription
   m_TagString: Untagged
@@ -39106,6 +39141,37 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8403737757974690533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8403737757974690532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8ace8ced0e81c847968cdca0aeda757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typewriterStartsAutomatically: 0
+  animationLoop: 0
+  timeScale: 0
+  _text: 
+  useDynamicScaling: 1
+  referenceFontSize: 10
+  isResettingTimeOnNewText: 1
+  useDefaultDatabases: 1
+  databaseBehaviors: {fileID: 0}
+  databaseAppearances: {fileID: 0}
+  useDefaultStyleSheet: 1
+  styleSheet: {fileID: 0}
+  databaseActions: {fileID: 0}
+  defaultAppearancesTags:
+  - size
+  defaultDisappearancesTags:
+  - fade
+  defaultBehaviorsTags: []
+  defaultTagsMode: 0
 --- !u!224 &9162669646776058924
 RectTransform:
   m_ObjectHideFlags: 0
