@@ -156,5 +156,6 @@ public class GameManager : MonoBehaviour
     {
         legendaryStudentPanelOpen = !legendaryStudentPanelOpen;
         legendaryStudentPanel.SetActive(legendaryStudentPanelOpen);
+        SoundManager.Instance.PlaySFX(legendaryStudentPanelOpen ? "Click_ChatOpen" : "Click_ChatClose");
     }
 }

@@ -8,6 +8,7 @@ using System.Linq;
 public class LegendaryStudentManager : MonoBehaviour
 {
     public static LegendaryStudentManager Instance;
+    [SerializeField] StudentInfo studentInfo;
     [SerializeField] Animator studentInfoAnimator;
     StudentData lastStudentData; 
     [SerializeField] List<Image> bodyParts;
@@ -94,28 +95,34 @@ public class LegendaryStudentManager : MonoBehaviour
     
     public void ScanStudent()
     {
-        StudentData currentStudent = StudentAdmissionManager.Instance.studentInfo.data;
-            if (currentStudent != lastStudentData)
-            {
-                lastStudentData = currentStudent;
-                studentInfoAnimator.SetTrigger("Scan");
-                if (currentStudent._legendaryStudentID != 0)
-                {
-                    bodyParts[0].sprite = lastStudentData._ASprite;
-                    bodyParts[1].sprite = lastStudentData._BSprite;
-                    bodyParts[2].sprite = lastStudentData._CSprite;
-                    bodyParts[3].sprite = lastStudentData._DSprite;
-                    bodyParts[4].sprite = lastStudentData._ESprite;
-                    bodyParts[5].sprite = lastStudentData._FSprite;
-                    if (lastStudentData._GSprite != null)
-                    {
-                        bodyParts[6].enabled = true;
-                        bodyParts[6].sprite = lastStudentData._GSprite;
-                    } else {
-                        bodyParts[6].enabled = false;
-                    }
 
-                    bodyParts[7].sprite = lastStudentData._HSprite;
+        StudentData currentStudent = StudentAdmissionManager.Instance.studentInfo.data;
+        if (currentStudent != lastStudentData)
+        {
+            SoundManager.Instance.PlaySFX("Click_OK");
+            lastStudentData = currentStudent;
+            studentInfoAnimator.SetTrigger("Scan");
+            if (currentStudent._legendaryStudentID != 0)
+            {
+                SoundManager.Instance.PlaySFX("PreReveal");
+                studentInfo.isLegendary = true;
+                bodyParts[0].sprite = lastStudentData._ASprite;
+                bodyParts[1].sprite = lastStudentData._BSprite;
+                bodyParts[2].sprite = lastStudentData._CSprite;
+                bodyParts[3].sprite = lastStudentData._DSprite;
+                bodyParts[4].sprite = lastStudentData._ESprite;
+                bodyParts[5].sprite = lastStudentData._FSprite;
+                if (lastStudentData._GSprite != null)
+                {
+                    bodyParts[6].enabled = true;
+                    bodyParts[6].sprite = lastStudentData._GSprite;
+                }
+                else
+                {
+                    bodyParts[6].enabled = false;
+                }
+
+                bodyParts[7].sprite = lastStudentData._HSprite;
 
                 float initialValue = 1f; // Starting value
                 float finalValue = -0.1f; // Ending value, consider changing to a positive value if this is outside expected range
@@ -135,15 +142,22 @@ public class LegendaryStudentManager : MonoBehaviour
                 }
 
                 currentScannedLegendaryStudentID = currentStudent._legendaryStudentID - 1;
-                
             }
+            else
+            {
+                studentInfo.isLegendary = false;
+            }
+        }
+        else
+        {
+            SoundManager.Instance.PlaySFX("Click_Confirm");
         }
     }
 
     public void UnlockCurrentScanedLegendaryStudent()
     {
         if (currentScannedLegendaryStudentID >= 0)
-        {
+        {            
             var id = legendaryStudentVisualsList[currentScannedLegendaryStudentID];
             id.SetLockState(false);
             legendaryStudentUnlockStates[currentScannedLegendaryStudentID] = true;

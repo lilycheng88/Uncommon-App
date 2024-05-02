@@ -11665,6 +11665,7 @@ GameObject:
   - component: {fileID: 679589552}
   - component: {fileID: 679589551}
   - component: {fileID: 679589554}
+  - component: {fileID: 679589555}
   m_Layer: 5
   m_Name: LockedCurtain
   m_TagString: Untagged
@@ -11767,6 +11768,18 @@ MonoBehaviour:
   normalStrength: 5
   normalSmoothing: 1
   computingNormal: 0
+--- !u!114 &679589555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679589549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 490baba2f4c806347b24c306969459fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &682997137
 GameObject:
   m_ObjectHideFlags: 0
@@ -16188,6 +16201,7 @@ GameObject:
   - component: {fileID: 970990248}
   - component: {fileID: 970990246}
   - component: {fileID: 970990247}
+  - component: {fileID: 970990250}
   m_Layer: 5
   m_Name: LockedCurtain
   m_TagString: Untagged
@@ -16290,6 +16304,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 970990244}
   m_CullTransparentMesh: 1
+--- !u!114 &970990250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970990244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 490baba2f4c806347b24c306969459fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!21 &979221921
 Material:
   serializedVersion: 8
@@ -17968,7 +17994,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Are you sure you no longer want this student to be your assistent?
+  m_text: Are you sure you no longer want this student to be your assistant?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d69a70905a1ec48f2a808782809020de, type: 2}
   m_sharedMaterial: {fileID: 1871626305224760578, guid: d69a70905a1ec48f2a808782809020de, type: 2}
@@ -22132,6 +22158,7 @@ GameObject:
   - component: {fileID: 1277290688}
   - component: {fileID: 1277290690}
   - component: {fileID: 1277290691}
+  - component: {fileID: 1277290692}
   m_Layer: 5
   m_Name: LockedCurtain
   m_TagString: Untagged
@@ -22234,6 +22261,18 @@ MonoBehaviour:
   normalStrength: 5
   normalSmoothing: 1
   computingNormal: 0
+--- !u!114 &1277290692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1277290686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 490baba2f4c806347b24c306969459fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1278893001
 GameObject:
   m_ObjectHideFlags: 0
@@ -24278,6 +24317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd5020301aeae482cb69abfe7def7c35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  studentInfo: {fileID: 1451621151}
   studentInfoAnimator: {fileID: 1451621152}
   bodyParts:
   - {fileID: 1444937893}
@@ -25886,6 +25926,7 @@ MonoBehaviour:
   studentDescriptionText: {fileID: 0}
   financeSlider: {fileID: 814719640}
   academicSlider: {fileID: 1695118703}
+  isLegendary: 0
   AImage: {fileID: 1750240101}
   BImage: {fileID: 729473017}
   CImage: {fileID: 721236675}

@@ -75,6 +75,7 @@ public class LegendaryStudentVisuals : MonoBehaviour, IPointerEnterHandler, IPoi
     }
     public void ToggleLegendaryStudentActivate()
     {
+        SoundManager.Instance.PlaySFX("ChatOpen");
         if (!confirmUI.isPanelOpen)
         {
             Toggle toggle = GetComponent<Toggle>();
@@ -84,6 +85,7 @@ public class LegendaryStudentVisuals : MonoBehaviour, IPointerEnterHandler, IPoi
                 {
                     if (isHovering == true)
                     {
+                        SoundManager.Instance.PlaySFX("ChatOpen");
                         confirmUI.OpenConfirmSelectPanel(this.GetComponent<LegendaryStudentVisuals>());
                     }
                     studentSelected = true;
@@ -92,6 +94,7 @@ public class LegendaryStudentVisuals : MonoBehaviour, IPointerEnterHandler, IPoi
                 {
                     if (isHovering == true)
                     {
+                        SoundManager.Instance.PlaySFX("ChatClose");
                         confirmUI.OpenConfirmDeselectPanel(this.GetComponent<LegendaryStudentVisuals>());
                     }
                     studentSelected = false;

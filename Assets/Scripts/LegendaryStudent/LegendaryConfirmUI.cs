@@ -13,7 +13,8 @@ public class LegendaryConfirmUI : MonoBehaviour
 
     public void OpenConfirmSelectPanel(LegendaryStudentVisuals vis)
     {
-        if(currentLegendary != null)
+        SoundManager.Instance.PlaySFX("Click_ChatOpen");
+        if (currentLegendary != null)
         {
             previousLegendary = currentLegendary;
         }
@@ -24,6 +25,7 @@ public class LegendaryConfirmUI : MonoBehaviour
 
     public void CloseConfirmSelectPanel(bool remainToggleIsOn)
     {
+        SoundManager.Instance.PlaySFX("Click_ChatClose");
         if (remainToggleIsOn) {
             currentLegendary.GetComponent<Toggle>().isOn = true;
         }else{
@@ -36,7 +38,8 @@ public class LegendaryConfirmUI : MonoBehaviour
 
     public void OpenConfirmDeselectPanel(LegendaryStudentVisuals vis)
     {
-        if(currentLegendary != null)
+        SoundManager.Instance.PlaySFX("Click_ChatOpen");
+        if (currentLegendary != null)
         {
             previousLegendary = currentLegendary;
         }
@@ -47,6 +50,7 @@ public class LegendaryConfirmUI : MonoBehaviour
 
     public void CloseConfirmDeselectPanel(bool remainToggleIsOn)
     {
+        SoundManager.Instance.PlaySFX("Click_ChatClose");
         if (remainToggleIsOn) {
             currentLegendary.GetComponent<Toggle>().isOn = true;
         }else{
@@ -92,15 +96,24 @@ public class LegendaryConfirmUI : MonoBehaviour
 
     public void UltimateConfirmSelectButton()
     {
+        
+        
         if (currentLegendary.CalculateConfirmCondition())
         {
+            SoundManager.Instance.PlaySFX("Click_OK");
+            SoundManager.Instance.PlaySFX("FinalHire");
             CloseConfirmSelectPanel(true);
             SetCurrentStudentSelected(true);
+        }
+        else
+        {
+            SoundManager.Instance.PlaySFX("Click_Confirm");
         }
     }
 
     public void UltimateCancelSelectButton()
     {
+        SoundManager.Instance.PlaySFX("Click_OK");
         CloseConfirmSelectPanel(false);
         SetCurrentStudentSelected(false);
         SetPreviousStudentSelected(true);
@@ -109,6 +122,8 @@ public class LegendaryConfirmUI : MonoBehaviour
 
     public void UltimateConfirmDeselectButton()
     {
+        SoundManager.Instance.PlaySFX("Click_OK");
+        SoundManager.Instance.PlaySFX("FinalCancel");
         currentLegendary.DisableStudentEffect();
         CloseConfirmDeselectPanel(false);
         SetCurrentStudentSelected(false);
@@ -118,6 +133,7 @@ public class LegendaryConfirmUI : MonoBehaviour
 
     public void UltimateCancelDeselectButton()
     {
+        SoundManager.Instance.PlaySFX("Click_OK");
         CloseConfirmDeselectPanel(true);
         SetCurrentStudentSelected(true);
         SetCurrentAndPreviousToNull();
