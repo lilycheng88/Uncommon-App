@@ -314,7 +314,6 @@ public class StudentAdmissionManager : MonoBehaviour
                     //===Legendary====
                     LegendaryStudentManager.Instance.UnlockCurrentScanedLegendaryStudent();
                     StudentGenerationManager.Instance.remainingLegendaryStudentList.Remove(data);
-
                     //================
 
                     //===Mini Goal Datas===
@@ -456,6 +455,12 @@ public class StudentAdmissionManager : MonoBehaviour
         }
         else
         {
+            if(LegendaryStudentManager.Instance.unmeiiaNystalFreeEffect){
+                if(data._nationality == "Tendiyu" || data._nationality == "Gessurd")
+                {
+                    return true;
+                }
+            }
             return false;
         }
     }
