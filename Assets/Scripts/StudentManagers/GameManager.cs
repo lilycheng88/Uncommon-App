@@ -121,6 +121,8 @@ public class GameManager : MonoBehaviour
         if (PlayerPrefs.HasKey("CurrentLevelID"))
         {
             currentLevelID = PlayerPrefs.GetInt("CurrentLevelID");
+        }else{
+            currentLevelID = 0;
         }
     }
 
