@@ -104,6 +104,8 @@ public class LegendaryStudentManager : MonoBehaviour
         StudentData currentStudent = StudentAdmissionManager.Instance.studentInfo.data;
         if (currentStudent != lastStudentData)
         {
+            ScanLeft -= 1;
+            ScanLeftText.text = ScanLeft.ToString();
             SoundManager.Instance.PlaySFX("Click_OK");
             lastStudentData = currentStudent;
             studentInfoAnimator.SetTrigger("Scan");
