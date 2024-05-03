@@ -79,6 +79,7 @@ public class GameManager : MonoBehaviour
     }
     public void GameLose()
     {
+        SoundManager.Instance.PlaySFX("FireSlam");
         gameLoseScreen.SetActive(true);
     }
 
@@ -106,7 +107,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            GameLose();
+            GameLose();           
         }
     }
 

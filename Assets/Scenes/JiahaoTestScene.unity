@@ -16619,7 +16619,7 @@ MonoBehaviour:
   - {fileID: 724982103}
   - {fileID: 101252907}
   - {fileID: 308610238}
-  levelNumberToSet: 4
+  levelNumberToSet: 0
 --- !u!1 &957325993
 GameObject:
   m_ObjectHideFlags: 0
@@ -22603,7 +22603,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a282e640009b45b46bbeb20656d92ffd, type: 2}
   - {fileID: 11400000, guid: 68b5cbae4416fb14a8460b0209695dde, type: 2}
   - {fileID: 11400000, guid: e4050e340fdc5a5499fec79f7cbd2396, type: 2}
-  currentLevelID: 4
+  currentLevelID: 0
 --- !u!1 &1274818114
 GameObject:
   m_ObjectHideFlags: 0
@@ -28770,12 +28770,44 @@ PrefabInstance:
       value: -458
       objectReference: {fileID: 0}
     - target: {fileID: 6405473449379477976, guid: b348956c5f9d143239d20a272204b1f5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6405473449379477976, guid: b348956c5f9d143239d20a272204b1f5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6405473449379477976, guid: b348956c5f9d143239d20a272204b1f5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1833455516}
+    - target: {fileID: 6405473449379477976, guid: b348956c5f9d143239d20a272204b1f5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1273621684}
     - target: {fileID: 6405473449379477976, guid: b348956c5f9d143239d20a272204b1f5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6405473449379477976, guid: b348956c5f9d143239d20a272204b1f5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ButtonClickSoundOK
+      objectReference: {fileID: 0}
+    - target: {fileID: 6405473449379477976, guid: b348956c5f9d143239d20a272204b1f5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: ReloadCurrentScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 6405473449379477976, guid: b348956c5f9d143239d20a272204b1f5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ButtonClickSound, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6405473449379477976, guid: b348956c5f9d143239d20a272204b1f5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6405473449379477976, guid: b348956c5f9d143239d20a272204b1f5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6585095433736663221, guid: b348956c5f9d143239d20a272204b1f5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -28841,7 +28873,10 @@ PrefabInstance:
     - {fileID: 2354543115019847571, guid: b348956c5f9d143239d20a272204b1f5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5388522311271151656, guid: b348956c5f9d143239d20a272204b1f5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1833455516}
   m_SourcePrefab: {fileID: 100100000, guid: b348956c5f9d143239d20a272204b1f5, type: 3}
 --- !u!1 &1620526112
 GameObject:
@@ -34096,6 +34131,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1831196557}
   m_CullTransparentMesh: 1
+--- !u!1 &1833455511 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5388522311271151656, guid: b348956c5f9d143239d20a272204b1f5, type: 3}
+  m_PrefabInstance: {fileID: 1612915260}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1833455516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833455511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d1cfc065ba3dd447bb17468934d2ce5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!21 &1840676150
 Material:
   serializedVersion: 8

@@ -22,8 +22,7 @@ public class NewspaperVisuals : MonoBehaviour
 
 
     public void UpdateVisuals(NewsItem newsItem1, NewsItem newsItem2, NewsItem titleNews)
-    {
-
+    {       
         newsOneNoData.SetActive(false);
         newsOneImage.sprite = newsItem1.icon;
         newsOneTitle.text = newsItem1.Header;
@@ -58,8 +57,9 @@ public class NewspaperVisuals : MonoBehaviour
         }else{
             titleNewsNoData.SetActive(false);
         }
-
-
-
+    }
+    public void PaperSound()
+    {
+        SoundManager.Instance.PlaySFX("NewPaper");
     }
 }
