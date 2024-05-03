@@ -6,6 +6,7 @@ public class TextCopy : MonoBehaviour
     public TextMeshProUGUI targetText;  // Reference to the target TextMeshProUGUI to copy from
     private TextMeshProUGUI ownText;    // The TextMeshProUGUI component on this GameObject
 
+    public bool copyColor;
     void Start()
     {
         // Get the TextMeshProUGUI component from this GameObject
@@ -42,7 +43,10 @@ public class TextCopy : MonoBehaviour
     {
         // Copy all necessary initial properties from the target TextMeshProUGUI
         ownText.fontSize = targetText.fontSize;
-        ownText.color = targetText.color;
+        if (copyColor)
+        {
+            ownText.color = targetText.color;
+        }
         ownText.alignment = targetText.alignment;
         ownText.font = targetText.font;
         ownText.fontStyle = targetText.fontStyle;
@@ -52,7 +56,10 @@ public class TextCopy : MonoBehaviour
     {
         // Continuously update these properties if they are expected to change
         ownText.fontSize = targetText.fontSize;
-        ownText.color = targetText.color;
+        if (copyColor)
+        {
+            ownText.color = targetText.color;
+        }
         ownText.alignment = targetText.alignment;
         // Add more properties if needed
     }
