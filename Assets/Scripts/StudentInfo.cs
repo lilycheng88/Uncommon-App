@@ -14,6 +14,7 @@ public class StudentInfo : MonoBehaviour
     public TextMeshProUGUI studentDescriptionText;
     public Slider financeSlider;
     public Slider academicSlider;
+    public bool isLegendary;
 
     [SerializeField] Image AImage;
     [SerializeField] Image BImage;
@@ -85,9 +86,15 @@ public class StudentInfo : MonoBehaviour
 
     public void ScanStudent()
     {
-
-
+        SoundManager.Instance.PlaySFX("Scan Beep3");
     }
 
+    public void Reveal()
+    {
+        if(isLegendary)
+        {
+            SoundManager.Instance.PlaySFX("Reveal2");
+        }
+    }
 
 }

@@ -13,15 +13,30 @@ MonoBehaviour:
   m_Name: Level 1 Chat
   m_EditorClassIdentifier: 
   messageContentList:
-  - message: I'm a hamburger
+  - message: I have an additional assignment for you. Pay attention.
     sprite: {fileID: 0}
-  - message: You are also a hamburger
+  - message: "Below school statistics, there should now be a tab labeled <bounce
+      a=0.1 f=0.5 w=1>\u201CMini Goals.\u201D </bounce>"
+    sprite: {fileID: 21300000, guid: d19073d55f112b7439e3c03ac5e449ac, type: 3}
+  - message: These additional responsibilities are indicative of what I have observed
+      to be positive trends in university admissions statistics.
     sprite: {fileID: 0}
-  - message: Aren't we all just hamburgers?
+  - message: "In layman\u2019s terms: I am telling you to admit these types of students.
+      It will make us look good. "
     sprite: {fileID: 0}
-  - message: Gosh, I could have a hamburger right now
+  - message: Student preferences are assigned a value from 1 to 5, indicated by the
+      number of dashes in the allotted field.
+    sprite: {fileID: 21300000, guid: d67c2e22598cde041a9e1735688441a3, type: 3}
+  - message: Student preferences are assigned a value from 1 to 5, indicated by the
+      number of dashes in the allotted field.
+    sprite: {fileID: 21300000, guid: d67c2e22598cde041a9e1735688441a3, type: 3}
+  - message: 'If the indicated preference is bolded, this student will count toward
+      your Mini Goal. '
     sprite: {fileID: 0}
-  - message: Look at you, little burgerino
+  - message: If you succeed in completing your assigned Mini Goals, our good reputation
+      should reward you with additional <wave a=0.1 f=1 w=1><b>scholarship funding</b>
+      </wave>or <wave a=0.1 f=1 w=1><b>applicants</b></wave>. Take advantage of the
+      opportunity to accept a more diverse pool of students.
     sprite: {fileID: 0}
-  - message: Come to papa
+  - message: ' That is all for now. Keep up the good work. '
     sprite: {fileID: 0}

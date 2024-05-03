@@ -102,7 +102,7 @@ public class TextFormater : MonoBehaviour
             {
                 care.text = "<incr a=0.8 f=1 w=1></incr>Careful";
                 care.color = No;
-                explore.text = "<incr a=0.8 f=1 w=1>Emotional</incr>";
+                explore.text = "<incr a=0.8 f=1 w=1>Explorative</incr>";
                 explore.color = Yes;
             }
             if(targetData._explorativity == 3)
