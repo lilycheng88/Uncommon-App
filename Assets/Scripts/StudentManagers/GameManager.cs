@@ -77,7 +77,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        dayText.text = "Day " + currentLevelID.ToString();
+        dayText.text = "Day " + (currentLevelID+1).ToString();
         Debug.Log("updating level data id=" + currentLevelID);
     }
     public void GameLose()
