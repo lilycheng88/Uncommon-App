@@ -8993,11 +8993,11 @@ MonoBehaviour:
   - Ogre
   - Wyrm
   allLegendaryStudentList:
-  - _studentName: The Night Watchman
+  - _studentName: einhardt adams
     _studentDescription: 
     _studentRace: 
-    _academic: 95
-    _finance: 30
+    _academic: 93
+    _finance: 32
     _ASprite: {fileID: 21300000, guid: 8a025c232a48b4b128664b04255def10, type: 3}
     _BSprite: {fileID: 21300000, guid: 3baa5521467c548faae1ad51d22f523d, type: 3}
     _CSprite: {fileID: 21300000, guid: 13292bd1de9834600bfaa10c6011c57a, type: 3}
@@ -9021,11 +9021,11 @@ MonoBehaviour:
     _nationality: 
     _nationType: 1
     _legendaryStudentID: 1
-  - _studentName: The Whiskey Kid
+  - _studentName: nowi hydra
     _studentDescription: 
     _studentRace: 
-    _academic: 50
-    _finance: 90
+    _academic: 49
+    _finance: 92
     _ASprite: {fileID: 21300000, guid: 329fc73aca64f465f8c69ed21d66ca39, type: 3}
     _BSprite: {fileID: 21300000, guid: 439da3bfdddf14c16bedcb644e723a7c, type: 3}
     _CSprite: {fileID: 21300000, guid: 4506b02a4dcea46fdb6781f3f91c4bc7, type: 3}
@@ -9049,11 +9049,11 @@ MonoBehaviour:
     _nationality: 
     _nationType: 3
     _legendaryStudentID: 2
-  - _studentName: Ivory bussiness
+  - _studentName: bill torres
     _studentDescription: 
     _studentRace: 
     _academic: 68
-    _finance: 90
+    _finance: 87
     _ASprite: {fileID: 21300000, guid: 795f507b4d321422c8ba0546c25b4674, type: 3}
     _BSprite: {fileID: 21300000, guid: acc80d9a1960747f8a7f576d3c4cc794, type: 3}
     _CSprite: {fileID: 21300000, guid: 8c8866e93eaebe24dbbe22fc7a80873c, type: 3}

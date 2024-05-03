@@ -56,6 +56,7 @@ public class GameManager : MonoBehaviour
             currentLevelManager = GameObject.FindGameObjectWithTag("levelManager").GetComponent<LevelManager>();
             if (currentLevelID < levelDataList.Count)
             {
+                Debug.Log("Setting level data as id=" + currentLevelID);
                 currentLevelManager.levelData = levelDataList[currentLevelID];
             }
             else
@@ -69,9 +70,13 @@ public class GameManager : MonoBehaviour
     {
         mainScreenAnimator = gameTabs[0].GetComponent<Animator>();
         mainScreenAnimator.SetTrigger("LoadIn");
-        
+        Debug.Log("now level data id=" + currentLevelID);
     }
 
+    private void Update()
+    {
+        Debug.Log("updating level data id=" + currentLevelID);
+    }
     public void GameLose()
     {
         gameLoseScreen.SetActive(true);
@@ -123,6 +128,7 @@ public class GameManager : MonoBehaviour
             currentLevelID = PlayerPrefs.GetInt("CurrentLevelID");
         }else{
             currentLevelID = 0;
+            PlayerPrefs.Save();
         }
     }
 
