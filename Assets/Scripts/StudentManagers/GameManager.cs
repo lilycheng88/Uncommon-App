@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -18,6 +19,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] Animator chatScreenAnimator, mapScreenAnimator,mainScreenAnimator;
     [SerializeField] GameObject legendaryStudentPanel;
     [SerializeField] GameObject creditScreen;
+    [SerializeField] TextMeshProUGUI dayText;
     private bool chatScreenOpen = false, mapScreenOpen = false, legendaryStudentPanelOpen = false, creditScreenOpen = false;
     public LevelManager currentLevelManager;
     public List<LevelData> levelDataList = new();
@@ -75,6 +77,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        dayText.text = "Day " + (currentLevelID+1).ToString();
         Debug.Log("updating level data id=" + currentLevelID);
     }
     public void GameLose()
