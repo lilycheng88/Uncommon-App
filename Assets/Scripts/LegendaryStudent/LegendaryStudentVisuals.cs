@@ -23,7 +23,7 @@ public class LegendaryStudentVisuals : MonoBehaviour, IPointerEnterHandler, IPoi
     // Start is called before the first frame update
     void Awake()
     {
-
+        SetLockState(studentLocked);
         
     }
 
@@ -133,7 +133,8 @@ public class LegendaryStudentVisuals : MonoBehaviour, IPointerEnterHandler, IPoi
             }
             if(legendaryStudentID == 1)
             {
-                LegendaryStudentManager.Instance.unmeiiaNystalFreeEffect= true;
+                LegendaryStudentManager.Instance.patronAddPoolEffect = true;
+                
                 LegendaryStudentManager.Instance.legendaryEffectIcon[1].SetActive(true);
                 LegendaryStudentManager.Instance.legendaryEffectIcon[0].SetActive(false);
                 LegendaryStudentManager.Instance.legendaryEffectIcon[2].SetActive(false);
@@ -142,7 +143,7 @@ public class LegendaryStudentVisuals : MonoBehaviour, IPointerEnterHandler, IPoi
             }
             if(legendaryStudentID == 2)
             {
-                LegendaryStudentManager.Instance.patronAddPoolEffect = true;
+                LegendaryStudentManager.Instance.unmeiiaNystalFreeEffect= true;
                 LegendaryStudentManager.Instance.legendaryEffectIcon[2].SetActive(true);
                 LegendaryStudentManager.Instance.legendaryEffectIcon[0].SetActive(false);
                 LegendaryStudentManager.Instance.legendaryEffectIcon[1].SetActive(false);
@@ -164,17 +165,19 @@ public class LegendaryStudentVisuals : MonoBehaviour, IPointerEnterHandler, IPoi
             LegendaryStudentManager.Instance.legendaryEffectIcon[0].SetActive(false);
 
         }
+
         if(legendaryStudentID == 1)
         {
-            LegendaryStudentManager.Instance.unmeiiaNystalFreeEffect= false;
+            
+            LegendaryStudentManager.Instance.patronAddPoolEffect = false;
             LegendaryStudentManager.Instance.legendaryEffectIcon[1].SetActive(false);
         }
         if(legendaryStudentID == 2)
         {
-            
-            LegendaryStudentManager.Instance.patronAddPoolEffect = false;
+            LegendaryStudentManager.Instance.unmeiiaNystalFreeEffect= false;
             LegendaryStudentManager.Instance.legendaryEffectIcon[2].SetActive(false);
         }
+
         DectivateEffectsVisuals();
     }
 

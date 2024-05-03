@@ -295,6 +295,7 @@ public class StudentAdmissionManager : MonoBehaviour
                     {
                         if (LegendaryStudentManager.Instance.patronAddPoolEffect)
                         {
+                            Debug.Log("patron added student");
                             studentLeft += 5;
                         }
                         else

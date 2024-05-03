@@ -17,7 +17,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] NewspaperManager newspaperManager;
     [SerializeField] Animator chatScreenAnimator, mapScreenAnimator,mainScreenAnimator;
     [SerializeField] GameObject legendaryStudentPanel;
-    private bool chatScreenOpen = false, mapScreenOpen = false, legendaryStudentPanelOpen = false;
+    [SerializeField] GameObject creditScreen;
+    private bool chatScreenOpen = false, mapScreenOpen = false, legendaryStudentPanelOpen = false, creditScreenOpen = false;
     public LevelManager currentLevelManager;
     public List<LevelData> levelDataList = new();
     public int currentLevelID = 0;
@@ -152,9 +153,23 @@ public class GameManager : MonoBehaviour
         SoundManager.Instance.PlaySFX(mapScreenOpen ? "Click_ChatOpen" : "Click_ChatClose");
     }
 
+    
+
     public void ToggleLegendaryStudentPanel()
     {
-        legendaryStudentPanelOpen = !legendaryStudentPanelOpen;
-        legendaryStudentPanel.SetActive(legendaryStudentPanelOpen);
+        //legendaryStudentPanel.SetActive(legendaryStudentPanelOpen);
+        legendaryStudentPanel.GetComponent<Animator>().SetBool("Expand", legendaryStudentPanelOpen = !legendaryStudentPanelOpen);
+        //legendaryStudentPanelOpen = !legendaryStudentPanelOpen;
+        SoundManager.Instance.PlaySFX(mapScreenOpen ? "Click_ChatOpen" : "Click_ChatClose");
     }
+
+    public void ToggleCreditScreen()
+    {
+        creditScreen.GetComponent<Animator>().SetBool("Expand", creditScreenOpen = !creditScreenOpen);
+        SoundManager.Instance.PlaySFX(mapScreenOpen ? "Click_ChatOpen" : "Click_ChatClose");
+    }
+
+
+        
+    
 }

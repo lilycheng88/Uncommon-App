@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 using System.Linq;
+using TMPro;
 
 public class LegendaryStudentManager : MonoBehaviour
 {
@@ -18,6 +19,9 @@ public class LegendaryStudentManager : MonoBehaviour
     public int currentScannedLegendaryStudentID = -1;
     public List<bool> legendaryStudentUnlockStates = new();
     public List<GameObject> legendaryEffectIcon = new();
+    public int ScanLeft;
+    public int InitialScanNumber;
+    public TextMeshProUGUI ScanLeftText;
 
     private void Awake()
     {
@@ -25,7 +29,7 @@ public class LegendaryStudentManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);  // Optionally make this object persistent
+            //DontDestroyOnLoad(gameObject);  // Optionally make this object persistent
         }
         else
         {
@@ -39,7 +43,8 @@ public class LegendaryStudentManager : MonoBehaviour
 
     void Start()
     {
-        
+        ScanLeft = InitialScanNumber;
+        ScanLeftText.text = ScanLeft.ToString();
     }
 
     private void InitializeUnlockStates()
@@ -94,49 +99,56 @@ public class LegendaryStudentManager : MonoBehaviour
     
     public void ScanStudent()
     {
-        StudentData currentStudent = StudentAdmissionManager.Instance.studentInfo.data;
-            if (currentStudent != lastStudentData)
-            {
-                lastStudentData = currentStudent;
-                studentInfoAnimator.SetTrigger("Scan");
-                if (currentStudent._legendaryStudentID != 0)
+        if(ScanLeft >0){
+        
+            StudentData currentStudent = StudentAdmissionManager.Instance.studentInfo.data;
+                if (currentStudent != lastStudentData)
                 {
-                    bodyParts[0].sprite = lastStudentData._ASprite;
-                    bodyParts[1].sprite = lastStudentData._BSprite;
-                    bodyParts[2].sprite = lastStudentData._CSprite;
-                    bodyParts[3].sprite = lastStudentData._DSprite;
-                    bodyParts[4].sprite = lastStudentData._ESprite;
-                    bodyParts[5].sprite = lastStudentData._FSprite;
-                    if (lastStudentData._GSprite != null)
+                    ScanLeft -= 1;
+                    ScanLeftText.text = ScanLeft.ToString();
+                    lastStudentData = currentStudent;
+                    studentInfoAnimator.SetTrigger("Scan");
+                    if (currentStudent._legendaryStudentID != 0)
                     {
-                        bodyParts[6].enabled = true;
-                        bodyParts[6].sprite = lastStudentData._GSprite;
-                    } else {
-                        bodyParts[6].enabled = false;
+                        bodyParts[0].sprite = lastStudentData._ASprite;
+                        bodyParts[1].sprite = lastStudentData._BSprite;
+                        bodyParts[2].sprite = lastStudentData._CSprite;
+                        bodyParts[3].sprite = lastStudentData._DSprite;
+                        bodyParts[4].sprite = lastStudentData._ESprite;
+                        bodyParts[5].sprite = lastStudentData._FSprite;
+                        if (lastStudentData._GSprite != null)
+                        {
+                            bodyParts[6].enabled = true;
+                            bodyParts[6].sprite = lastStudentData._GSprite;
+                        }
+                        else
+                        {
+                            bodyParts[6].enabled = false;
+                        }
+
+                        bodyParts[7].sprite = lastStudentData._HSprite;
+
+                        float initialValue = 1f; // Starting value
+                        float finalValue = -0.1f; // Ending value, consider changing to a positive value if this is outside expected range
+                        float duration = 2f; // Duration in seconds
+
+                        foreach (Image bodyPart in bodyParts)
+                        {
+                            bodyPart.material = new Material(bodyPart.material);  // Create a new material instance for each body part
+
+                            // Create the tween and assign a tag
+                            DOVirtual.Float(initialValue, finalValue, duration, value =>
+                            {
+                                bodyPart.material.SetFloat("_FadeAmount", value);  // Apply the interpolated value to the shader property
+                            })
+                            .SetEase(Ease.InOutQuad)  // Optional: Set the easing function
+                            .SetId(bodyPart.GetInstanceID());  // Set a unique ID based on the instance of the bodyPart
+                        }
+
+                        currentScannedLegendaryStudentID = currentStudent._legendaryStudentID - 1;
+
                     }
-
-                    bodyParts[7].sprite = lastStudentData._HSprite;
-
-                float initialValue = 1f; // Starting value
-                float finalValue = -0.1f; // Ending value, consider changing to a positive value if this is outside expected range
-                float duration = 2f; // Duration in seconds
-
-                foreach (Image bodyPart in bodyParts)
-                {
-                    bodyPart.material = new Material(bodyPart.material);  // Create a new material instance for each body part
-
-                    // Create the tween and assign a tag
-                    DOVirtual.Float(initialValue, finalValue, duration, value =>
-                    {
-                        bodyPart.material.SetFloat("_FadeAmount", value);  // Apply the interpolated value to the shader property
-                    })
-                    .SetEase(Ease.InOutQuad)  // Optional: Set the easing function
-                    .SetId(bodyPart.GetInstanceID());  // Set a unique ID based on the instance of the bodyPart
                 }
-
-                currentScannedLegendaryStudentID = currentStudent._legendaryStudentID - 1;
-                
-            }
         }
     }
 
