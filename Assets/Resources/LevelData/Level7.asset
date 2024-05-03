@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ca2e59f8d0ff4f62828d568cdc2f154, type: 3}
   m_Name: Level7
   m_EditorClassIdentifier: 
-  academicMultiplier: 0.3
-  financeMultiplier: 0.5
+  academicMultiplier: 0.5
+  financeMultiplier: 0.3
   studentLeft: 25
   studentRequired: 20
   initialScholarship: 350

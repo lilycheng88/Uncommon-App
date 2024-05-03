@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ca2e59f8d0ff4f62828d568cdc2f154, type: 3}
   m_Name: Level2
   m_EditorClassIdentifier: 
-  academicMultiplier: 0.7
-  financeMultiplier: 0.4
+  academicMultiplier: 0.4
+  financeMultiplier: 0.7
   studentLeft: 35
   studentRequired: 20
   initialScholarship: 500
   goodStudentPercentage: 6
   badStudentPercentage: 29
-  richStudentPercentage: 12
+  richStudentPercentage: 22
   poorStudentPercentage: 62
   extroversionPercentage: 62
   magicalPersonalityPercentage: 24
