@@ -11741,58 +11741,53 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newsItems:
   - Label: ScholarlyExcellence
-    Header: ScholarlyExcellence!
-    Description: Students are so good. Oh Yeah
+    Header: Scholarly Excellence!
+    Description: According to our sources inside the hallowed halls of Uncommon Academy,
+      it seems that this incoming freshman class will have one of the highest cumulative
+      GPAs ever recorded for the institution! We are sure their parents will be very
+      proud.
     TriggerCount: 0
     RequiredTriggerCount: 1
     icon: {fileID: 21300000, guid: 84d5fbe6800784d10aab63c9f0ba402a, type: 3}
   - Label: ScholarshipWho
-    Header: Scholarship who?
-    Description: "by Cristina Fey                          According to our sources
-      inside the hallowed halls of Uncommon Academy, it seems like the admissions
-      office is pinching their proverbial pennies tighter than they ever have before.
-      80% of their financial aid has been left undistributed after today\u2019s round
-      of acceptances. Academy hopefuls beware: you may be paying out of pocket much
-      more than you expected this year\u2026"
+    Header: Scholarship Who?
+    Description: "According to our sources inside the hallowed halls of Uncommon
+      Academy, it seems like the admissions office is pinching their proverbial pennies
+      tighter than they ever have before. 80% of their financial aid has been left
+      undistributed after today\u2019s round of acceptances. Academy hopefuls beware:
+      you may be paying out of pocket much more than you expected this year\u2026 "
     TriggerCount: 0
     RequiredTriggerCount: 1
     icon: {fileID: 21300000, guid: 6a90e918251a64e3ba141a7b72d71b04, type: 3}
   - Label: FirstGenAcademy
     Header: 1ST GENERATION STUDENTS FIND A HOME AT UNCOMMON ACADEMY
-    Description: "by Ipa Nemea                            Today\u2019s Uncommon Academy
-      admission statistics have finally been revealed, to the elation and chagrin
-      of many applicants. UA\u2019s campus will be full of fresh faces this year,
-      as double the projected number of 1st generation students have been admitted!
-      Many approve of this change in direction for the prestigious university, while
-      some others question whether or not the school\u2019s pedigree will remain
-      intact. Only time will tell\u2026"
+    Description: "Today\u2019s Uncommon Academy admission statistics have finally
+      been revealed, to the elation and chagrin of many applicants. UA\u2019s campus
+      will be full of fresh faces this year, as double the projected number of 1st
+      generation students have been admitted! Some question whether or not the school\u2019s
+      pedigree will remain intact. Only time will tell\u2026 "
     TriggerCount: 0
     RequiredTriggerCount: 1
     icon: {fileID: 21300000, guid: 95882f9b3742a4fe08d3cbd5dee6635f, type: 3}
   - Label: AlumniAcademy
     Header: "CHILDREN OF UNCOMMON ACADEMY ALUMNI FOLLOW IN THEIR PARENTS\u2019 FOOTSTEPS
       THIS YEAR\u2026"
-    Description: "by Dilly Quill Today\u2019s Uncommon Academy admission statistics
-      have finally been revealed, to the elation and chagrin of many applicants.
-      In a not-so-shocking twist, the projected number of admitted students who are
-      children of UA alumni has been greatly exceeded, past even the most generous
-      of estimations. This reflects a pattern on the part of the admissions department
-      as well as administrators, and begs the question: what part of a prospective
-      student\u2019s application is really the most important?"
+    Description: "Today\u2019s Uncommon Academy admission statistics have finally
+      been revealed, to the elation and chagrin of many applicants. In a not-so-shocking
+      twist, the projected number of admitted legacy has been greatly exceeded. This
+      reflects a pattern on the part of the admissions department as well as administrators,
+      and begs the question: what part of a prospective student\u2019s application
+      is really the most important? "
     TriggerCount: 0
     RequiredTriggerCount: 1
     icon: {fileID: 21300000, guid: a0536a1b61f1b44a4864e947f54149d5, type: 3}
   - Label: PatronAcademy
     Header: "PATRONS OF UNCOMMON ACADEMY GET THEIR MONEY\u2019S WORTH "
-    Description: "by Yoli Volo Today\u2019s Uncommon Academy admission statistics
-      have finally been revealed, to the elation and chagrin of many applicants.
-      It appears that students who are children of patrons of UA have an exponentially
-      higher chance of being admitted, if this round is any indication. It appears
-      that even the high and mighty Uncommon Academy, with all its prestige, is not
-      immune to the sway of money. Who is, really? Or, is this only to be expected
-      of such a successful institution? For any prospective applicants, take this
-      as a lesson: the more money you offer, the better your chances of being accepted
-      will be. "
+    Description: "Today\u2019s Uncommon Academy admission statistics have finally
+      been revealed, to the elation and chagrin of many applicants. It appears that
+      students who are children of patrons of UA have an exponentially higher chance
+      of being admitted. For any prospective applicants, take this as a lesson: the
+      more money you offer, the better your chances of being accepted will be. "
     TriggerCount: 0
     RequiredTriggerCount: 1
     icon: {fileID: 21300000, guid: 2a63302e8ce2244aaab0743f0172d3e9, type: 3}
@@ -16536,7 +16531,7 @@ MonoBehaviour:
   - {fileID: 724982103}
   - {fileID: 101252907}
   - {fileID: 308610238}
-  levelNumberToSet: 5
+  levelNumberToSet: 1
 --- !u!1 &957325993
 GameObject:
   m_ObjectHideFlags: 0
@@ -22709,7 +22704,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a282e640009b45b46bbeb20656d92ffd, type: 2}
   - {fileID: 11400000, guid: 68b5cbae4416fb14a8460b0209695dde, type: 2}
   - {fileID: 11400000, guid: e4050e340fdc5a5499fec79f7cbd2396, type: 2}
-  currentLevelID: 5
+  currentLevelID: 1
 --- !u!1 &1274818114
 GameObject:
   m_ObjectHideFlags: 0
