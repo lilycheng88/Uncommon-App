@@ -278,7 +278,7 @@ public class StudentAdmissionManager : MonoBehaviour
                     var scholarshipCost = (financeRequired - data._finance);
                     if (LegendaryStudentManager.Instance.unmeiiaNystalFreeEffect)
                     {
-                        if(data._nationality == "Unmeiia" || data._nationality == "Nystal")
+                        if(data._nationality == "Tendiyu" || data._nationality == "Gessurd")
                         {
                             scholarshipCost = 0;
                         }
@@ -295,6 +295,7 @@ public class StudentAdmissionManager : MonoBehaviour
                     {
                         if (LegendaryStudentManager.Instance.patronAddPoolEffect)
                         {
+                            Debug.Log("patron added student");
                             studentLeft += 5;
                         }
                         else
@@ -313,7 +314,6 @@ public class StudentAdmissionManager : MonoBehaviour
                     //===Legendary====
                     LegendaryStudentManager.Instance.UnlockCurrentScanedLegendaryStudent();
                     StudentGenerationManager.Instance.remainingLegendaryStudentList.Remove(data);
-
                     //================
 
                     //===Mini Goal Datas===
@@ -455,6 +455,12 @@ public class StudentAdmissionManager : MonoBehaviour
         }
         else
         {
+            if(LegendaryStudentManager.Instance.unmeiiaNystalFreeEffect){
+                if(data._nationality == "Tendiyu" || data._nationality == "Gessurd")
+                {
+                    return true;
+                }
+            }
             return false;
         }
     }

@@ -20,6 +20,7 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Initialzie()
     {
+        //SetCurrentLevel(GameManager.Instance.currentLevelID);
         if(levelData != null){
         StudentGenerationManager.Instance.goodStudentPercentage =  levelData.goodStudentPercentage;
         StudentGenerationManager.Instance.badStudentPercentage = levelData.badStudentPercentage;
@@ -118,6 +119,6 @@ public class LevelManager : MonoBehaviour
     public void SetCurrentLevel(int number)
     {
         GameManager.Instance.currentLevelID = levelNumberToSet;
-        GameManager.Instance.SaveCurrentLevelID();
+       GameManager.Instance.SaveCurrentLevelID();
     }
 }

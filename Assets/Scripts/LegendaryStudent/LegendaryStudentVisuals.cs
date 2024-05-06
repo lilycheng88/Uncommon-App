@@ -10,6 +10,7 @@ public class LegendaryStudentVisuals : MonoBehaviour, IPointerEnterHandler, IPoi
     public bool studentLocked = true;
     public List<GameObject> unlockedVisuals = new();
     public List<GameObject> lockedVisuals = new();
+    public List<GameObject> effectVisuals = new();
     public bool studentSelected = false;
     public int legendaryStudentID;
     public GameObject confirmSelectPanel;
@@ -22,7 +23,7 @@ public class LegendaryStudentVisuals : MonoBehaviour, IPointerEnterHandler, IPoi
     // Start is called before the first frame update
     void Awake()
     {
-
+        SetLockState(studentLocked);
         
     }
 
@@ -57,8 +58,24 @@ public class LegendaryStudentVisuals : MonoBehaviour, IPointerEnterHandler, IPoi
         }
     }
 
+    public void ActivateEffectsVisuals()
+    {
+        foreach (GameObject unlockedVisual in effectVisuals)
+        {
+            unlockedVisual.SetActive(true);
+        }
+    }
+
+        public void DectivateEffectsVisuals()
+    {
+        foreach (GameObject unlockedVisual in effectVisuals)
+        {
+            unlockedVisual.SetActive(false);
+        }
+    }
     public void ToggleLegendaryStudentActivate()
     {
+        SoundManager.Instance.PlaySFX("ChatOpen");
         if (!confirmUI.isPanelOpen)
         {
             Toggle toggle = GetComponent<Toggle>();
@@ -68,6 +85,7 @@ public class LegendaryStudentVisuals : MonoBehaviour, IPointerEnterHandler, IPoi
                 {
                     if (isHovering == true)
                     {
+                        SoundManager.Instance.PlaySFX("ChatOpen");
                         confirmUI.OpenConfirmSelectPanel(this.GetComponent<LegendaryStudentVisuals>());
                     }
                     studentSelected = true;
@@ -76,6 +94,7 @@ public class LegendaryStudentVisuals : MonoBehaviour, IPointerEnterHandler, IPoi
                 {
                     if (isHovering == true)
                     {
+                        SoundManager.Instance.PlaySFX("ChatClose");
                         confirmUI.OpenConfirmDeselectPanel(this.GetComponent<LegendaryStudentVisuals>());
                     }
                     studentSelected = false;
@@ -104,26 +123,35 @@ public class LegendaryStudentVisuals : MonoBehaviour, IPointerEnterHandler, IPoi
             Debug.Log("calculated confirm condition as true");
             StudentAdmissionManager.Instance.totalScholarship -= hireCost;
             StudentAdmissionManager.Instance.UpdateAllVisuals();
+            ActivateEffectsVisuals();
             if(legendaryStudentID == 0)
             {
+                
                 LegendaryStudentManager.Instance.moreAcademicLessMoneyEffect = true;
                 LegendaryStudentManager.Instance.legendaryEffectIcon[0].SetActive(true);
                 LegendaryStudentManager.Instance.legendaryEffectIcon[1].SetActive(false);
                 LegendaryStudentManager.Instance.legendaryEffectIcon[2].SetActive(false);
+                LegendaryStudentManager.Instance.legendaryStudentVisualsList[1].DectivateEffectsVisuals();
+                LegendaryStudentManager.Instance.legendaryStudentVisualsList[2].DectivateEffectsVisuals();
             }
             if(legendaryStudentID == 1)
             {
-                LegendaryStudentManager.Instance.unmeiiaNystalFreeEffect= true;
+                LegendaryStudentManager.Instance.patronAddPoolEffect = true;
+                
                 LegendaryStudentManager.Instance.legendaryEffectIcon[1].SetActive(true);
                 LegendaryStudentManager.Instance.legendaryEffectIcon[0].SetActive(false);
                 LegendaryStudentManager.Instance.legendaryEffectIcon[2].SetActive(false);
+                LegendaryStudentManager.Instance.legendaryStudentVisualsList[0].DectivateEffectsVisuals();
+                LegendaryStudentManager.Instance.legendaryStudentVisualsList[2].DectivateEffectsVisuals();
             }
             if(legendaryStudentID == 2)
             {
-                LegendaryStudentManager.Instance.patronAddPoolEffect = true;
+                LegendaryStudentManager.Instance.unmeiiaNystalFreeEffect= true;
                 LegendaryStudentManager.Instance.legendaryEffectIcon[2].SetActive(true);
                 LegendaryStudentManager.Instance.legendaryEffectIcon[0].SetActive(false);
                 LegendaryStudentManager.Instance.legendaryEffectIcon[1].SetActive(false);
+                LegendaryStudentManager.Instance.legendaryStudentVisualsList[1].DectivateEffectsVisuals();
+                LegendaryStudentManager.Instance.legendaryStudentVisualsList[0].DectivateEffectsVisuals();
             }
 
             return true;
@@ -140,16 +168,20 @@ public class LegendaryStudentVisuals : MonoBehaviour, IPointerEnterHandler, IPoi
             LegendaryStudentManager.Instance.legendaryEffectIcon[0].SetActive(false);
 
         }
+
         if(legendaryStudentID == 1)
         {
-            LegendaryStudentManager.Instance.unmeiiaNystalFreeEffect= false;
+            
+            LegendaryStudentManager.Instance.patronAddPoolEffect = false;
             LegendaryStudentManager.Instance.legendaryEffectIcon[1].SetActive(false);
         }
         if(legendaryStudentID == 2)
         {
-            LegendaryStudentManager.Instance.patronAddPoolEffect = false;
+            LegendaryStudentManager.Instance.unmeiiaNystalFreeEffect= false;
             LegendaryStudentManager.Instance.legendaryEffectIcon[2].SetActive(false);
         }
+
+        DectivateEffectsVisuals();
     }
 
     

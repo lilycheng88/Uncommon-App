@@ -40,7 +40,10 @@ public class LoginManager : MonoBehaviour
     {
         string enteredUsername = loginInputField.text;
         string enteredPassword = passwordInputField.text;
-        SoundManager.Instance.PlaySFX("Click_Confirm");
+        if (SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySFX("Click_Confirm");
+        }
 
         if (enteredUsername == correctUsername && enteredPassword == correctPassword)
         {

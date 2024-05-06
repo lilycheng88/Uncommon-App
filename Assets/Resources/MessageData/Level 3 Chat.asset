@@ -32,6 +32,9 @@ MonoBehaviour:
       have a solid suspicion, you may scan the student you have selected with the
       <wave a=0.1 f=1 w=1><b>scan</b></wave> button. '
     sprite: {fileID: 0}
+  - message: If you feel like you have a solid suspicion, you may scan the student
+      you have selected with the <wave a=0.1 f=1 w=1><b>scan</b></wave> button.
+    sprite: {fileID: 21300000, guid: 4b2821b2272c4fd4abe2816191296e33, type: 3}
   - message: 'Upon a successful scan, the Legendary student will be revealed, and
       you will be rewarded with the opportunity to hire them as your assistant from
       the Legendary student panel.  '

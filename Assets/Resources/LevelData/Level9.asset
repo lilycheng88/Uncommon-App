@@ -17,9 +17,9 @@ MonoBehaviour:
   studentLeft: 20
   studentRequired: 20
   initialScholarship: 250
-  goodStudentPercentage: 6
+  goodStudentPercentage: 5
   badStudentPercentage: 50
-  richStudentPercentage: 7
+  richStudentPercentage: 9
   poorStudentPercentage: 90
   extroversionPercentage: 62
   magicalPersonalityPercentage: 24

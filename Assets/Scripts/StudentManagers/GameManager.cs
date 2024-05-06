@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -17,7 +18,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] NewspaperManager newspaperManager;
     [SerializeField] Animator chatScreenAnimator, mapScreenAnimator,mainScreenAnimator;
     [SerializeField] GameObject legendaryStudentPanel;
-    private bool chatScreenOpen = false, mapScreenOpen = false, legendaryStudentPanelOpen = false;
+    [SerializeField] GameObject creditScreen;
+    [SerializeField] TextMeshProUGUI dayText;
+    private bool chatScreenOpen = false, mapScreenOpen = false, legendaryStudentPanelOpen = false, creditScreenOpen = false;
     public LevelManager currentLevelManager;
     public List<LevelData> levelDataList = new();
     public int currentLevelID = 0;
@@ -55,6 +58,7 @@ public class GameManager : MonoBehaviour
             currentLevelManager = GameObject.FindGameObjectWithTag("levelManager").GetComponent<LevelManager>();
             if (currentLevelID < levelDataList.Count)
             {
+                Debug.Log("Setting level data as id=" + currentLevelID);
                 currentLevelManager.levelData = levelDataList[currentLevelID];
             }
             else
@@ -68,11 +72,17 @@ public class GameManager : MonoBehaviour
     {
         mainScreenAnimator = gameTabs[0].GetComponent<Animator>();
         mainScreenAnimator.SetTrigger("LoadIn");
-        
+        Debug.Log("now level data id=" + currentLevelID);
     }
 
+    private void Update()
+    {
+        dayText.text = "Day " + (currentLevelID+1).ToString();
+        Debug.Log("updating level data id=" + currentLevelID);
+    }
     public void GameLose()
     {
+        SoundManager.Instance.PlaySFX("FireSlam");
         gameLoseScreen.SetActive(true);
     }
 
@@ -100,7 +110,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            GameLose();
+            GameLose();           
         }
     }
 
@@ -120,6 +130,9 @@ public class GameManager : MonoBehaviour
         if (PlayerPrefs.HasKey("CurrentLevelID"))
         {
             currentLevelID = PlayerPrefs.GetInt("CurrentLevelID");
+        }else{
+            currentLevelID = 0;
+            PlayerPrefs.Save();
         }
     }
 
@@ -152,9 +165,23 @@ public class GameManager : MonoBehaviour
         SoundManager.Instance.PlaySFX(mapScreenOpen ? "Click_ChatOpen" : "Click_ChatClose");
     }
 
+    
+
     public void ToggleLegendaryStudentPanel()
     {
-        legendaryStudentPanelOpen = !legendaryStudentPanelOpen;
-        legendaryStudentPanel.SetActive(legendaryStudentPanelOpen);
+        //legendaryStudentPanel.SetActive(legendaryStudentPanelOpen);
+        legendaryStudentPanel.GetComponent<Animator>().SetBool("Expand", legendaryStudentPanelOpen = !legendaryStudentPanelOpen);
+        //legendaryStudentPanelOpen = !legendaryStudentPanelOpen;
+        SoundManager.Instance.PlaySFX(mapScreenOpen ? "Click_ChatOpen" : "Click_ChatClose");
     }
+
+    public void ToggleCreditScreen()
+    {
+        creditScreen.GetComponent<Animator>().SetBool("Expand", creditScreenOpen = !creditScreenOpen);
+        SoundManager.Instance.PlaySFX(mapScreenOpen ? "Click_ChatOpen" : "Click_ChatClose");
+    }
+
+
+        
+    
 }

@@ -4,10 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 using System.Linq;
+using TMPro;
 
 public class LegendaryStudentManager : MonoBehaviour
 {
     public static LegendaryStudentManager Instance;
+    [SerializeField] StudentInfo studentInfo;
     [SerializeField] Animator studentInfoAnimator;
     StudentData lastStudentData; 
     [SerializeField] List<Image> bodyParts;
@@ -18,6 +20,9 @@ public class LegendaryStudentManager : MonoBehaviour
     public int currentScannedLegendaryStudentID = -1;
     public List<bool> legendaryStudentUnlockStates = new();
     public List<GameObject> legendaryEffectIcon = new();
+    public int ScanLeft;
+    public int InitialScanNumber;
+    public TextMeshProUGUI ScanLeftText;
 
     private void Awake()
     {
@@ -25,7 +30,7 @@ public class LegendaryStudentManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);  // Optionally make this object persistent
+            //DontDestroyOnLoad(gameObject);  // Optionally make this object persistent
         }
         else
         {
@@ -39,7 +44,8 @@ public class LegendaryStudentManager : MonoBehaviour
 
     void Start()
     {
-        
+        ScanLeft = InitialScanNumber;
+        ScanLeftText.text = ScanLeft.ToString();
     }
 
     private void InitializeUnlockStates()
@@ -94,28 +100,36 @@ public class LegendaryStudentManager : MonoBehaviour
     
     public void ScanStudent()
     {
+		if(ScanLeft >0){
         StudentData currentStudent = StudentAdmissionManager.Instance.studentInfo.data;
-            if (currentStudent != lastStudentData)
+        if (currentStudent != lastStudentData)
+        {
+            ScanLeft -= 1;
+            ScanLeftText.text = ScanLeft.ToString();
+            SoundManager.Instance.PlaySFX("Click_OK");
+            lastStudentData = currentStudent;
+            studentInfoAnimator.SetTrigger("Scan");
+            if (currentStudent._legendaryStudentID != 0)
             {
-                lastStudentData = currentStudent;
-                studentInfoAnimator.SetTrigger("Scan");
-                if (currentStudent._legendaryStudentID != 0)
+                SoundManager.Instance.PlaySFX("PreReveal");
+                studentInfo.isLegendary = true;
+                bodyParts[0].sprite = lastStudentData._ASprite;
+                bodyParts[1].sprite = lastStudentData._BSprite;
+                bodyParts[2].sprite = lastStudentData._CSprite;
+                bodyParts[3].sprite = lastStudentData._DSprite;
+                bodyParts[4].sprite = lastStudentData._ESprite;
+                bodyParts[5].sprite = lastStudentData._FSprite;
+                if (lastStudentData._GSprite != null)
                 {
-                    bodyParts[0].sprite = lastStudentData._ASprite;
-                    bodyParts[1].sprite = lastStudentData._BSprite;
-                    bodyParts[2].sprite = lastStudentData._CSprite;
-                    bodyParts[3].sprite = lastStudentData._DSprite;
-                    bodyParts[4].sprite = lastStudentData._ESprite;
-                    bodyParts[5].sprite = lastStudentData._FSprite;
-                    if (lastStudentData._GSprite != null)
-                    {
-                        bodyParts[6].enabled = true;
-                        bodyParts[6].sprite = lastStudentData._GSprite;
-                    } else {
-                        bodyParts[6].enabled = false;
-                    }
+                    bodyParts[6].enabled = true;
+                    bodyParts[6].sprite = lastStudentData._GSprite;
+                }
+                else
+                {
+                    bodyParts[6].enabled = false;
+                }
 
-                    bodyParts[7].sprite = lastStudentData._HSprite;
+                bodyParts[7].sprite = lastStudentData._HSprite;
 
                 float initialValue = 1f; // Starting value
                 float finalValue = -0.1f; // Ending value, consider changing to a positive value if this is outside expected range
@@ -135,15 +149,23 @@ public class LegendaryStudentManager : MonoBehaviour
                 }
 
                 currentScannedLegendaryStudentID = currentStudent._legendaryStudentID - 1;
-                
+            }
+            else
+            {
+                studentInfo.isLegendary = false;
             }
         }
+        else
+        {
+            SoundManager.Instance.PlaySFX("Click_Confirm");
+        }
+	}
     }
 
     public void UnlockCurrentScanedLegendaryStudent()
     {
         if (currentScannedLegendaryStudentID >= 0)
-        {
+        {            
             var id = legendaryStudentVisualsList[currentScannedLegendaryStudentID];
             id.SetLockState(false);
             legendaryStudentUnlockStates[currentScannedLegendaryStudentID] = true;

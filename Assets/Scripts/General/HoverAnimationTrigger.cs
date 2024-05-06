@@ -63,6 +63,4 @@ public class HoverAnimationTrigger : MonoBehaviour, IPointerEnterHandler, IPoint
                 break;
         }
     }
-
-
 }
