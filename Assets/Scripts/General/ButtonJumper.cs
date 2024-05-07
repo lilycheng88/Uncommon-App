@@ -23,5 +23,9 @@ public class ButtonJumper : MonoBehaviour
         //animator.enabled = false;
     }
 
+    public void NewMessageSound()
+    {
+        SoundManager.Instance.PlaySFX("NewMessage");
+    }
   
 }
