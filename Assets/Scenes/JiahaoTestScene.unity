@@ -6317,11 +6317,35 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1683610460}
     m_Modifications:
+    - target: {fileID: 2026688948899165549, guid: 442e570b7b32e4be7baf39bc1ff6e263, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2840961897050443702, guid: 442e570b7b32e4be7baf39bc1ff6e263, type: 3}
       propertyPath: m_Name
       value: PauseManager
       objectReference: {fileID: 0}
     - target: {fileID: 2840961897050443702, guid: 442e570b7b32e4be7baf39bc1ff6e263, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4485663679959876968, guid: 442e570b7b32e4be7baf39bc1ff6e263, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ca9458290f164c04dbeb9d5982a6553d, type: 3}
+    - target: {fileID: 6539104441365971774, guid: 442e570b7b32e4be7baf39bc1ff6e263, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6740807016634866066, guid: 442e570b7b32e4be7baf39bc1ff6e263, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6740807016634866066, guid: 442e570b7b32e4be7baf39bc1ff6e263, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0b5d3a087e28afc4e8f79d80c0ef475e, type: 3}
+    - target: {fileID: 6822447622515732152, guid: 442e570b7b32e4be7baf39bc1ff6e263, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -6432,6 +6456,14 @@ PrefabInstance:
     - target: {fileID: 8489924820006366994, guid: 442e570b7b32e4be7baf39bc1ff6e263, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 484
+      objectReference: {fileID: 0}
+    - target: {fileID: 8751416648306798256, guid: 442e570b7b32e4be7baf39bc1ff6e263, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8751416648306798256, guid: 442e570b7b32e4be7baf39bc1ff6e263, type: 3}
+      propertyPath: m_Interactable
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16531,7 +16563,7 @@ MonoBehaviour:
   - {fileID: 724982103}
   - {fileID: 101252907}
   - {fileID: 308610238}
-  levelNumberToSet: 1
+  levelNumberToSet: 0
 --- !u!1 &957325993
 GameObject:
   m_ObjectHideFlags: 0
@@ -22704,7 +22736,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a282e640009b45b46bbeb20656d92ffd, type: 2}
   - {fileID: 11400000, guid: 68b5cbae4416fb14a8460b0209695dde, type: 2}
   - {fileID: 11400000, guid: e4050e340fdc5a5499fec79f7cbd2396, type: 2}
-  currentLevelID: 1
+  currentLevelID: 0
 --- !u!1 &1274818114
 GameObject:
   m_ObjectHideFlags: 0
