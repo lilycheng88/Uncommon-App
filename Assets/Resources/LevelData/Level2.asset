@@ -35,7 +35,7 @@ MonoBehaviour:
   miniGoalPool:
   - goal: careful
     requiredNum: 5
-  - goal: patron
+  - goal: oyveka
     requiredNum: 5
   features:
   - includedFeature: 1

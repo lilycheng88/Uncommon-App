@@ -71,7 +71,7 @@ public class LevelData : ScriptableObject
 [System.Serializable]
 public class MiniGoalOptions
 {
-    [Header("Copy one of the following exact string(with space included) to the goal : \nintroverted,extroverted,calm, emotional,night owl,early bird,careful,\nexplorativenon-psychic,psychic,1st-gen,alumni,patron")]
+    [Header("Copy one of the following exact string(with space included) to the goal : \nintroverted,extroverted,calm, emotional,night owl,early bird,careful,\nexplorativenon-psychic,psychic,1st-gen,legacy,patron,oyveka")]
     public string goal;
     public int requiredNum;
     

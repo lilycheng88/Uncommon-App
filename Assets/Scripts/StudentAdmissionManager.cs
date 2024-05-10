@@ -329,7 +329,7 @@ public class StudentAdmissionManager : MonoBehaviour
                                     MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
                                 }
 
-                                break;
+                            break;
 
                             case "extroverted":
                                 if (data._extroversion >= 4)
@@ -337,7 +337,7 @@ public class StudentAdmissionManager : MonoBehaviour
                                     MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
                                 }
 
-                                break;
+                            break;
 
                             case "calm":
                                 if (data._magicalPersonality <= 2)
@@ -345,7 +345,7 @@ public class StudentAdmissionManager : MonoBehaviour
                                     MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
                                 }
 
-                                break;
+                            break;
 
                             case "emotional":
                                 if (data._magicalPersonality >= 4)
@@ -353,7 +353,7 @@ public class StudentAdmissionManager : MonoBehaviour
                                     MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
                                 }
 
-                                break;
+                            break;
 
                             case "night owl":
                                 if (data._schedule <= 2)
@@ -361,7 +361,7 @@ public class StudentAdmissionManager : MonoBehaviour
                                     MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
                                 }
 
-                                break;
+                            break;
 
                             case "early bird":
                                 if (data._schedule >= 4)
@@ -369,7 +369,7 @@ public class StudentAdmissionManager : MonoBehaviour
                                     MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
                                 }
 
-                                break;
+                            break;
 
                             case "careful":
                                 if (data._explorativity <= 2)
@@ -377,7 +377,7 @@ public class StudentAdmissionManager : MonoBehaviour
                                     MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
                                 }
 
-                                break;
+                            break;
 
                             case "explorative":
                                 if (data._explorativity >= 4)
@@ -385,7 +385,7 @@ public class StudentAdmissionManager : MonoBehaviour
                                     MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
                                 }
 
-                                break;
+                            break;
 
                             case "non-psychic":
                                 if (data._psionicAffinity <= 2)
@@ -393,7 +393,7 @@ public class StudentAdmissionManager : MonoBehaviour
                                     MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
                                 }
 
-                                break;
+                            break;
 
                             case "psychic":
                                 if (data._psionicAffinity >= 4)
@@ -401,7 +401,7 @@ public class StudentAdmissionManager : MonoBehaviour
                                     MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
                                 }
 
-                                break;
+                            break;
 
                             case "1st-gen":
                                 if (data._isFirstGen)
@@ -409,7 +409,7 @@ public class StudentAdmissionManager : MonoBehaviour
                                     MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
                                 }
 
-                                break;
+                            break;
 
                             case "legacy":
                                 if (data._isAlumni)
@@ -417,7 +417,7 @@ public class StudentAdmissionManager : MonoBehaviour
                                     MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
                                 }
 
-                                break;
+                            break;
 
                             case "patron":
                                 if (data._isPatron)
@@ -425,7 +425,15 @@ public class StudentAdmissionManager : MonoBehaviour
                                     MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
                                 }
 
-                                break;
+                            break;
+
+                            case "oyveka":
+                                if(data._nationType == RaceData.NationType.Ovyeka)
+                                {
+                                    MiniGoalManager.Instance.miniGoalDatas[i].UpdateProgress(1);
+                                }
+
+                            break;
 
                         }
 
